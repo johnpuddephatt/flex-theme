@@ -3,7 +3,7 @@
   <div class="px-4 lg:px-0 container pt-24 pb-16">
     <div class="flex flex-wrap gap-4">
       <div class="flex-shrink w-full mt-3 md:w-1/2">
-        <p class="mb-6 text-2xl first-letter:lg:text-3xl font-semibold text-white"><?php echo e(get_bloginfo('description')); ?></p>
+        <p class="mb-6 text-2xl font-semibold text-white"><?php echo e(get_bloginfo('description')); ?></p>
 
         <?php if(carbon_get_theme_option('address')): ?>
           <p class="site-footer--address contact-address mb-1 text-base"><?php echo nl2br(strip_tags(carbon_get_theme_option('address'))); ?></p>
@@ -14,7 +14,9 @@
             <a class="site-footer--email contact-email mb-4"
               href="mailto:<?php echo e(carbon_get_theme_option('companyemail')); ?>"><?php echo e(carbon_get_theme_option('companyemail')); ?></a>
           <?php endif; ?>
-          |
+          <?php if(carbon_get_theme_option('companyemail') && carbon_get_theme_option('companyphone')): ?>
+            |
+          <?php endif; ?>
           <?php if(carbon_get_theme_option('companyphone')): ?>
             <a class="site-footer--phone contact-phone"
               href="tel:<?php echo e(carbon_get_theme_option('companyphone')); ?>"><?php echo e(carbon_get_theme_option('companyphone')); ?></a>

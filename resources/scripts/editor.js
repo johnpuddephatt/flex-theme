@@ -26,7 +26,7 @@ wp.domReady(function () {
   wp.blocks.unregisterBlockType("core/preformatted");
   wp.blocks.unregisterBlockType("core/pullquote");
   // wp.blocks.unregisterBlockType('core/html');
-  wp.blocks.unregisterBlockType("core/embed");
+  // wp.blocks.unregisterBlockType("core/embed");
   wp.blocks.unregisterBlockType("core/archives");
   wp.blocks.unregisterBlockType("core/categories");
   wp.blocks.unregisterBlockType("core/calendar");

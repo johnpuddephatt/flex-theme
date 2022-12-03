@@ -3262,11 +3262,6 @@ cite p::after {
   .lg\:leading-tight {
     line-height: 1.25;
   }
-
-  .first-letter\:lg\:text-3xl::first-letter {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
 }
 @media (min-width: 1280px) {
 
