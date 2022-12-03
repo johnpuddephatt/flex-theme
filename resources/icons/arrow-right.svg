@@ -1,0 +1,13 @@
+<svg class="w-12 h-12 text-orange my-auto" xmlns="http://www.w3.org/2000/svg" width="437.95" height="437.95" viewBox="0 0 437.95 437.95">
+  
+  <polyline fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="25px" points="218.97 12.5 425.45 218.97 218.97 425.45"/>
+  <line fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="25px" x1="425.45" y1="218.98" x2="12.5" y2="218.98"/>
+</svg>

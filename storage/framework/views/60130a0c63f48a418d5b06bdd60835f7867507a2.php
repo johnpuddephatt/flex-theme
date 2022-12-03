@@ -1,0 +1,2 @@
+
+<?php echo $__env->make('taxonomy-resource', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/johnpuddephatt/Sites/flex/web/app/themes/flex-2022/resources/views/taxonomy-resourcetype.blade.php ENDPATH**/ ?>

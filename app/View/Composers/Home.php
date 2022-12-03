@@ -6,7 +6,6 @@ use Roots\Acorn\View\Composer;
 
 class Home extends Composer
 {
-
     /**
      * List of views served by this composer.
      *
@@ -15,65 +14,17 @@ class Home extends Composer
     protected static $views = [
         // 'partials.page-header',
         // 'partials.content',
-        'template-home',
+        "template-home",
     ];
 
-    public function with() {
-
+    public function with()
+    {
         return [
-            "hero_title" => get_theme_mod('home_hero_title'),
-            "hero_subtitle" => get_theme_mod('home_hero_subtitle'),
-            "hero_image" => wp_get_attachment_image(get_theme_mod('home_hero_image'), 'square', false, [
-               'class' => 'w-full clip-teardrop',
-               'sizes' => '(orientation: portrait) 100vw, 50vw'
-            ]),
-
-            "announcement_title" => get_theme_mod('home_announcement_title'),
-            "announcement_text" => get_theme_mod('home_announcement_text'),
-            "announcement_link" => get_theme_mod('home_announcement_link'),
-            "announcement_linktext" => get_theme_mod('home_announcement_linktext'),
-            "announcement_enabled" => get_theme_mod('home_announcement_enabled'),
-
-            "groups_title" => get_theme_mod('home_groups_title'),
-            "groups_description" => get_theme_mod('home_groups_description'),
-            "groups_enabled" => get_theme_mod('home_groups_enabled'),
-            "groups_link" => get_theme_mod('home_groups_link'),
-            "groups_linktext" => get_theme_mod('home_groups_linktext'),
-
-            "blocks_enabled" => get_theme_mod('home_blocks_enabled'),
-            "blocks" => get_posts([
-            'post_type' => 'any',
-            'orderby' => 'post__in',
-            'numberposts' => '4',
-            'include' => array_reduce(
-                get_option('home_blocks')['blocks'],
-                    function( $result, $item ) {
-                        $result[] = intval($item['item']);
-                        return $result;
-                    }
-                )
-            ]),
-
-            "research_title" => get_theme_mod('home_research_title'),
-            "research_description" => get_theme_mod('home_research_description'),
-            "research_enabled" => get_theme_mod('home_research_enabled'),
-
-            "join_pretitle" => get_theme_mod('home_join_pretitle'),
-            "join_title" => get_theme_mod('home_join_title'),
-            "join_enabled" => get_theme_mod('home_join_enabled'),
-            "join_image" => wp_get_attachment_image(get_theme_mod('home_join_image'), 'twothirds', false, [
-               'class' => 'w-full rounded',
-               'sizes' => '(orientation: portrait) 100vw, 30vw'
-            ]),
-
-            "blog_enabled" => get_theme_mod('home_blog_enabled'),
-            "posts" => (new \WP_Query)->query([
-                    'posts_per_page' => 4
-            ]),
-        
-            "signup_title" => get_theme_mod('home_signup_title'),
-            "signup_buttontext" => get_theme_mod('home_signup_buttontext'),
-            "signup_enabled" => get_theme_mod('home_signup_enabled'),
+            "hero_images" => $this->hero_images(),
+            "home_posts" => $this->home_posts(),
+            "areas_of_focus" => $this->areas_of_focus(),
+            "latest_publications" => $this->latest_publications(),
+            "home_blocks" => $this->home_blocks(),
         ];
     }
 
@@ -85,7 +36,46 @@ class Home extends Composer
     public function override()
     {
         return [
-            //    "foo" => 'bar',
-        ];
+                //    "foo" => 'bar',
+            ];
+    }
+
+    public function hero_images()
+    {
+        $image_ids = carbon_get_theme_option("hero_images");
+        return array_map("wp_get_attachment_image", $image_ids);
+    }
+
+    public function home_posts()
+    {
+        return get_posts([
+            "numberposts" => 3,
+        ]);
+    }
+
+    public function areas_of_focus()
+    {
+        return get_posts([
+            "post_type" => "page",
+            "meta_key" => "_wp_page_template",
+            "meta_value" => "template-areaoffocus.blade.php",
+        ]);
+    }
+
+    public function latest_publications()
+    {
+        return get_posts([
+            "post_type" => "publication",
+            "numberposts" => 3,
+        ]);
+    }
+
+    public function home_blocks()
+    {
+        return get_posts([
+            "post_type" => "page",
+            "post_parent" => 145,
+            "numberposts" => 4,
+        ]);
     }
 }

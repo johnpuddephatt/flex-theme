@@ -26,10 +26,10 @@ class Alert extends Component
      * @var array
      */
     public $types = [
-        'default' => 'py-4 text-white bg-blue-light border-l-8 border-blue shadow rounded    ',
-        'success' => 'py-4 text-black bg-sky-lightest border-l-8 border-sky shadow rounded',
-        'caution' => 'py-4 text-black bg-orange-lightest border-l-8 border-orange shadow rounded',
-        'warning' => 'py-4 text-black bg-pink-lightest border-l-8 border-pink shadow rounded',
+        "default" => "bg-navy text-white",
+        "success" => "bg-sky bg-opacity-50",
+        "caution" => "bg-orange",
+        "warning" => "bg-orange bg-opacity-30",
     ];
 
     /**
@@ -39,9 +39,9 @@ class Alert extends Component
      * @param  string  $message
      * @return void
      */
-    public function __construct($type = 'default', $message = null)
+    public function __construct($type = "default", $message = null)
     {
-        $this->type = $this->types[$type] ?? $this->types['default'];
+        $this->type = $this->types[$type] ?? $this->types["default"];
         $this->message = $message;
     }
 
@@ -52,6 +52,6 @@ class Alert extends Component
      */
     public function render()
     {
-        return $this->view('components.alert');
+        return $this->view("components.alert");
     }
 }

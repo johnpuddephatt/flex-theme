@@ -12,7 +12,7 @@ require('@tinypixelco/laravel-mix-wp-blocks'); //https://www.npmjs.com/package/@
  |
  */
 
-mix.setPublicPath('./public').browserSync('lopf.test');
+mix.setPublicPath('./public').browserSync('flex.test');
 
 mix
   .sass('resources/styles/app.scss', 'styles')

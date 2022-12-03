@@ -1,53 +1,52 @@
-<footer>
-  <div class="antialiased text-gray-100 bg-blue">
-    <div class="container pt-24 pb-16 ">
-      <div
-        class="flex flex-wrap order-first space-y-8 text-center md:space-x-4 2xl:space-x-8 md:space-y-0 md:text-left">
-        <div class="flex-shrink w-full mt-3 text-center md:text-left lg:w-1/4 md:w-1/2">
-          <x-logo text="blue" background="white" />
-        </div>
-        <div class="flex-shrink w-full mr-auto lg:pt-4 2xl:w-1/3 md:w-1/4 !lg:mr-auto">
-          @if(get_theme_mod('contact_address'))
-          <p class="mb-4 text-base site-footer--address contact-address">{!!
-            nl2br(strip_tags(get_theme_mod('contact_address')))
-            !!}</p>
-          @endif
+<footer class="antialiased bg-blue text-white text-center md:text-left">
 
-          <p class="mb-4 text-base">
-            @if(get_theme_mod('contact_email'))
-            <a class="block mb-4 site-footer--email contact-email" href="mailto:{{ get_theme_mod('contact_email') }}">{{
-              get_theme_mod('contact_email') }}</a>
-            @endif
-            @if(get_theme_mod('contact_phone') || get_theme_mod('contact_phone_human'))
-            <a class="block site-footer--phone contact-phone"
-              href="tel:{{ get_theme_mod('contact_phone') ?? get_theme_mod('contact_phone_human') }}">{{
-              get_theme_mod('contact_phone_human') ?? get_theme_mod('contact_phone') }}</a>
-            @endif
-          </p>
+  <div class="px-4 lg:px-0 container pt-24 pb-16">
+    <div class="flex flex-wrap gap-4">
+      <div class="flex-shrink w-full mt-3 md:w-1/2">
+        <p class="mb-6 text-2xl first-letter:lg:text-3xl font-semibold text-white">{{ get_bloginfo('description') }}</p>
 
-          @if(get_theme_mod('company_info'))
-          <p class="mt-3 text-sm text-gray-300 company-info">{{ get_theme_mod('company_info') }}</p>
-          @endif
-
-        </div>
-        {{-- @if(!empty($primaryNavigationFooter))
-        <div class="flex-shrink w-full text-xl 2xl:w-1/6 lg:w-1/5 md:w-1/4 !lg:ml-auto">
-          {!! $primaryNavigationFooter !!}
-        </div>
-        @endif --}}
-
-        @if(!empty($secondaryNavigationFooter))
-        <div class="flex-shrink w-full text-xl 2xl:w-1/6 lg:w-1/5 md:w-1/4 lg:ml-auto xl:ml-auto 2xl:ml-auto">
-          {!! $secondaryNavigationFooter !!}
-        </div>
+        @if (carbon_get_theme_option('address'))
+          <p class="site-footer--address contact-address mb-1 text-base">{!! nl2br(strip_tags(carbon_get_theme_option('address'))) !!}</p>
         @endif
 
-        @if(!empty($tertiaryNavigation))
-        <div class="flex-shrink w-full text-xl 2xl:w-1/6 lg:w-1/5 md:w-1/4">
-          {!! $tertiaryNavigation !!}
-        </div>
-        @endif
+        <p class="text-base">
+          @if (carbon_get_theme_option('companyemail'))
+            <a class="site-footer--email contact-email mb-4"
+              href="mailto:{{ carbon_get_theme_option('companyemail') }}">{{ carbon_get_theme_option('companyemail') }}</a>
+          @endif
+          |
+          @if (carbon_get_theme_option('companyphone'))
+            <a class="site-footer--phone contact-phone"
+              href="tel:{{ carbon_get_theme_option('companyphone') }}">{{ carbon_get_theme_option('companyphone') }}</a>
+          @endif
+        </p>
 
+        <p class="text-gray-300 company-info mt-6 text-sm">
+          Flex is a registered charity.
+          @if (carbon_get_theme_option('charitynumber'))
+            Charity no. {{ carbon_get_theme_option('charitynumber') }}
+          @endif
+          @if (carbon_get_theme_option('companynumber'))
+            | Company no. {{ carbon_get_theme_option('companynumber') }}
+        </p>
+        @endif
+        </p>
+      </div>
+
+      <div class="ml-auto md:w-1/3 h-full flex flex-col">
+        <div class="flex items-start justify-center md:justify-end flex-row gap-2 mt-4">
+          @foreach (['facebook', 'twitter', 'youtube', 'instagram', 'linkedin', 'vimeo'] as $account)
+            @if (get_option('_' . $account))
+              <a rel="noopener" class="text-axis-green bg-navy text-white inline-block rounded-full p-2"
+                aria-label="{{ $account }} link" href="{{ get_option('_' . $account) }}" target="_blank">
+                <x-dynamic-component :component="'icon.' . $account" class="mt-4" />
+              </a>
+            @endif
+          @endforeach
+        </div>
+        @if (carbon_get_theme_option('footer_text'))
+          <p class="mt-auto pt-16 text-sm">{{ carbon_get_theme_option('footer_text') }}</p>
+        @endif
       </div>
     </div>
   </div>

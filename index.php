@@ -7,15 +7,18 @@
     <?php wp_head(); ?>
   </head>
 
-  <body <?php body_class(); ?>>
+  <body <?php body_class("tracking-wide border-t-[1.25rem] border-blue"); ?>>
     <?php wp_body_open(); ?>
-    <?php do_action('get_header'); ?>
+    <?php do_action("get_header"); ?>
 
     <div id="app">
-      <?php echo \Roots\view(\Roots\app('sage.view'), \Roots\app('sage.data'))->render(); ?>
+      <?php echo \Roots\view(
+        \Roots\app("sage.view"),
+        \Roots\app("sage.data")
+      )->render(); ?>
     </div>
 
-    <?php do_action('get_footer'); ?>
+    <?php do_action("get_footer"); ?>
     <?php wp_footer(); ?>
   </body>
 </html>

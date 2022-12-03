@@ -1,9 +1,9 @@
-@if($children)
+@if ($children)
 
-<div class="container flex flex-col py-16 mx-auto space-y-12 md:py-32 md:space-y-24 xl:max-w-5xl">
-    @foreach($children as $key => $page)
-    @include('partials.page-card')
+  <div class="w-full container flex flex-col pb-16 divide-y divide-sky">
+    @foreach ($children as $key => $page)
+      @include('partials.page-card')
     @endforeach
-</div>
+  </div>
 
 @endif

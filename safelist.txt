@@ -2,12 +2,7 @@ alignfull
 text-2xl
 text-6xl
 has-background
-has-purple-background-color
-has-light-purple-background-color
-has-orange-background-color
-has-light-orange-background-color
 border-blue
-border-blue-light
 border-sky
 border-2
 border-black
@@ -18,3 +13,4 @@ pl-6
 divide-y
 pt-5
 mb-0
+-translate-x-full

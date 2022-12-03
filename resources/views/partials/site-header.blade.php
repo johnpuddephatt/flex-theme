@@ -2,33 +2,52 @@
   {{ __('Skip to content') }}
 </a>
 
-<a href="{{ home_url('/') }}" class="absolute top-0 left-0 z-50 ">
-  <x-logo :text="$alternative_header ? 'blue': 'sky'" :background="$alternative_header ? 'sky': 'blue'" />
-</a>
-
-<div class="container py-2 text-right md:py-12 lg:hidden">
+<div class="space-between relative z-30 container max-w-none py-2 flex md:py-12 lg:hidden">
+  <x-logo />
   <button id="main-menu-button"
-    class="relative z-50 inline-block px-4 py-2 ml-auto font-semibold bg-white border-2 rounded text-blue border-blue">
+    class="relative z-50 inline-block my-auto px-6 py-3 ml-auto font-semibold bg-white border-2 rounded-2xl text-blue border-blue">
     Menu
   </button>
 </div>
 
 <div id="main-menu"
-  class="fixed top-0 bottom-0 z-40 w-screen overflow-y-auto lg:h-auto pt-36 left-full lg:pt-0 @if($alternative_header) bg-sky-lightest @else bg-sky @endif lg:static lg:bg-transparent">
-  <div id="main-menu-container"
-    class="flex flex-col-reverse justify-end mt-20 overflow-y-auto lg:block lg:mt-0 lg:h-auto">
-    @if(!empty($secondaryNavigation)) <header class="lg:border-b border-blue-lighter">
-      <div class="container justify-end px-0 py-1 text-right lg:flex text-blue lg:text-blue-light xl:text-lg">
-        {!! $secondaryNavigation !!}
-      </div>
-    </header>
+  class="bg-white transition fixed top-[1.25rem] bottom-0 z-20 w-screen overflow-y-auto left-full transform lg:static lg:bg-transparent">
+  <div id="main-menu-container" class="flex flex-col-reverse justify-end overflow-y-auto lg:block">
+    @if (!empty($secondaryNavigation))
+      <header class="lg:border-b border-sky">
+        <nav class="container xl:max-w-7xl max-w-none xl:px-0 py-7">
+          <ul class="flex flex-col lg:flex-row justify-end gap-8 xl:gap-16">
+            @foreach ($secondaryNavigation as $link)
+              <li>
+                <a href="{{ $link->url }}" class="{{ $link->classes }} font-semibold">
+                  {{ $link->label }}
+                </a>
+              </li>
+            @endforeach
+          </ul>
+        </nav>
+      </header>
     @endif
 
-    @if(!empty($primaryNavigation))
-    <nav
-      class="container justify-end px-0 py-6 text-right lg:py-12 lg:flex text-blue xl:text-2xl 2xl:text-3xl lg:text-xl">
-      {!! $primaryNavigation !!}
-    </nav>
+    @if (!empty($primaryNavigation))
+      <div
+        class="pt-2 xl:max-w-7xl xl:px-0 max-w-none container flex justify-between flex-col lg:flex-row lg:items-end">
+        <div class="invisible lg:visible">
+          <x-logo />
+        </div>
+
+        <nav class="px-0 pt-4 lg:pt-6 pb-4 lg:pb-8 lg:text-xl">
+          <ul class="flex flex-col lg:flex-row gap-8 xl:gap-16">
+            @foreach ($primaryNavigation as $link)
+              <li>
+                <a href="{{ $link->url }}" class="{{ $link->classes }} lg:text-xl font-semibold">
+                  {{ $link->label }}
+                </a>
+              </li>
+            @endforeach
+          </ul>
+        </nav>
+      </div>
     @endif
   </div>
 

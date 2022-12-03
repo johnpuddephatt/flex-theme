@@ -1,5 +1,12 @@
 {
-  "semi": true,
-  "singleQuote": true,
-  "trailingComma": "es5"
+  "plugins": ["@shufo/prettier-plugin-blade"],
+  "sortTailwindcssClasses": true,
+  "overrides": [
+    {
+      "files": "*.blade.php",
+      "options": {
+        "parser": "blade"
+      }
+    }
+  ]
 }
