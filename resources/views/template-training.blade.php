@@ -7,11 +7,14 @@
 @section('content')
   @while (have_posts())
     @php(the_post())
+
+    ***
     <style>
       #main-menu-container nav {
         display: none;
       }
     </style>
+    ***
 
     <div class="flex flex-row w-full border-t border-sky">
       <div class="flex-1">
