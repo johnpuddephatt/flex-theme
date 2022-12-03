@@ -75,30 +75,32 @@ Template Name: Home
       </div>
     @endif
 
-    <div class="container grid lg:grid-cols-2">
-      <div class="pr-16 relative max-w-lg">
-        <div class="align-top inline-block bg-orange w-2/3 rounded-tl-big pt-[66.67%]"></div>
-        <div
-          class="overflow-hidden relative inline-block bg-sky ml-[-35%] mt-[33.33%] w-2/3 rounded-tr-big rounded-bl-big pt-[66.67%]">
-          {!! get_the_post_thumbnail($home_posts[0]->ID, null, [
-              'class' => 'h-full w-full object-cover object-center inset-0 absolute',
-          ]) !!}
+    @if (count($home_posts))
+      <div class="container grid lg:grid-cols-2">
+        <div class="pr-16 relative max-w-lg">
+          <div class="align-top inline-block bg-orange w-2/3 rounded-tl-big pt-[66.67%]"></div>
+          <div
+            class="overflow-hidden relative inline-block bg-sky ml-[-35%] mt-[33.33%] w-2/3 rounded-tr-big rounded-bl-big pt-[66.67%]">
+            {!! get_the_post_thumbnail($home_posts[0]->ID, null, [
+                'class' => 'h-full w-full object-cover object-center inset-0 absolute',
+            ]) !!}
+          </div>
+        </div>
+        <div class="gap-x-12 md:grid-cols-2 gap-y-16 mt-12 lg:border-l-2 lg:border-orange lg:pl-8 grid lg:gap-y-32">
+          @foreach ($home_posts as $post)
+            <div class="{{ $loop->iteration == 1 ? 'md:col-span-2' : null }} flex flex-col">
+              <div class="font-semibold text-lg mb-4">{{ date(get_option('date_format'), strtotime($post->post_date)) }}
+              </div>
+              <h3 class="text-2xl font-semibold">{{ $post->post_title }}</h3>
+              <p class="py-8 text-sm">{!! get_the_excerpt($post->ID) !!} </p>
+
+              <a href="{{ get_permalink($post->ID) }}"
+                class="lowercase inline-block mt-auto mr-auto border-2 border-green px-9 py-3 text-sm font-semibold rounded-xl rounded-tr-none whitespace-nowrap">Read</a>
+            </div>
+          @endforeach
         </div>
       </div>
-      <div class="gap-x-12 md:grid-cols-2 gap-y-16 mt-12 lg:border-l-2 lg:border-orange lg:pl-8 grid lg:gap-y-32">
-        @foreach ($home_posts as $post)
-          <div class="{{ $loop->iteration == 1 ? 'md:col-span-2' : null }} flex flex-col">
-            <div class="font-semibold text-lg mb-4">{{ date(get_option('date_format'), strtotime($post->post_date)) }}
-            </div>
-            <h3 class="text-2xl font-semibold">{{ $post->post_title }}</h3>
-            <p class="py-8 text-sm">{!! get_the_excerpt($post->ID) !!} </p>
-
-            <a href="{{ get_permalink($post->ID) }}"
-              class="lowercase inline-block mt-auto mr-auto border-2 border-green px-9 py-3 text-sm font-semibold rounded-xl rounded-tr-none whitespace-nowrap">Read</a>
-          </div>
-        @endforeach
-      </div>
-    </div>
+    @endif
 
     @include('partials.areas-of-focus')
 
