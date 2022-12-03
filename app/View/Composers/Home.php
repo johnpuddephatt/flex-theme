@@ -56,6 +56,7 @@ class Home extends Composer
     public function areas_of_focus()
     {
         return get_posts([
+            "numberposts" => -1,
             "post_type" => "page",
             "meta_key" => "_wp_page_template",
             "meta_value" => "template-areaoffocus.blade.php",
