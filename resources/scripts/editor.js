@@ -2,7 +2,7 @@ import "@wordpress/edit-post";
 // import domReady from '@wordpress/dom-ready';
 // import { unregisterBlockStyle, registerBlockStyle } from '@wordpress/blocks';
 
-wp.domReady(function() {
+wp.domReady(function () {
   // wp.data
   //   .dispatch('core/edit-post')
   //   .removeEditorPanel('taxonomy-panel-category');
@@ -14,7 +14,7 @@ wp.domReady(function() {
 
   wp.blocks.registerBlockStyle("core/button", {
     name: "outline",
-    label: "Outline"
+    label: "Outline",
   });
   wp.data.dispatch("core/edit-post").removeEditorPanel("discussion-panel");
 
@@ -33,7 +33,7 @@ wp.domReady(function() {
   wp.blocks.unregisterBlockType("core/tag-cloud");
   wp.blocks.unregisterBlockType("core/rss");
   wp.blocks.unregisterBlockType("core/search");
-  wp.blocks.unregisterBlockType("core/shortcode");
+  // wp.blocks.unregisterBlockType("core/shortcode");
   wp.blocks.unregisterBlockType("core/latest-posts");
   // wp.blocks.unregisterBlockType('core/latest-comments');
   wp.blocks.unregisterBlockType("core/spacer");
@@ -45,22 +45,22 @@ wp.domReady(function() {
 
   wp.blocks.registerBlockStyle("core/paragraph", {
     name: "large",
-    label: "Large"
+    label: "Large",
   });
 
   wp.blocks.registerBlockStyle("core/paragraph", {
     name: "small",
-    label: "Small"
+    label: "Small",
   });
 
   wp.blocks.registerBlockStyle("core/image", {
     name: "rounded-corners",
-    label: "Rounded corners"
+    label: "Rounded corners",
   });
 
   wp.blocks.registerBlockStyle("core/quote", {
     name: "centered",
-    label: "Centered"
+    label: "Centered",
   });
 
   wp.blocks.registerBlockType("mrn/details-summary-block", {
@@ -72,15 +72,15 @@ wp.domReady(function() {
       facebook: {
         type: "string",
         source: "html",
-        selector: "span"
-      }
+        selector: "span",
+      },
     },
 
-    edit: props => {
+    edit: (props) => {
       const {
         attributes: { twitter, facebook, instagram, email, phone },
         setAttributes,
-        className
+        className,
       } = props;
 
       return (
@@ -91,7 +91,7 @@ wp.domReady(function() {
               tagName="span"
               placeholder="Enter full URL to Facebook page"
               value={facebook}
-              onChange={newContent => {
+              onChange={(newContent) => {
                 setAttributes({ facebook: newContent });
               }}
             />
@@ -100,9 +100,9 @@ wp.domReady(function() {
       );
     },
 
-    save: props => {
+    save: (props) => {
       const {
-        attributes: { twitter, facebook, instagram, email, phone }
+        attributes: { twitter, facebook, instagram, email, phone },
       } = props;
 
       return (
@@ -120,7 +120,7 @@ wp.domReady(function() {
           </ul>
         </wp.element.Fragment>
       );
-    }
+    },
   });
 
   // wp.blocks.registerBlockType('mrn/button', {
