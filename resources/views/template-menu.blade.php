@@ -11,6 +11,12 @@
       <div class="flex-1">
         @include('partials.page-header')
 
+        <div class="container my-24 flex flex-col gap-6 mx-auto xl:max-w-5xl 2xl:py-32">
+          @foreach ($children as $key => $page)
+            @include('partials.page-card-alternative')
+          @endforeach
+        </div>
+
         @includeFirst(['partials.content-page', 'partials.content-single'])
 
         @include('partials.page-siblings')
