@@ -75,32 +75,34 @@
       </div>
     <?php endif; ?>
 
-    <div class="container grid lg:grid-cols-2">
-      <div class="pr-16 relative max-w-lg">
-        <div class="align-top inline-block bg-orange w-2/3 rounded-tl-big pt-[66.67%]"></div>
-        <div
-          class="overflow-hidden relative inline-block bg-sky ml-[-35%] mt-[33.33%] w-2/3 rounded-tr-big rounded-bl-big pt-[66.67%]">
-          <?php echo get_the_post_thumbnail($home_posts[0]->ID, null, [
-              'class' => 'h-full w-full object-cover object-center inset-0 absolute',
-          ]); ?>
+    <?php if(count($home_posts)): ?>
+      <div class="container grid lg:grid-cols-2">
+        <div class="pr-16 relative max-w-lg">
+          <div class="align-top inline-block bg-orange w-2/3 rounded-tl-big pt-[66.67%]"></div>
+          <div
+            class="overflow-hidden relative inline-block bg-sky ml-[-35%] mt-[33.33%] w-2/3 rounded-tr-big rounded-bl-big pt-[66.67%]">
+            <?php echo get_the_post_thumbnail($home_posts[0]->ID, null, [
+                'class' => 'h-full w-full object-cover object-center inset-0 absolute',
+            ]); ?>
 
+          </div>
+        </div>
+        <div class="gap-x-12 md:grid-cols-2 gap-y-16 mt-12 lg:border-l-2 lg:border-orange lg:pl-8 grid lg:gap-y-32">
+          <?php $__currentLoopData = $home_posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <div class="<?php echo e($loop->iteration == 1 ? 'md:col-span-2' : null); ?> flex flex-col">
+              <div class="font-semibold text-lg mb-4"><?php echo e(date(get_option('date_format'), strtotime($post->post_date))); ?>
+
+              </div>
+              <h3 class="text-2xl font-semibold"><?php echo e($post->post_title); ?></h3>
+              <p class="py-8 text-sm"><?php echo get_the_excerpt($post->ID); ?> </p>
+
+              <a href="<?php echo e(get_permalink($post->ID)); ?>"
+                class="lowercase inline-block mt-auto mr-auto border-2 border-green px-9 py-3 text-sm font-semibold rounded-xl rounded-tr-none whitespace-nowrap">Read</a>
+            </div>
+          <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
       </div>
-      <div class="gap-x-12 md:grid-cols-2 gap-y-16 mt-12 lg:border-l-2 lg:border-orange lg:pl-8 grid lg:gap-y-32">
-        <?php $__currentLoopData = $home_posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-          <div class="<?php echo e($loop->iteration == 1 ? 'md:col-span-2' : null); ?> flex flex-col">
-            <div class="font-semibold text-lg mb-4"><?php echo e(date(get_option('date_format'), strtotime($post->post_date))); ?>
-
-            </div>
-            <h3 class="text-2xl font-semibold"><?php echo e($post->post_title); ?></h3>
-            <p class="py-8 text-sm"><?php echo get_the_excerpt($post->ID); ?> </p>
-
-            <a href="<?php echo e(get_permalink($post->ID)); ?>"
-              class="lowercase inline-block mt-auto mr-auto border-2 border-green px-9 py-3 text-sm font-semibold rounded-xl rounded-tr-none whitespace-nowrap">Read</a>
-          </div>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-      </div>
-    </div>
+    <?php endif; ?>
 
     <?php echo $__env->make('partials.areas-of-focus', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
@@ -132,7 +134,7 @@
             <h3 class="text-2xl font-semibold leading-tight pt-8">
               <a href="<?php echo e(get_permalink($block->ID)); ?>"><?php echo get_the_title($block->ID); ?></a>
             </h3>
-            <div class="max-w-xs mx-auto lg:mx-0">
+            <div class="max-w-sm mx-auto lg:mx-0">
               <?php echo wp_trim_words(get_the_excerpt($block->ID), 30); ?>
 
             </div>

@@ -16,7 +16,7 @@
 
     <div class="">
 
-      <h2 class="mt-12 max-w-3xl font-bold text-4xl lg:text-5xl xl:text-6xl text-blue">
+      <h2 class="mt-12 max-w-3xl font-bold text-4xl lg:text-5xl text-blue">
         {!! $title !!}
       </h2>
       @if (isset($post) && isset($post->post_type) && $post->post_type == 'post')
@@ -36,7 +36,7 @@
           <div class="flex items-center py-2 mt-8">
             {!! get_avatar(get_the_author_meta('ID'), 32, null, 'Profile image for ' . get_the_author(), [
                 'class' => "object-cover w-10 h-10 mr-2
-                                                                                                                                                                                                                                                                                                                                                                                                        rounded-full",
+                                                                                                                                                                                                                                                                                                                                                                                                                    rounded-full",
             ]) !!}
             <div class="leading-tight">
               <p class="text-sm font-semibold tracking-tight text-black">
