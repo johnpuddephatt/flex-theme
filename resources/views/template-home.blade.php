@@ -131,7 +131,7 @@ Template Name: Home
             <h3 class="text-2xl font-semibold leading-tight pt-8">
               <a href="{{ get_permalink($block->ID) }}">{!! get_the_title($block->ID) !!}</a>
             </h3>
-            <div class="max-w-xs mx-auto lg:mx-0">
+            <div class="max-w-sm mx-auto lg:mx-0">
               {!! wp_trim_words(get_the_excerpt($block->ID), 30) !!}
             </div>
             <a href="{{ get_permalink($block->ID) }}"
