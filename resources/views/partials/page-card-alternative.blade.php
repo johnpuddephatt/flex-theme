@@ -1,15 +1,15 @@
 <a href="{{ get_permalink($page->ID) }}"
   @php(post_class(''))>
-    <div class="flex flex-row bg-navy rounded-tr-big rounded-bl-big overflow-hidden items-center xl:max-w-3xl mx-auto">
+    <div class="flex flex-row bg-navy rounded-tr-medium rounded-bl-medium overflow-hidden items-center xl:max-w-3xl mx-auto">
     <div
         class="mb-auto hidden lg:block relative">
         @if (has_post_thumbnail(isset($page->ID) ? $page->ID : '') &&
             isset(wp_get_attachment_metadata(get_post_thumbnail_id($page->ID))['sizes']['square-xs']))
         {!! get_the_post_thumbnail($page->ID, 'square-xs', [
-            'class' => 'w-48 rounded-tr-big rounded-bl-big max-w-none block ',
+            'class' => 'w-48 rounded-tr-medium rounded-bl-medium max-w-none block ',
         ]) !!}
         @else
-        <div class="block w-48 h-48 bg-sky rounded-tr-big rounded-bl-big max-w-none"></div>
+        <div class="block w-48 h-48 bg-sky rounded-tr-medium rounded-bl-medium max-w-none"></div>
 
         @endif
   </div>
