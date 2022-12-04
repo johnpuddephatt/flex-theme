@@ -77,6 +77,7 @@ class Home extends Composer
             "post_type" => "page",
             "post_parent" => 457,
             "numberposts" => 4,
+            "order" => "ASC",
             "orderby" => "menu_order",
         ]);
     }
