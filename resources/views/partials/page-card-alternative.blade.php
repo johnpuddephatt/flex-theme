@@ -13,10 +13,10 @@
 
         @endif
   </div>
-  <div class="p-8">
+  <div class="p-6 px-8">
     <h3 class="mt-2 mb-4 text-xl font-bold lg:text-2xl text-white">{!! get_the_title($page->ID) !!}</h3>
     <span
-      class="font-semibold inline-block mt-8 py-3 px-6 rounded-xl rounded-tr-none border-2 border-green text-lg text-white">Read
+      class="font-semibold inline-block mt-4 py-2 px-6 rounded-xl rounded-tr-none border-2 border-green text-sm text-white">Read
       more</span>
   </div>
   </div>
