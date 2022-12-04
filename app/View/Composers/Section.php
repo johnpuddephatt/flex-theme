@@ -12,9 +12,9 @@ class Section extends Composer
      * @var array
      */
     protected static $views = [
-        'partials.section-header',    
-        'partials.section-navigation',
-
+        "partials.section-header",
+        "partials.section-navigation",
+        "template-menu",
     ];
 
     /**
@@ -27,7 +27,7 @@ class Section extends Composer
         global $post;
 
         return [
-            'children' => $this->children(),
+            "children" => $this->children(),
         ];
     }
 
@@ -39,22 +39,22 @@ class Section extends Composer
     public function override()
     {
         return [
-            // 'title' => $this->title(),
-        ];
+                // 'title' => $this->title(),
+            ];
     }
 
-    public function children() {
-        global $post; 
+    public function children()
+    {
+        global $post;
 
-        if($post) {
-
-        return get_posts([
-            'post_type'        => 'page',
-            'post_parent'    => $post->ID,
-            'orderby' => 'menu_order',
-            'order' => 'ASC',
-            'numberposts' => -1
-        ]);
-    }
+        if ($post) {
+            return get_posts([
+                "post_type" => "page",
+                "post_parent" => $post->ID,
+                "orderby" => "menu_order",
+                "order" => "ASC",
+                "numberposts" => -1,
+            ]);
+        }
     }
 }
