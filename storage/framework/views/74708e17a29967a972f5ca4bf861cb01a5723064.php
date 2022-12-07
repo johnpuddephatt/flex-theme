@@ -27,7 +27,7 @@
   <div id="main-menu-container" class="flex flex-col-reverse justify-end overflow-y-auto lg:block">
     <?php if(!empty($secondaryNavigation)): ?>
       <header class="lg:border-b border-sky">
-        <nav class="container xl:max-w-7xl max-w-none xl:px-0 py-7">
+        <nav class="container max-w-none py-7">
           <ul class="flex flex-col lg:flex-row justify-end gap-8 xl:gap-16">
             <?php $__currentLoopData = $secondaryNavigation; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $link): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
               <li>
@@ -43,8 +43,7 @@
     <?php endif; ?>
 
     <?php if(!empty($primaryNavigation)): ?>
-      <div
-        class="pt-2 xl:max-w-7xl xl:px-0 max-w-none container flex justify-between flex-col lg:flex-row lg:items-end">
+      <div class="pt-2 max-w-none container flex justify-between flex-col lg:flex-row lg:items-end">
         <div class="invisible lg:visible">
            <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
 <?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.logo','data' => []]); ?>

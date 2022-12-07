@@ -6,11 +6,12 @@
     </div>
   </div>
 
+  @if (rwmb_get_value('file_advanced', null, null, false))
   <div class="bg-orange bg-opacity-10 py-32">
     <div class="container max-w-5xl mx-auto">
       <h2 class="text-3xl font-bold mb-12 text-navy">Downloads</h2>
 
-      @if (rwmb_get_value('file_advanced', null, null, false))
+      
       <div class="space-y-4">        
         @foreach (rwmb_get_value('file_advanced', null, null, false) as $file)
           <a href="{{ $file['url'] }}"
@@ -24,7 +25,8 @@
           </a>
         @endforeach
       </div>
-      @endif
+      
   </div>
   </div>
-</article>
+  @endif
+  </article>

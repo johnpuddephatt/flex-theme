@@ -6,11 +6,12 @@
     </div>
   </div>
 
+  <?php if(rwmb_get_value('file_advanced', null, null, false)): ?>
   <div class="bg-orange bg-opacity-10 py-32">
     <div class="container max-w-5xl mx-auto">
       <h2 class="text-3xl font-bold mb-12 text-navy">Downloads</h2>
 
-      <?php if(rwmb_get_value('file_advanced', null, null, false)): ?>
+      
       <div class="space-y-4">        
         <?php $__currentLoopData = rwmb_get_value('file_advanced', null, null, false); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $file): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
           <a href="<?php echo e($file['url']); ?>"
@@ -24,8 +25,9 @@
           </a>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
       </div>
-      <?php endif; ?>
+      
   </div>
   </div>
-</article>
+  <?php endif; ?>
+  </article>
 <?php /**PATH /Users/johnpuddephatt/Sites/flex/web/app/themes/flex-2022/resources/views/partials/content-single-publication.blade.php ENDPATH**/ ?>

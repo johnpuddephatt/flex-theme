@@ -1,6 +1,6 @@
 <footer class="antialiased bg-blue text-white text-center md:text-left">
 
-  <div class="px-4 lg:px-0 container pt-24 pb-16">
+  <div class="container max-w-none pt-24 pb-16">
     <div class="flex flex-wrap gap-4">
       <div class="flex-shrink w-full mt-3 md:w-1/2">
         <p class="mb-6 text-2xl font-semibold text-white">{{ get_bloginfo('description') }}</p>
