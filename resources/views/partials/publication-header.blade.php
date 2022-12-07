@@ -28,12 +28,14 @@
         {{ get_the_date() }}
       </div>
 
-      <div class="mt-4 mb-6 flex flex-row gap-2">
-        @foreach (get_the_terms($post->ID, 'resourcetype') as $type)
-          <a href="{{ get_term_link($type->term_id, 'resourcetype') }}"
-            class="bg-orange bg-opacity-10 rounded-lg px-6 text-sm py-2 font-semibold">{{ $type->name }}</a>
-        @endforeach
-      </div>
+      @if (get_the_terms($post->ID, 'resourcetype'))
+        <div class="mt-4 mb-6 flex flex-row gap-2">
+          @foreach (get_the_terms($post->ID, 'resourcetype') as $type)
+            <a href="{{ get_term_link($type->term_id, 'resourcetype') }}"
+              class="bg-orange bg-opacity-10 rounded-lg px-6 text-sm py-2 font-semibold">{{ $type->name }}</a>
+          @endforeach
+        </div>
+      @endif
 
       @if (!empty($post->post_excerpt))
         <p class="max-w-2xl mt-8 text-lg font-semibold md:text-xl">
@@ -43,7 +45,7 @@
           <div class="flex items-center py-2 mt-8">
             {!! get_avatar(get_the_author_meta('ID'), 32, null, 'Profile image for ' . get_the_author(), [
                 'class' => "object-cover w-10 h-10 mr-2
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                rounded-full",
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    rounded-full",
             ]) !!}
             <div class="leading-tight">
               <p class="text-sm font-semibold tracking-tight text-black">

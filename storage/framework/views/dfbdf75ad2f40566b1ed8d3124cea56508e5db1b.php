@@ -21,7 +21,7 @@
         <span class="px-3">&gt;</span>
         <a class="" href="<?php echo e(get_permalink(get_option('page_for_publications'))); ?>">Publications</a>
       </div>
-      <h2 class="max-w-3xl font-bold text-4xl lg:text-5xl xl:text-6xl text-blue">
+      <h2 class="max-w-3xl font-bold text-4xl lg:text-5xl text-blue">
         <?php echo $title; ?>
 
       </h2>
@@ -31,15 +31,17 @@
 
       </div>
 
-      <div class="mt-4 mb-6 flex flex-row gap-2">
-        <?php $__currentLoopData = get_the_terms($post->ID, 'resourcetype'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $type): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-          <a href="<?php echo e(get_term_link($type->term_id, 'resourcetype')); ?>"
-            class="bg-orange bg-opacity-10 rounded-lg px-6 text-sm py-2 font-semibold"><?php echo e($type->name); ?></a>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-      </div>
+      <?php if(get_the_terms($post->ID, 'resourcetype')): ?>
+        <div class="mt-4 mb-6 flex flex-row gap-2">
+          <?php $__currentLoopData = get_the_terms($post->ID, 'resourcetype'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $type): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <a href="<?php echo e(get_term_link($type->term_id, 'resourcetype')); ?>"
+              class="bg-orange bg-opacity-10 rounded-lg px-6 text-sm py-2 font-semibold"><?php echo e($type->name); ?></a>
+          <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        </div>
+      <?php endif; ?>
 
       <?php if(!empty($post->post_excerpt)): ?>
-        <p class="max-w-2xl mt-8 text-xl font-semibold leading-tight tracking-tight md:text-2xl">
+        <p class="max-w-2xl mt-8 text-lg font-semibold md:text-xl">
           <?php echo $post->post_excerpt; ?>
 
         </p>
@@ -47,7 +49,7 @@
           <div class="flex items-center py-2 mt-8">
             <?php echo get_avatar(get_the_author_meta('ID'), 32, null, 'Profile image for ' . get_the_author(), [
                 'class' => "object-cover w-10 h-10 mr-2
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    rounded-full",
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    rounded-full",
             ]); ?>
 
             <div class="leading-tight">

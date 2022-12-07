@@ -14,6 +14,7 @@ add_action("init", function () {
             "add_new_item" => __("Add New Publication"),
             "edit_item" => "Edit Publication",
         ],
+        "taxonomies" => ["post_tag"],
         "public" => true,
         "publicly_queryable" => true,
         "has_archive" => true,
@@ -29,7 +30,7 @@ add_action("init", function () {
         "menu_icon" => "dashicons-book-alt",
         "menu_position" => 4,
         "show_in_rest" => true,
-        "supports" => ["title", "excerpt"],
+        "supports" => ["title", "editor"],
     ]);
 });
 
@@ -110,6 +111,23 @@ add_action("mb_relationships_init", function () {
                 ],
             ],
         ];
+
+        // $meta_boxes[] = [
+        //     "title" => esc_html__("Summary", "online-generator"),
+        //     "id" => "summary",
+        //     "post_types" => ["publication"],
+        //     "context" => "normal",
+        //     "fields" => [
+        //         [
+        //             "type" => "wysiwyg",
+        //             "name" => esc_html__(
+        //                 "Publication summary",
+        //                 "online-generator"
+        //             ),
+        //             "id" => "summary-field",
+        //         ],
+        //     ],
+        // ];
 
         return $meta_boxes;
     });

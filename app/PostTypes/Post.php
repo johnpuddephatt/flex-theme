@@ -1,5 +1,29 @@
 <?php
 
+add_action("generate_rewrite_rules", function ($wp_rewrite) {
+    $new_rules = [
+        'news/(.+?)/?$' =>
+            "index.php?post_type=post&name=" . $wp_rewrite->preg_index(1),
+    ];
+
+    $wp_rewrite->rules = $new_rules + $wp_rewrite->rules;
+});
+
+add_filter(
+    "post_link",
+    function ($post_link, $id = 0) {
+        $post = get_post($id);
+
+        if (is_object($post) && $post->post_type == "post") {
+            return home_url("/news/" . $post->post_name . "/");
+        }
+
+        return $post_link;
+    },
+    1,
+    3
+);
+
 add_action("mb_relationships_init", function () {
     $post_id = empty($_GET["post"]) ? null : sanitize_key($_GET["post"]);
 
