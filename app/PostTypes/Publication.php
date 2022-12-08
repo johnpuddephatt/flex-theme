@@ -1,5 +1,6 @@
 <?php
-
+use Carbon_Fields\Container;
+use Carbon_Fields\Field;
 /*
  *
  * Register 'Publication' post
@@ -157,6 +158,25 @@ add_action(
     },
     10
 );
+
+add_action("carbon_fields_register_fields", function () {
+    Container::make("term_meta", __("Publication type colours"))
+        ->where("term_taxonomy", "=", "resourcetype")
+        ->add_fields([
+            Field::make(
+                "color",
+                "resourcetype_background",
+                __("Background colour")
+            ),
+            Field::make("color", "resourcetype_spine", __("Spine colour")),
+            Field::make("color", "resourcetype_text", __("Text colour")),
+        ]);
+});
+
+add_action("after_setup_theme", function () {
+    require_once get_template_directory() . "/vendor/autoload.php";
+    \Carbon_Fields\Carbon_Fields::boot();
+});
 
 /**
  * Adds a custom field: "Publications page"; on the "Settings > Reading" page.
