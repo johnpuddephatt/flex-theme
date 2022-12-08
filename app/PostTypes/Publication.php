@@ -15,7 +15,7 @@ add_action("init", function () {
             "add_new_item" => __("Add New Publication"),
             "edit_item" => "Edit Publication",
         ],
-        "taxonomies" => ["post_tag"],
+        // "taxonomies" => ["post_tag"],
         "public" => true,
         "publicly_queryable" => true,
         "has_archive" => true,
@@ -149,6 +149,7 @@ add_action(
             "meta_box_cb" => "post_categories_meta_box",
             "show_ui" => true,
             "show_admin_column" => true,
+            "show_in_rest" => true,
             "query_var" => true,
             "public" => true,
             "rewrite" => [
