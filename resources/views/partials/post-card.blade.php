@@ -2,7 +2,7 @@
   @php(post_class('border flex items-center flex-row mx-auto block border-blue'))>
   <div class="flex-grow py-4 px-6  lg:px-10 text-navy">
   <div class="mb-2 font-semibold ">{{ get_the_date(null, $post_id ?? null) }}</div>
-  <h3 class="mt-0 mb-4 text-lg lg:leading-tight font-semibold lg:text-2xl">
+  <h3 class="mt-0 mb-4 text-lg lg:leading-tight font-semibold lg:text-xl">
     {!! get_the_title($post_id ?? null) !!}
   </h3>
   <div class="text-sm lg:text-base">
