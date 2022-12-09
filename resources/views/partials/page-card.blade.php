@@ -15,7 +15,7 @@
   </div>
   <div>
     <h3 class="mt-2 mb-4 text-2xl font-bold lg:text-4xl text-navy">{!! get_the_title($page->ID) !!}</h3>
-    <p class="md:text-lg">{!! wp_trim_words(get_the_excerpt($page->ID), 30) !!}</p>
+    <p class="md:text-lg">{!! wp_trim_words(get_the_excerpt($page->ID), 40) !!}</p>
     <span
       class="font-semibold inline-block mt-8 lg:mt-16 py-3 px-6 rounded-xl rounded-tr-none border-2 border-green text-lg text-navy">Read
       more</span>
