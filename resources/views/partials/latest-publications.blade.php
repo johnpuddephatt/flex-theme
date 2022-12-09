@@ -27,12 +27,12 @@
         <div class="text-center">
           <a href="{{ get_permalink($publication->ID) }}"
             @if ($category) style="background-color: {{ carbon_get_term_meta($category->term_id, 'resourcetype_background') }}; color: {{ carbon_get_term_meta($category->term_id, 'resourcetype_text') }}; border-color: {{ carbon_get_term_meta($category->term_id, 'resourcetype_spine') }};" @endif
-            class="border text-left justify-between antialiased aspect-[3/4] flex flex-col py-12 px-6 border-l-[1.25rem]">
-            <h3 class="text-3xl font-bold">{{ $publication->post_title }}</h3>
+            class="shadow text-left justify-between antialiased aspect-[3/4] flex flex-col py-12 px-6 border-l-[1.25rem]">
+            <h3 class="text-3xl font-bold">{!! $publication->post_title !!}</h3>
 
             @if ($category)
               <p class="pt-6 mt-auto font-semibold text-xl">
-                {{ $category->name }}
+                {!! $category->name !!}
               </p>
             @endif
 
