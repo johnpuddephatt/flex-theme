@@ -51,6 +51,9 @@ module.exports = {
         big: "6em",
         giant: "12em",
       },
+      maxWidth: {
+        "8xl": "90rem",
+      },
       minHeight: {
         header: "30em",
         "header-sm": "20em",

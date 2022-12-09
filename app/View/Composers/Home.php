@@ -43,7 +43,12 @@ class Home extends Composer
     public function hero_images()
     {
         $image_ids = carbon_get_theme_option("hero_images");
-        return array_map("wp_get_attachment_image", $image_ids);
+
+        return array_map(function ($item) {
+            return wp_get_attachment_image($item, "thumbnail", false, [
+                "class" => "w-full",
+            ]);
+        }, $image_ids);
     }
 
     public function home_posts()

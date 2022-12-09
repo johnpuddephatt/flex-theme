@@ -2,7 +2,7 @@
   <div class="flex flex-col w-screen py-16 space-y-12 overflow-x-hidden lg:space-y-36">
     <div class="relative">
       <div
-        class="container md:border-l border-blue z-10 flex flex-col-reverse items-center px-0 mx-auto max-w-7xl min-h-header-sm lg:min-h-header md:flex-row">
+        class="2xl:max-w-8xl container md:border-l border-blue z-10 flex flex-col-reverse items-center px-0 mx-auto max-w-7xl min-h-header-sm lg:min-h-header md:flex-row">
         <div class="max-w-4xl pb-12 md:flex-1 md:pb-0 container md:border-l-4 border-white md:ml-[-2px]">
           <h2 class="text-blue pr-6 text-5xl 2xl:text-6xl font-bold leading-none">
             <?php echo e(carbon_get_theme_option('home_hero_title')); ?>
@@ -78,32 +78,36 @@
     <?php endif; ?>
 
     <?php if(count($home_posts)): ?>
-      <div class="container grid lg:grid-cols-2">
-        <div class="pr-16 relative">
-          <div class="align-top inline-block bg-orange w-2/3 rounded-tl-big pt-[66.67%]"></div>
-          <div
-            class="overflow-hidden relative inline-block bg-sky ml-[-35%] mt-[33.33%] w-2/3 rounded-tr-big rounded-bl-big pt-[66.67%]">
-            <?php echo get_the_post_thumbnail($home_posts[0]->ID, null, [
-                'class' => 'h-full w-full object-cover object-center inset-0 absolute',
-            ]); ?>
+      <div>
+        <h2 class="container text-center text-3xl lg:text-4xl font-bold text-blue mb-16">Latest updates</h2>
+        <div class="container grid lg:grid-cols-2">
+          <div class="pr-16 relative">
+            <div class="align-top inline-block bg-orange w-2/3 rounded-tl-big pt-[66.67%]"></div>
+            <div
+              class="overflow-hidden relative inline-block bg-sky ml-[-35%] mt-[33.33%] w-2/3 rounded-tr-big rounded-bl-big pt-[66.67%]">
+              <?php echo get_the_post_thumbnail($home_posts[0]->ID, null, [
+                  'class' => 'h-full w-full object-cover object-center inset-0 absolute',
+              ]); ?>
 
-          </div>
-        </div>
-        <div class="gap-x-12 md:grid-cols-2 gap-y-16 mt-12 lg:border-l-2 lg:border-orange lg:pl-8 grid lg:gap-y-32">
-          <?php $__currentLoopData = $home_posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <div class="<?php echo e($loop->iteration == 1 ? 'md:col-span-2' : null); ?> flex flex-col">
-              <a href="<?php echo e(get_permalink($post->ID)); ?>">
-                <div class="font-semibold text-lg mb-4"><?php echo e(date(get_option('date_format'), strtotime($post->post_date))); ?>
-
-                </div>
-                <h3 class="text-2xl font-semibold"><?php echo e($post->post_title); ?></h3>
-                <p class="py-8 text-sm"><?php echo wp_trim_words(get_the_excerpt($post->ID), 30); ?></p>
-              </a>
-
-              <a href="<?php echo e(get_permalink($post->ID)); ?>"
-                class="lowercase inline-block mt-auto mr-auto border-2 border-green px-9 py-3 text-sm font-semibold rounded-xl rounded-tr-none whitespace-nowrap">Read</a>
             </div>
-          <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+          </div>
+          <div class="gap-x-12 md:grid-cols-2 gap-y-16 mt-12 lg:border-l-2 lg:border-orange lg:pl-8 grid lg:gap-y-32">
+            <?php $__currentLoopData = $home_posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+              <div class="<?php echo e($loop->iteration == 1 ? 'md:col-span-2' : null); ?> flex flex-col">
+                <a href="<?php echo e(get_permalink($post->ID)); ?>">
+                  <div class="font-semibold text-lg mb-4">
+                    <?php echo e(date(get_option('date_format'), strtotime($post->post_date))); ?>
+
+                  </div>
+                  <h3 class="text-2xl font-semibold"><?php echo e($post->post_title); ?></h3>
+                  <p class="py-8 text-sm"><?php echo wp_trim_words(get_the_excerpt($post->ID), 30); ?></p>
+                </a>
+
+                <a href="<?php echo e(get_permalink($post->ID)); ?>"
+                  class="lowercase inline-block mt-auto mr-auto border-2 border-green px-9 py-3 text-sm font-semibold rounded-xl rounded-tr-none whitespace-nowrap">Read</a>
+              </div>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+          </div>
         </div>
       </div>
     <?php endif; ?>
