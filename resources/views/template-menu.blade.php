@@ -11,7 +11,7 @@
       <div class="flex-1">
         @include('partials.page-header')
 
-        <div class="container my-24 flex flex-col gap-6 mx-auto xl:max-w-5xl 2xl:max-w-6xl 2xl:my-32">
+        <div class="container mt-16 flex flex-col gap-6 mx-auto xl:max-w-5xl 2xl:max-w-6xl 2xl:mt-24">
           @foreach ($children as $key => $page)
             @include('partials.page-card-alternative')
           @endforeach
