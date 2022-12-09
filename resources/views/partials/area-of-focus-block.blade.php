@@ -6,7 +6,7 @@
     ]) !!}
     <div class="p-8 lg:px-16 flex-1">
       <h3 class="!mt-0 !mb-2 text-white text-3xl font-semibold">{{ get_the_title($area_of_focus) }}</h3>
-      <p class="text-white leading-normal text-sm">{{ get_the_excerpt($area_of_focus) }}</p>
+      <p class="text-white leading-normal">{{ get_the_excerpt($area_of_focus) }}</p>
       <span
         class="inline-block mt-4 border-2 hover:bg-green hover:bg-opacity-30 border-green px-6 py-2 text-xs font-semibold rounded-xl rounded-tr-none whitespace-nowrap">Read
         more</span>
