@@ -4,13 +4,13 @@
       <div
         class="container md:border-l border-blue z-10 flex flex-col-reverse items-center px-0 mx-auto max-w-7xl min-h-header-sm lg:min-h-header md:flex-row">
         <div class="max-w-4xl pb-12 md:flex-1 md:pb-0 container md:border-l-4 border-white md:ml-[-2px]">
-          <h2 class="text-blue pr-6 text-4xl 2xl:text-5xl font-bold leading-none">
+          <h2 class="text-blue pr-6 text-5xl 2xl:text-6xl font-bold leading-none">
             <?php echo e(carbon_get_theme_option('home_hero_title')); ?>
 
           </h2>
-          <p class="mt-2 font-semibold text-lg md:text-xl"><?php echo e(carbon_get_theme_option('home_hero_subtitle')); ?></p>
+          <p class="mt-4 font-semibold text-lg"><?php echo e(carbon_get_theme_option('home_hero_subtitle')); ?></p>
 
-          <a class="border-2 rounded-2xl border-green py-3 px-6 font-semibold lowercase inline-block mt-12"
+          <a class="border-2 rounded-tr-none rounded-2xl border-green py-3 px-6 font-semibold lowercase inline-block mt-12"
             href="#">Find out how</a>
 
         </div>
@@ -79,7 +79,7 @@
 
     <?php if(count($home_posts)): ?>
       <div class="container grid lg:grid-cols-2">
-        <div class="pr-16 relative max-w-lg">
+        <div class="pr-16 relative">
           <div class="align-top inline-block bg-orange w-2/3 rounded-tl-big pt-[66.67%]"></div>
           <div
             class="overflow-hidden relative inline-block bg-sky ml-[-35%] mt-[33.33%] w-2/3 rounded-tr-big rounded-bl-big pt-[66.67%]">
@@ -92,11 +92,13 @@
         <div class="gap-x-12 md:grid-cols-2 gap-y-16 mt-12 lg:border-l-2 lg:border-orange lg:pl-8 grid lg:gap-y-32">
           <?php $__currentLoopData = $home_posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="<?php echo e($loop->iteration == 1 ? 'md:col-span-2' : null); ?> flex flex-col">
-              <div class="font-semibold text-lg mb-4"><?php echo e(date(get_option('date_format'), strtotime($post->post_date))); ?>
+              <a href="<?php echo e(get_permalink($post->ID)); ?>">
+                <div class="font-semibold text-lg mb-4"><?php echo e(date(get_option('date_format'), strtotime($post->post_date))); ?>
 
-              </div>
-              <h3 class="text-2xl font-semibold"><?php echo e($post->post_title); ?></h3>
-              <p class="py-8 text-sm"><?php echo wp_trim_words(get_the_excerpt($post->ID), 30); ?></p>
+                </div>
+                <h3 class="text-2xl font-semibold"><?php echo e($post->post_title); ?></h3>
+                <p class="py-8 text-sm"><?php echo wp_trim_words(get_the_excerpt($post->ID), 30); ?></p>
+              </a>
 
               <a href="<?php echo e(get_permalink($post->ID)); ?>"
                 class="lowercase inline-block mt-auto mr-auto border-2 border-green px-9 py-3 text-sm font-semibold rounded-xl rounded-tr-none whitespace-nowrap">Read</a>
@@ -142,10 +144,10 @@
             </div>
             <a href="<?php echo e(get_permalink($block->ID)); ?>"
               class="lowercase inline-block mt-auto mx-auto lg:ml-0 border-2 border-green px-9 py-3 text-sm font-semibold rounded-xl rounded-tr-none whitespace-nowrap">Read</a>
-
           </div>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
       </div>
+
     </div>
 
     <form action="<?php echo e(carbon_get_theme_option('newsletter_url')); ?>" method="POST" class="container mb-16">

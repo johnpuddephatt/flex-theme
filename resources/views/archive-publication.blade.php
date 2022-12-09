@@ -5,11 +5,11 @@
   @if (isset($_GET['all']) || isset($_GET['resourceProjectID']))
     @php
       query_posts([
-          'post_type' => 'resource',
+          'post_type' => 'publication',
           'numberposts' => -1,
           'posts_per_page' => -1,
           'order' => isset($_GET['order']) ? $_GET['order'] : 'ASC',
-          'meta_key' => isset($_GET['orderby']) && isset($_GET['orderby']) == 'date' ? 'date' : null,
+      
           'orderby' => isset($_GET['orderby']) ? $_GET['orderby'] : 'date',
           'meta_query' => isset($_GET['resourceProjectID'])
               ? [
@@ -25,32 +25,33 @@
     @endphp
 
     <div class="container">
-      <div class="flex flex-col max-w-3xl py-12 mx-auto mb-12 space-y-12">
+      <div class="flex flex-col max-w-3xl py-12 mx-auto mb-12 space-y-6 lg:space-y-12">
         <div class="text-gray-500 inline-flex mt-12 lg:text-xl">
           <a class="" href="/">Home</a>
           <span class="px-3">&gt;</span>
-          <a class="" href="/resources">Resources</a>
+          <a class="" href="/publications">Publications</a>
         </div>
         <h2 class="max-w-3xl font-bold text-4xl lg:text-5xl xl:text-6xl text-blue">
           @if (isset($_GET['resourceProjectID']))
-            {{ get_post($_GET['resourceProjectID'])->post_title }} resources
+            {{ get_post($_GET['resourceProjectID'])->post_title }} publications
           @else
-            All resources
+            All publications
           @endif
         </h2>
 
         @if (!isset($_GET['resourceProjectID']))
           <div>
-            <a href="?all&orderby=title&order=ASC"
-              class="@if ('?' . $_SERVER['QUERY_STRING'] == '?all&orderby=title&order=ASC') bg-blue text-white @else bg-sky-light @endif px-4 py-2 text-xl leading-loose rounded-full">Alphabetical</a>
             <a href="?all&orderby=date&order=DESC"
-              class="@if ('?' . $_SERVER['QUERY_STRING'] == '?all&orderby=date&order=DESC') bg-blue text-white @else bg-sky-light @endif px-4 py-2 text-xl leading-loose rounded-full">Newest
+              class="@if ('?' . $_SERVER['QUERY_STRING'] == '?all&orderby=date&order=DESC') bg-blue text-white @else bg-sky @endif px-4 py-2 text-xl leading-loose rounded-xl rounded-tr-none">Newest
               first</a>
+            <a href="?all&orderby=title&order=ASC"
+              class="@if ('?' . $_SERVER['QUERY_STRING'] == '?all&orderby=title&order=ASC') bg-blue text-white @else bg-sky @endif px-4 py-2 text-xl leading-loose rounded-xl rounded-tr-none">Alphabetical</a>
+
           </div>
         @endif
 
         @php global $wp_query @endphp
-        <div class="max-w-3xl text-right">Found {{ $wp_query->found_posts }} resources</div>
+        <div class="max-w-3xl text-right">Found {{ $wp_query->found_posts }} publications</div>
 
         @while (have_posts())
           @php(the_post())
