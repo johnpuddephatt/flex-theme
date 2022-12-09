@@ -31,7 +31,7 @@
       </h2>
 
       @if (!empty($post->post_excerpt))
-        <p class="max-w-2xl my-8 text-lg font-semibold md:text-xl">
+        <p class="max-w-3xl my-8 text-lg font-semibold md:text-xl">
           {!! $post->post_excerpt !!}
         </p>
       @endif
