@@ -92,7 +92,7 @@ Template Name: Home
               <div class="font-semibold text-lg mb-4">{{ date(get_option('date_format'), strtotime($post->post_date)) }}
               </div>
               <h3 class="text-2xl font-semibold">{{ $post->post_title }}</h3>
-              <p class="py-8 text-sm">{!! get_the_excerpt($post->ID) !!} </p>
+              <p class="py-8 text-sm">{!! wp_trim_words(get_the_excerpt($post->ID), 30) !!}</p>
 
               <a href="{{ get_permalink($post->ID) }}"
                 class="lowercase inline-block mt-auto mr-auto border-2 border-green px-9 py-3 text-sm font-semibold rounded-xl rounded-tr-none whitespace-nowrap">Read</a>

@@ -94,7 +94,7 @@
 
               </div>
               <h3 class="text-2xl font-semibold"><?php echo e($post->post_title); ?></h3>
-              <p class="py-8 text-sm"><?php echo get_the_excerpt($post->ID); ?> </p>
+              <p class="py-8 text-sm"><?php echo wp_trim_words(get_the_excerpt($post->ID), 30); ?></p>
 
               <a href="<?php echo e(get_permalink($post->ID)); ?>"
                 class="lowercase inline-block mt-auto mr-auto border-2 border-green px-9 py-3 text-sm font-semibold rounded-xl rounded-tr-none whitespace-nowrap">Read</a>

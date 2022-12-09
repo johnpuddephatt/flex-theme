@@ -3,7 +3,8 @@
   <?php if(has_post_thumbnail($post && isset($post->ID) ? $post->ID : '') &&
       isset(
           wp_get_attachment_metadata(get_post_thumbnail_id($post && isset($post->ID) ? $post->ID : ''))['sizes']['16by9'])): ?>
-    <div class="w-1/2">
+    <div class="container max-w-5xl w-full">
+
       <?php echo get_the_post_thumbnail(isset($post->ID) ? $post->ID : '', '16by9', [
           'class' => ' w-full rounded-br-big',
       ]); ?>
@@ -13,11 +14,11 @@
     <div class="h-24"></div>
   <?php endif; ?>
 
-  <div class="container max-w-5xl mb-24">
+  <div class="container max-w-5xl pb-12">
 
     <div class="">
 
-      <h2 class="mt-12 max-w-3xl font-bold text-4xl lg:text-5xl text-blue">
+      <h2 class="pt-12 max-w-3xl font-bold text-4xl lg:text-5xl text-blue">
         <?php echo $title; ?>
 
       </h2>
@@ -32,15 +33,15 @@
       <?php endif; ?>
 
       <?php if(!empty($post->post_excerpt)): ?>
-        <p class="max-w-3xl mt-8 text-xl font-semibold">
+        <div class="text-navy max-w-3xl mt-8 text-xl font-semibold">
           <?php echo $post->post_excerpt; ?>
 
-        </p>
+        </div>
         <?php endif; ?> <?php if(get_the_author_meta('ID') != 1): ?>
           <div class="flex items-center py-2 mt-8">
             <?php echo get_avatar(get_the_author_meta('ID'), 32, null, 'Profile image for ' . get_the_author(), [
                 'class' => "object-cover w-10 h-10 mr-2
-                                                                                                                                                                                                                                                                                                                                                                                                                    rounded-full",
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        rounded-full",
             ]); ?>
 
             <div class="leading-tight">

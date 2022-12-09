@@ -4,7 +4,7 @@
           wp_get_attachment_metadata(get_post_thumbnail_id($post && isset($post->ID) ? $post->ID : ''))['sizes'][
               'square'
           ])): ?>
-    <div class="<?php if(isset($parent)): ?> lg:w-2/3 <?php else: ?> lg:w-1/2 <?php endif; ?> lg:ml-auto w-full ml-4">
+    <div class="lg:w-[50vw] max-w-5xl lg:ml-auto w-full ml-4">
       <?php echo get_the_post_thumbnail(isset($post->ID) ? $post->ID : '', '16by9', ['class' => ' w-full rounded-bl-big']); ?>
 
     </div>
@@ -12,7 +12,7 @@
     <div class="h-20"></div>
   <?php endif; ?>
 
-  <div class="container xl:max-w-5xl">
+  <div class="container xl:max-w-5xl 2xl:max-w-6xl">
 
     <div class="">
       <?php if(isset($post) && isset($post->post_type) && $post->post_type == 'post'): ?>
@@ -34,7 +34,7 @@
       </h2>
 
       <?php if(!empty($post->post_excerpt)): ?>
-        <p class="max-w-2xl my-8 text-lg font-semibold leading-tight tracking-tight md:text-xl">
+        <p class="max-w-2xl my-8 text-lg font-semibold md:text-xl">
           <?php echo $post->post_excerpt; ?>
 
         </p>

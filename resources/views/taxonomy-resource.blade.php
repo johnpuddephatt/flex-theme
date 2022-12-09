@@ -4,7 +4,7 @@
   <div class="flex flex-row w-full border-t border-sky">
     @include('partials.publication-sidebar')
     <div class="flex-1">
-      <div class="container flex flex-row my-12 xl:max-w-5xl">
+      <div class="container flex flex-row my-12 xl:max-w-5xl 2xl:max-w-6xl">
 
         <div>
 
@@ -24,7 +24,7 @@
 
       </div>
       <div class="bg-gray-100">
-        <div class="container py-24 space-y-8 xl:max-w-5xl">
+        <div class="container py-24 space-y-8 xl:max-w-5xl 2xl:max-w-6xl">
 
           @php $wp_the_query = new WP_Query() @endphp
           <div class="max-w-3xl text-right">

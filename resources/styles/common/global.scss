@@ -18,6 +18,10 @@
   }
 }
 
+.prose a {
+  @apply decoration-sky;
+}
+
 .wp-block-image.is-style-rounded-corners img {
   border-top-right-radius: 5rem;
   border-bottom-left-radius: 5rem;
