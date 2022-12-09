@@ -10,12 +10,12 @@ module.exports = {
       "./resources/**/*.php",
       "./resources/**/*.vue",
       "./resources/**/*.js",
-      "./resources/**/*.svg"
-    ]
+      "./resources/**/*.svg",
+    ],
   },
   theme: {
     fontFamily: {
-      sans: ["FLEX-Sans", "Helvetica", "Arial", "sans-serif"]
+      sans: ["FLEX-Sans", "Helvetica", "Arial", "sans-serif"],
     },
 
     container: {
@@ -25,69 +25,69 @@ module.exports = {
         sm: "1.5rem",
         lg: "2rem",
         xl: "2.5rem",
-        "2xl": "3rem"
-      }
+        "2xl": "3rem",
+      },
     },
     colors: {
       transparent: "transparent",
       current: "currentColor",
       white: "#ffffff",
       black: "#000000",
-      blue: "#2f4e7d",
-      sky: "#c2d9e3",
-      orange: "#e1a138",
+      blue: "#304f80",
+      sky: "#cee5ef",
+      orange: "#ecaf3d",
       navy: "#192b41",
-      green: "#418580"
+      green: "#47918a",
     },
     backgroundSize: {
       auto: "auto",
       cover: "cover",
       contain: "contain",
-      "1/2": "50% auto"
+      "1/2": "50% auto",
     },
     extend: {
       borderRadius: {
         medium: "3em",
         big: "6em",
-        giant: "12em"
+        giant: "12em",
       },
       minHeight: {
         header: "30em",
-        "header-sm": "20em"
+        "header-sm": "20em",
       },
       lineHeight: {
-        none: "1.1"
+        none: "1.1",
       },
       backgroundImage: () => ({}),
-      typography: theme => ({
+      typography: (theme) => ({
         DEFAULT: {
           css: {
             a: {
               color: theme("colors.blue.DEFAULT"),
               textDecorationColor: theme("colors.blue.lightest"),
-              textDecorationThickness: "3px"
+              textDecorationThickness: "3px",
             },
             hr: {
-              borderTopColor: null
+              borderTopColor: null,
             },
             h2: {
-              color: theme("colors.blue.DEFAULT")
-            }
-          }
+              color: theme("colors.blue.DEFAULT"),
+            },
+          },
         },
         lg: {
           css: {
-            h2: {}
-          }
-        }
-      })
+            h2: {},
+          },
+        },
+      }),
     },
-    gutenberg: theme => ({
+    gutenberg: (theme) => ({
       // Create block color palette utility classes that WordPress uses.
       // @link https://developer.wordpress.org/block-editor/developers/themes/theme-support/#block-color-palettes
       colors: {
         blue: theme("colors.blue.DEFAULT"),
-        sky: theme("colors.sky.DEFAULT")
+        sky: theme("colors.sky.DEFAULT"),
       },
 
       // // If set, will pick the color with most contrast as the foreground text
@@ -101,7 +101,7 @@ module.exports = {
         sm: theme("fontSize.sm"),
         base: theme("fontSize.base"),
         xl: theme("fontSize.xl"),
-        xxl: theme("fontSize.2xl")
+        xxl: theme("fontSize.2xl"),
       },
 
       alignments: {
@@ -128,22 +128,22 @@ module.exports = {
           // NOTE the values of maxWidth, contentWidth and gutter all have
           // to use the same units for this to work. calc() in media queries
           // does not have good browser support
-          sizer: 1.25
+          sizer: 1.25,
         },
         // Add responsive alignleft and alignright support.
         alignleftright: {
           // Screen size when alignment is triggered, defaults to an arbitrary 640px
           minWidth: theme("screens.sm"),
           // Side margin, defaults to core's 1em.
-          margin: theme("spacing.2")
-        }
-      }
-    })
+          margin: theme("spacing.2"),
+        },
+      },
+    }),
   },
   variants: {
     extend: {
-      display: ["group-hover"]
-    }
+      display: ["group-hover"],
+    },
   },
   plugins: [
     require("@tailwindcss/typography"),
@@ -152,6 +152,6 @@ module.exports = {
     gutenberg.fontSizes,
     gutenberg.foregroundColors,
     gutenberg.alignments,
-    gutenberg.admin
-  ]
+    gutenberg.admin,
+  ],
 };
