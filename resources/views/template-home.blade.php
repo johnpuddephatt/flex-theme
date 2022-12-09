@@ -8,9 +8,10 @@ Template Name: Home
       <div
         class="container md:border-l border-blue z-10 flex flex-col-reverse items-center px-0 mx-auto max-w-7xl min-h-header-sm lg:min-h-header md:flex-row">
         <div class="max-w-4xl pb-12 md:flex-1 md:pb-0 container md:border-l-4 border-white md:ml-[-2px]">
-          <h2 class="text-blue pr-6 text-4xl font-bold leading-none">
-            We’re working to end labour exploitation through research and policy change.
+          <h2 class="text-blue pr-6 text-4xl 2xl:text-5xl font-bold leading-none">
+            {{ carbon_get_theme_option('home_hero_title') }}
           </h2>
+          <p class="mt-2 font-semibold text-lg md:text-xl">{{ carbon_get_theme_option('home_hero_subtitle') }}</p>
 
           <a class="border-2 rounded-2xl border-green py-3 px-6 font-semibold lowercase inline-block mt-12"
             href="#">Find out how</a>

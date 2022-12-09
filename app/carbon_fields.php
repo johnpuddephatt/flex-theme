@@ -19,6 +19,8 @@ add_action("carbon_fields_register_fields", function () {
         ->set_page_parent($parent_options) // reference to a top level container
         ->add_fields([
             Field::make("separator", "hero_separator", __("Hero")),
+            Field::make("text", "home_hero_title", __("Title")),
+            Field::make("text", "home_hero_subtitle", __("Subtitle")),
             Field::make("media_gallery", "hero_images", __("Hero images")),
             Field::make(
                 "separator",

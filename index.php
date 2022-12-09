@@ -7,7 +7,9 @@
     <?php wp_head(); ?>
   </head>
 
-  <body <?php body_class("tracking-wide border-t-[1.25rem] border-blue"); ?>>
+  <body <?php body_class(
+    "tracking-wide border-t-[1.25rem] border-blue text-black"
+  ); ?>>
     <?php wp_body_open(); ?>
     <?php do_action("get_header"); ?>
 
