@@ -99,7 +99,7 @@ Template Name: Home
                   <h3 class="{{ $loop->iteration == 1 ? 'text-2xl' : 'text-lg' }} leading-tight font-semibold">
                     {{ $post->post_title }}
                   </h3>
-                  <p class="py-8 text-sm">{!! wp_trim_words(get_the_excerpt($post->ID), 30) !!}</p>
+                  <p class="{{ $loop->iteration == 1 ? '' : 'text-sm' }} py-8">{!! wp_trim_words(get_the_excerpt($post->ID), 30) !!}</p>
                 </a>
 
                 <a href="{{ get_permalink($post->ID) }}"
