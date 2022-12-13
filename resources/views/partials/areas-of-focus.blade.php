@@ -8,7 +8,7 @@
             'class' => 'flex-none w-24 h-24 lg:w-32 lg:h-32 rounded-tr-3xl rounded-bl-3xl',
         ]) !!}
         <div class="py-2 lg:py-3 px-4 lg:px-5">
-          <h3 class="font-semibold text-lg leading-tight">{{ $area_of_focus->post_title }}</h3>
+          <h3 class="mb-2 font-semibold text-lg leading-tight">{{ $area_of_focus->post_title }}</h3>
           <p class="text-sm leading-tight">{{ $area_of_focus->post_excerpt }}</p>
         </div>
 
