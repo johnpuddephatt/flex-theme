@@ -96,7 +96,8 @@ Template Name: Home
                   <div class="{{ $loop->iteration == 1 ? 'text-lg' : 'text-base' }} font-semibold mb-4">
                     {{ date(get_option('date_format'), strtotime($post->post_date)) }}
                   </div>
-                  <h3 class="{{ $loop->iteration == 1 ? 'text-xl' : 'text-lg' }} font-semibold">{{ $post->post_title }}
+                  <h3 class="{{ $loop->iteration == 1 ? 'text-2xl' : 'text-lg' }} leading-tight font-semibold">
+                    {{ $post->post_title }}
                   </h3>
                   <p class="py-8 text-sm">{!! wp_trim_words(get_the_excerpt($post->ID), 30) !!}</p>
                 </a>
