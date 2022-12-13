@@ -93,10 +93,11 @@ Template Name: Home
             @foreach ($home_posts as $post)
               <div class="{{ $loop->iteration == 1 ? 'md:col-span-2' : null }} flex flex-col">
                 <a href="{{ get_permalink($post->ID) }}">
-                  <div class="font-semibold text-lg mb-4">
+                  <div class="{{ $loop->iteration == 1 ? 'text-lg' : 'text-base' }} font-semibold mb-4">
                     {{ date(get_option('date_format'), strtotime($post->post_date)) }}
                   </div>
-                  <h3 class="text-2xl font-semibold">{{ $post->post_title }}</h3>
+                  <h3 class="{{ $loop->iteration == 1 ? 'text-xl' : 'text-lg' }} font-semibold">{{ $post->post_title }}
+                  </h3>
                   <p class="py-8 text-sm">{!! wp_trim_words(get_the_excerpt($post->ID), 30) !!}</p>
                 </a>
 

@@ -27,12 +27,12 @@
         <div class="text-center">
           <a href="<?php echo e(get_permalink($publication->ID)); ?>"
             <?php if($category): ?> style="background-color: <?php echo e(carbon_get_term_meta($category->term_id, 'resourcetype_background')); ?>; color: <?php echo e(carbon_get_term_meta($category->term_id, 'resourcetype_text')); ?>; border-color: <?php echo e(carbon_get_term_meta($category->term_id, 'resourcetype_spine')); ?>;" <?php endif; ?>
-            class="border text-left justify-between antialiased aspect-[3/4] flex flex-col py-12 px-6 border-l-[1.25rem]">
-            <h3 class="text-3xl font-bold"><?php echo e($publication->post_title); ?></h3>
+            class="shadow text-left justify-between antialiased aspect-[3/4] flex flex-col py-12 px-6 border-l-[1.25rem]">
+            <h3 class="text-3xl font-bold"><?php echo $publication->post_title; ?></h3>
 
             <?php if($category): ?>
               <p class="pt-6 mt-auto font-semibold text-xl">
-                <?php echo e($category->name); ?>
+                <?php echo $category->name; ?>
 
               </p>
             <?php endif; ?>

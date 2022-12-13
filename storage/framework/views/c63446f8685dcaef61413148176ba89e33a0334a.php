@@ -8,7 +8,7 @@
             <?php echo e(carbon_get_theme_option('home_hero_title')); ?>
 
           </h2>
-          <p class="mt-4 font-semibold text-lg"><?php echo e(carbon_get_theme_option('home_hero_subtitle')); ?></p>
+          <p class="mt-8 font-semibold text-lg"><?php echo e(carbon_get_theme_option('home_hero_subtitle')); ?></p>
 
           <a class="border-2 rounded-tr-none rounded-2xl border-green py-3 px-6 font-semibold lowercase inline-block mt-12"
             href="#">Find out how</a>

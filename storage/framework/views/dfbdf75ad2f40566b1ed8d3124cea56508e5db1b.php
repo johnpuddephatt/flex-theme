@@ -41,7 +41,7 @@
       <?php endif; ?>
 
       <?php if(!empty($post->post_excerpt)): ?>
-        <p class="max-w-2xl mt-8 text-lg font-semibold md:text-xl">
+        <p class="max-w-3xl mt-8 text-lg font-semibold md:text-xl">
           <?php echo $post->post_excerpt; ?>
 
         </p>
@@ -49,7 +49,7 @@
           <div class="flex items-center py-2 mt-8">
             <?php echo get_avatar(get_the_author_meta('ID'), 32, null, 'Profile image for ' . get_the_author(), [
                 'class' => "object-cover w-10 h-10 mr-2
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    rounded-full",
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                rounded-full",
             ]); ?>
 
             <div class="leading-tight">
