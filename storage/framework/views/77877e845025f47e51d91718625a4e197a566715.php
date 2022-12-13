@@ -39,7 +39,7 @@
 
           </a>
           <a href="<?php echo e(get_permalink($publication->ID)); ?>"
-            class="lowercase inline-block mt-4 mx-auto lg:ml-0 border-2 border-green px-9 py-3 text-sm font-semibold rounded-xl rounded-tr-none whitespace-nowrap">Read</a>
+            class="lowercase inline-block mt-8 mx-auto lg:ml-0 border-2 border-green px-9 py-3 text-sm font-semibold rounded-xl rounded-tr-none whitespace-nowrap">Read</a>
         </div>
       <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </div>

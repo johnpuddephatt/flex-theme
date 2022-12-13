@@ -34,7 +34,7 @@
       </h2>
 
       <?php if(!empty($post->post_excerpt)): ?>
-        <p class="max-w-2xl my-8 text-lg font-semibold md:text-xl">
+        <p class="max-w-3xl my-8 text-lg font-semibold md:text-xl">
           <?php echo $post->post_excerpt; ?>
 
         </p>

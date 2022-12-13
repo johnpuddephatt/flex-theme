@@ -122,19 +122,21 @@ Template Name: Home
         @foreach ($home_blocks as $block)
           <div class="flex flex-col space-y-8 text-center lg:text-left">
             <a href="{{ get_permalink($block->ID) }}" class="relative">
-              <div
-                class="{{ match ($loop->iteration) {1 => '',2 => 'mt-[8.333%]',3 => 'ml-[8.333%] mt-[8.333%]',4 => 'ml-[8.333%]'} }} absolute -z-10 rounded-tr-big rounded-bl-big bg-sky bg-opacity-40 aspect-square w-10/12">
+              <div class="max-w-lg mx-auto">
+                <div
+                  class="{{ match ($loop->iteration) {1 => '',2 => 'mt-[8.333%]',3 => 'ml-[8.333%] mt-[8.333%]',4 => 'ml-[8.333%]'} }} absolute -z-10 rounded-tr-big rounded-bl-big bg-sky bg-opacity-40 aspect-square w-10/12">
+                </div>
+                {!! get_the_post_thumbnail($block->ID, 'square', [
+                    'class' =>
+                        'block w-10/12 rounded-tr-big rounded-bl-big ' .
+                        match ($loop->iteration) {
+                            1 => 'ml-[8.333%] mt-[8.333%]',
+                            2 => 'ml-[8.333%] mb-[8.333%]',
+                            3 => 'mb-[8.333%]',
+                            4 => 'mt-[8.333%]',
+                        },
+                ]) !!}
               </div>
-              {!! get_the_post_thumbnail($block->ID, 'square', [
-                  'class' =>
-                      'block w-10/12 rounded-tr-big rounded-bl-big ' .
-                      match ($loop->iteration) {
-                          1 => 'ml-[8.333%] mt-[8.333%]',
-                          2 => 'ml-[8.333%] mb-[8.333%]',
-                          3 => 'mb-[8.333%]',
-                          4 => 'mt-[8.333%]',
-                      },
-              ]) !!}
             </a>
 
             <h3 class="text-2xl font-semibold leading-tight pt-8">
@@ -153,7 +155,7 @@ Template Name: Home
 
     <form action="{{ carbon_get_theme_option('newsletter_url') }}" method="POST" class="container mb-16">
       <div
-        class="rounded-tr-big lg:rounded-br-big overflow-hidden bg-navy text-white flex flex-col items-start space-y-3 leading-tight lg:space-x-8 lg:space-y-0 lg:items-center lg:flex-row">
+        class="rounded-tr-big lg:rounded-tr-none lg:rounded-br-big overflow-hidden bg-navy text-white flex flex-col items-start space-y-3 leading-tight lg:space-x-8 lg:space-y-0 lg:items-center lg:flex-row">
 
         <div class="p-6 md:p-12 lg:p-24 flex-1">
 

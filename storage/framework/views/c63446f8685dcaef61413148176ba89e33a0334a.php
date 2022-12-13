@@ -95,12 +95,15 @@
             <?php $__currentLoopData = $home_posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
               <div class="<?php echo e($loop->iteration == 1 ? 'md:col-span-2' : null); ?> flex flex-col">
                 <a href="<?php echo e(get_permalink($post->ID)); ?>">
-                  <div class="font-semibold text-lg mb-4">
+                  <div class="<?php echo e($loop->iteration == 1 ? 'text-lg' : 'text-base'); ?> font-semibold mb-4">
                     <?php echo e(date(get_option('date_format'), strtotime($post->post_date))); ?>
 
                   </div>
-                  <h3 class="text-2xl font-semibold"><?php echo e($post->post_title); ?></h3>
-                  <p class="py-8 text-sm"><?php echo wp_trim_words(get_the_excerpt($post->ID), 30); ?></p>
+                  <h3 class="<?php echo e($loop->iteration == 1 ? 'text-2xl' : 'text-lg'); ?> leading-tight font-semibold">
+                    <?php echo e($post->post_title); ?>
+
+                  </h3>
+                  <p class="<?php echo e($loop->iteration == 1 ? '' : 'text-sm'); ?> py-8"><?php echo wp_trim_words(get_the_excerpt($post->ID), 30); ?></p>
                 </a>
 
                 <a href="<?php echo e(get_permalink($post->ID)); ?>"
@@ -123,20 +126,22 @@
         <?php $__currentLoopData = $home_blocks; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $block): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
           <div class="flex flex-col space-y-8 text-center lg:text-left">
             <a href="<?php echo e(get_permalink($block->ID)); ?>" class="relative">
-              <div
-                class="<?php echo e(match ($loop->iteration) {1 => '',2 => 'mt-[8.333%]',3 => 'ml-[8.333%] mt-[8.333%]',4 => 'ml-[8.333%]'}); ?> absolute -z-10 rounded-tr-big rounded-bl-big bg-sky bg-opacity-40 aspect-square w-10/12">
-              </div>
-              <?php echo get_the_post_thumbnail($block->ID, 'square', [
-                  'class' =>
-                      'block w-10/12 rounded-tr-big rounded-bl-big ' .
-                      match ($loop->iteration) {
-                          1 => 'ml-[8.333%] mt-[8.333%]',
-                          2 => 'ml-[8.333%] mb-[8.333%]',
-                          3 => 'mb-[8.333%]',
-                          4 => 'mt-[8.333%]',
-                      },
-              ]); ?>
+              <div class="max-w-lg mx-auto">
+                <div
+                  class="<?php echo e(match ($loop->iteration) {1 => '',2 => 'mt-[8.333%]',3 => 'ml-[8.333%] mt-[8.333%]',4 => 'ml-[8.333%]'}); ?> absolute -z-10 rounded-tr-big rounded-bl-big bg-sky bg-opacity-40 aspect-square w-10/12">
+                </div>
+                <?php echo get_the_post_thumbnail($block->ID, 'square', [
+                    'class' =>
+                        'block w-10/12 rounded-tr-big rounded-bl-big ' .
+                        match ($loop->iteration) {
+                            1 => 'ml-[8.333%] mt-[8.333%]',
+                            2 => 'ml-[8.333%] mb-[8.333%]',
+                            3 => 'mb-[8.333%]',
+                            4 => 'mt-[8.333%]',
+                        },
+                ]); ?>
 
+              </div>
             </a>
 
             <h3 class="text-2xl font-semibold leading-tight pt-8">
@@ -156,7 +161,7 @@
 
     <form action="<?php echo e(carbon_get_theme_option('newsletter_url')); ?>" method="POST" class="container mb-16">
       <div
-        class="rounded-tr-big lg:rounded-br-big overflow-hidden bg-navy text-white flex flex-col items-start space-y-3 leading-tight lg:space-x-8 lg:space-y-0 lg:items-center lg:flex-row">
+        class="rounded-tr-big lg:rounded-tr-none lg:rounded-br-big overflow-hidden bg-navy text-white flex flex-col items-start space-y-3 leading-tight lg:space-x-8 lg:space-y-0 lg:items-center lg:flex-row">
 
         <div class="p-6 md:p-12 lg:p-24 flex-1">
 

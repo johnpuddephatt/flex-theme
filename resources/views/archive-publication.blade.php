@@ -26,7 +26,7 @@
 
     <div class="container">
       <div class="flex flex-col max-w-3xl py-12 mx-auto mb-12 space-y-6 lg:space-y-12">
-        <div class="text-gray-500 inline-flex mt-12 lg:text-xl">
+        <div class="inline-flex mt-12">
           <a class="" href="/">Home</a>
           <span class="px-3">&gt;</span>
           <a class="" href="/publications">Publications</a>

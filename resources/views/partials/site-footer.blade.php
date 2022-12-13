@@ -39,7 +39,7 @@
         <div class="flex items-start justify-center md:justify-end flex-row gap-2 mt-4">
           @foreach (['facebook', 'twitter', 'youtube', 'instagram', 'linkedin', 'vimeo'] as $account)
             @if (get_option('_' . $account))
-              <a rel="noopener" class="text-axis-green bg-navy text-white inline-block rounded-full p-2"
+              <a rel="noopener" class="text-axis-green bg-white text-blue inline-block rounded-full p-2"
                 aria-label="{{ $account }} link" href="{{ get_option('_' . $account) }}" target="_blank">
                 <x-dynamic-component :component="'icon.' . $account" class="mt-4" />
               </a>

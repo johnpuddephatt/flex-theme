@@ -1,58 +1,34 @@
-<div>
+<div class="flex lg:gap-12 flex-col lg:flex-row lg:items-end container pt-0 pb-16">
 
   @if (has_post_thumbnail($post && isset($post->ID) ? $post->ID : '') &&
       isset(
           wp_get_attachment_metadata(get_post_thumbnail_id($post && isset($post->ID) ? $post->ID : ''))['sizes']['16by9']))
-    <div class="container max-w-5xl w-full">
-
-      {!! get_the_post_thumbnail(isset($post->ID) ? $post->ID : '', '16by9', [
-          'class' => ' w-full rounded-br-big',
-      ]) !!}
+    <div class="mx-auto mt-4 max-w-md lg:max-w-none lg:mt-12 w-full lg:w-1/3 relative">
+      <div class="align-top inline-block bg-orange w-2/3 rounded-tl-big pt-[66.67%]"></div>
+      <div
+        class="overflow-hidden relative inline-block bg-sky ml-[-35%] mt-[33.33%] w-2/3 rounded-tr-big rounded-bl-big pt-[66.67%]">
+        {!! get_the_post_thumbnail(isset($post->ID) ? $post->ID : null, 'square', [
+            'class' => 'h-full w-full object-cover object-center inset-0 absolute',
+        ]) !!}
+      </div>
     </div>
   @else
     <div class="h-24"></div>
   @endif
 
-  <div class="container max-w-5xl pb-12">
+  <div class="max-w-5xl">
 
     <div class="">
 
-      <h2 class="pt-12 max-w-3xl font-bold text-4xl lg:text-5xl text-blue">
+      <h2 class="pt-6 lg:pt-12 max-w-3xl font-bold text-3xl lg:text-4xl text-blue">
         {!! $title !!}
       </h2>
       @if (isset($post) && isset($post->post_type) && $post->post_type == 'post')
-        <!-- <a class="text-gray-600 inline-block mb-8" href="{{ get_permalink(get_option('page_for_posts')) }}">&larr; Back to
-          all posts</a> -->
-
-        <div class="mt-6 mb-4 text-xl font-semibold md:mb-4">
+        <div class="mt-6 text-xl font-semibold">
           {{ get_the_date() }}
         </div>
       @endif
 
-      @if (!empty($post->post_excerpt))
-        <div class="text-navy max-w-3xl mt-8 text-lg md:text-xl font-semibold">
-          {!! $post->post_excerpt !!}
-        </div>
-        @endif @if (get_the_author_meta('ID') != 1)
-          <div class="flex items-center py-2 mt-8">
-            {!! get_avatar(get_the_author_meta('ID'), 32, null, 'Profile image for ' . get_the_author(), [
-                'class' => "object-cover w-10 h-10 mr-2
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    rounded-full",
-            ]) !!}
-            <div class="leading-tight">
-              <p class="text-sm font-semibold tracking-tight text-black">
-                <a href="{{ get_author_posts_url(get_the_author_meta('ID')) }}" rel="author" class="fn">
-                  {{ get_the_author() }}
-                </a>
-              </p>
-              @if (get_field('role', 'user_' . get_the_author_meta('ID')))
-                <p class="text-gray-600 text-sm font-normal tracking-tight">
-                  {{ the_field('role', 'user_' . get_the_author_meta('ID')) }}
-                </p>
-              @endif
-            </div>
-          </div>
-        @endif
     </div>
   </div>
 </div>
