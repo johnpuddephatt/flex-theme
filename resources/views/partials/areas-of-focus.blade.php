@@ -3,7 +3,7 @@
   <div class="grid md:grid-cols-2 gap-4 lg:gap-8 container">
     @foreach ($areas_of_focus as $area_of_focus)
       <a class="bg-green bg-opacity-10 flex flex-row items-center" href="{{ get_permalink($area_of_focus->ID) }}">
-        {!! get_the_post_thumbnail($area_of_focus->ID, 'post-thumbnail', [
+        {!! get_the_post_thumbnail($area_of_focus->ID, null, [
             'class' => 'flex-none w-24 h-24 lg:w-32 lg:h-32 rounded-tr-3xl rounded-bl-3xl',
         ]) !!}
         <div class="py-3 px-6">
