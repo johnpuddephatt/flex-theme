@@ -42,6 +42,8 @@ class Publication extends Composer
                     "post_type" => "page",
                     "meta_key" => "_wp_page_template",
                     "meta_value" => "template-areaoffocus.blade.php",
+                    "order" => "ASC",
+                    "orderby" => "menu_order",
                 ]),
             ];
         } else {
@@ -60,6 +62,8 @@ class Publication extends Composer
                     "meta_key" => "_wp_page_template",
                     "meta_value" => "template-areaoffocus.blade.php",
                     "numberposts" => -1,
+                    "order" => "ASC",
+                    "orderby" => "menu_order",
                 ]),
             ];
 

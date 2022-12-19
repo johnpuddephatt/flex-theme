@@ -65,6 +65,8 @@ class Home extends Composer
             "post_type" => "page",
             "meta_key" => "_wp_page_template",
             "meta_value" => "template-areaoffocus.blade.php",
+            "order" => "ASC",
+            "orderby" => "menu_order",
         ]);
     }
 

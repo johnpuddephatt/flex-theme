@@ -1,5 +1,5 @@
  <?php $__env->startSection('content'); ?>
-  <div class="flex flex-col w-screen py-16 space-y-12 overflow-x-hidden lg:space-y-36">
+  <div class="flex flex-col w-screen py-16 space-y-12 overflow-x-hidden lg:space-y-16 xl:space-y-24 2xl:space-y-36">
     <div class="relative">
       <div
         class="2xl:max-w-8xl container md:border-l border-blue z-10 flex flex-col-reverse items-center px-0 mx-auto max-w-7xl min-h-header-sm lg:min-h-header md:flex-row">
