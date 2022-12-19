@@ -1,9 +1,5 @@
 <?php $__env->startSection('content'); ?>
-  <?php echo $__env->make('partials.section-header', [
-      'background' => 'bg-navy',
-      'text' => 'text-white',
-      'titletext' => 'text-sky',
-  ], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+  <?php echo $__env->make('partials.section-header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
   <div class="container px-4 py-24 mx-auto xl:max-w-5xl">
     <?php if(!have_posts()): ?>
@@ -24,17 +20,17 @@
     <?php endif; ?>
 
     <!-- <form class="max-w-3xl mx-auto mb-24" role="search" action="<?php echo e(home_url('/')); ?>" method="get" id="searchform">
-        <input type="hidden" name="post_type" value="post" />
-        <div class="flex flex-wrap px-8 py-12 lg:flex-nowrap">
-          <input type="text" aria-label="Text to search for" name="s" placeholder="Search latest updates"
-            class="text-lg flex-1 inline-block rounded-l-lg p-4 border-2 border-blue">
-          <button type="submit"
-            class="bg-blue text-white border-2 text-base border-blue inline-block px-8 py-4 font-semibold rounded-br-lg whitespace-nowrap">
-            Search
-          </button>
+            <input type="hidden" name="post_type" value="post" />
+            <div class="flex flex-wrap px-8 py-12 lg:flex-nowrap">
+              <input type="text" aria-label="Text to search for" name="s" placeholder="Search latest updates"
+                class="text-lg flex-1 inline-block rounded-l-lg p-4 border-2 border-blue">
+              <button type="submit"
+                class="bg-blue text-white border-2 text-base border-blue inline-block px-8 py-4 font-semibold rounded-br-lg whitespace-nowrap">
+                Search
+              </button>
 
-        </div>
-      </form> -->
+            </div>
+          </form> -->
 
     <div class="space-y-8 xl:space-y-16 max-w-4xl mx-auto">
       <?php while(have_posts()): ?>

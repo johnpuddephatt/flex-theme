@@ -58,11 +58,7 @@
       </div>
     </div>
   <?php else: ?>
-    <?php echo $__env->make('partials.section-header', [
-        'background' => 'bg-sky',
-        'text' => 'text-navy',
-        'titletext' => 'text-blue',
-    ], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    <?php echo $__env->make('partials.section-header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
     <div class="space-y-24 mb-48">
 

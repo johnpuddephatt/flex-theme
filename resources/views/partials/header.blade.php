@@ -12,8 +12,6 @@
         ]) !!}
       </div>
     </div>
-  @else
-    <div class="h-24"></div>
   @endif
 
   <div class="max-w-5xl">

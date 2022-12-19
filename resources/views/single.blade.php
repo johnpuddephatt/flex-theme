@@ -4,7 +4,7 @@
   <div class="flex flex-row w-full border-t border-sky">
     @includeIf('partials.' . get_post_type() . '-sidebar')
     <div class="flex-1">
-      <div class="">
+      <div class="max-w-3xl mx-auto">
         @while (have_posts())
           @php(the_post())
           @includeFirst(['partials.' . get_post_type() . '-header', 'partials.header'])

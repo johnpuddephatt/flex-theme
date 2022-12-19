@@ -128,7 +128,7 @@
             <a href="<?php echo e(get_permalink($block->ID)); ?>" class="relative">
               <div class="max-w-lg mx-auto">
                 <div
-                  class="<?php echo e(match ($loop->iteration) {1 => '',2 => 'mt-[8.333%]',3 => 'ml-[8.333%] mt-[8.333%]',4 => 'ml-[8.333%]'}); ?> absolute -z-10 rounded-tr-big rounded-bl-big bg-sky bg-opacity-40 aspect-square w-10/12">
+                  class="<?php echo e(match ($loop->iteration) {1 => '',2 => 'mt-[8.333%]',3 => 'ml-[8.333%] mt-[8.333%]',4 => 'ml-[8.333%]'}); ?> top-0 absolute -z-10 rounded-tr-big rounded-bl-big bg-sky bg-opacity-40 aspect-square w-10/12">
                 </div>
                 <?php echo get_the_post_thumbnail($block->ID, 'square', [
                     'class' =>
@@ -147,10 +147,10 @@
             <h3 class="text-2xl font-semibold leading-tight pt-8">
               <a href="<?php echo e(get_permalink($block->ID)); ?>"><?php echo get_the_title($block->ID); ?></a>
             </h3>
-            <div class="max-w-sm mx-auto lg:mx-0">
-              <?php echo wp_trim_words(get_the_excerpt($block->ID), 30); ?>
+            <!-- <div class="max-w-sm mx-auto lg:mx-0">
+                    <?php echo wp_trim_words(get_the_excerpt($block->ID), 30); ?>
 
-            </div>
+                  </div> -->
             <a href="<?php echo e(get_permalink($block->ID)); ?>"
               class="lowercase inline-block mt-auto mx-auto lg:ml-0 border-2 border-green px-9 py-3 text-sm font-semibold rounded-xl rounded-tr-none whitespace-nowrap">Read</a>
           </div>

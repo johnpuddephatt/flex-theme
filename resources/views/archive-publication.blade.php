@@ -60,11 +60,7 @@
       </div>
     </div>
   @else
-    @include('partials.section-header', [
-        'background' => 'bg-sky',
-        'text' => 'text-navy',
-        'titletext' => 'text-blue',
-    ])
+    @include('partials.section-header')
 
     <div class="space-y-24 mb-48">
 

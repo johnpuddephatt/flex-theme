@@ -13,8 +13,6 @@
 
       </div>
     </div>
-  <?php else: ?>
-    <div class="h-24"></div>
   <?php endif; ?>
 
   <div class="max-w-5xl">

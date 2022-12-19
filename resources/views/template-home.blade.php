@@ -124,7 +124,7 @@ Template Name: Home
             <a href="{{ get_permalink($block->ID) }}" class="relative">
               <div class="max-w-lg mx-auto">
                 <div
-                  class="{{ match ($loop->iteration) {1 => '',2 => 'mt-[8.333%]',3 => 'ml-[8.333%] mt-[8.333%]',4 => 'ml-[8.333%]'} }} absolute -z-10 rounded-tr-big rounded-bl-big bg-sky bg-opacity-40 aspect-square w-10/12">
+                  class="{{ match ($loop->iteration) {1 => '',2 => 'mt-[8.333%]',3 => 'ml-[8.333%] mt-[8.333%]',4 => 'ml-[8.333%]'} }} top-0 absolute -z-10 rounded-tr-big rounded-bl-big bg-sky bg-opacity-40 aspect-square w-10/12">
                 </div>
                 {!! get_the_post_thumbnail($block->ID, 'square', [
                     'class' =>
@@ -142,9 +142,9 @@ Template Name: Home
             <h3 class="text-2xl font-semibold leading-tight pt-8">
               <a href="{{ get_permalink($block->ID) }}">{!! get_the_title($block->ID) !!}</a>
             </h3>
-            <div class="max-w-sm mx-auto lg:mx-0">
-              {!! wp_trim_words(get_the_excerpt($block->ID), 30) !!}
-            </div>
+            <!-- <div class="max-w-sm mx-auto lg:mx-0">
+                    {!! wp_trim_words(get_the_excerpt($block->ID), 30) !!}
+                  </div> -->
             <a href="{{ get_permalink($block->ID) }}"
               class="lowercase inline-block mt-auto mx-auto lg:ml-0 border-2 border-green px-9 py-3 text-sm font-semibold rounded-xl rounded-tr-none whitespace-nowrap">Read</a>
           </div>
