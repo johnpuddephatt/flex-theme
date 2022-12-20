@@ -6,22 +6,20 @@
     </div>
   </div>
 
-  @if (rwmb_get_value('file_advanced', null, null, false))
-  <div class="bg-orange bg-opacity-10 py-32">
+  @if ($publication_files)
+  <div class="bg-sky py-32">
     <div class="container max-w-5xl mx-auto">
       <h2 class="text-3xl font-bold mb-12 text-navy">Downloads</h2>
-
-      
       <div class="space-y-4">        
-        @foreach (rwmb_get_value('file_advanced', null, null, false) as $file)
+        @foreach ($publication_files as $file)
           <a href="{{ $file['url'] }}"
-            class="flex bg-orange text-navy max-w-3xl bg-opacity-20 rounded-tl-medium pr-8 overflow-hidden">
-            <div class="w-32 h-32 bg-orange rounded-br-medium"></div>
+            class="flex bg-white text-navy max-w-3xl rounded-tl-medium pr-8 overflow-hidden">
+            <div class="w-32 h-32 bg-blue rounded-br-medium"></div>
             <div class="py-6 px-12 flex-1">
               <h3 class="mb-3 font-semibold text-lg">{!! $file['title'] !!}</h3>
               <p>{{ get_the_excerpt($file['ID']) }}</p>
             </div>
-            @svg('icons.arrow-right')
+            @svg('icons.arrow-right', 'h-12 w-12 text-navy my-auto')
           </a>
         @endforeach
       </div>

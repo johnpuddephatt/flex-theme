@@ -14,8 +14,8 @@ class Publication extends Composer
     protected static $views = [
         // 'partials.page-header',
         // 'partials.content',
-        "partials.content-single-resource",
-        "partials.resource-header",
+        "partials.content-single-publication",
+        "partials.publication-header",
         "archive-publication",
         "partials.publication-sidebar",
         "taxonomy-resource",
@@ -44,7 +44,27 @@ class Publication extends Composer
                     "meta_value" => "template-areaoffocus.blade.php",
                     "order" => "ASC",
                     "orderby" => "menu_order",
+                    "hide_empty" => false,
                 ]),
+                "publication_files" => rwmb_get_value(
+                    "file_advanced",
+                    null,
+                    null,
+                    false
+                ),
+                "publication_types" => get_the_terms($post->ID, "resourcetype"),
+                "publication_what_we_dos" => \MB_Relationships_API::get_connected(
+                    [
+                        "id" => "publications_to_what_we_do",
+                        "from" => get_the_ID(),
+                    ]
+                ),
+                "publication_areas_of_focus" => \MB_Relationships_API::get_connected(
+                    [
+                        "id" => "publications_to_areas_of_focus",
+                        "from" => get_the_ID(),
+                    ]
+                ),
             ];
         } else {
             return [

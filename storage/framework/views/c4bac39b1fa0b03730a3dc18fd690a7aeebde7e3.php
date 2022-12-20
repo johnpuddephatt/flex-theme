@@ -2,7 +2,7 @@
   <div class="flex flex-row w-full border-t border-sky">
     <?php if ($__env->exists('partials.' . get_post_type() . '-sidebar')) echo $__env->make('partials.' . get_post_type() . '-sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <div class="flex-1">
-      <div class="max-w-3xl mx-auto">
+      <div class="">
         <?php while(have_posts()): ?>
           <?php (the_post()); ?>
           <?php echo $__env->first(['partials.' . get_post_type() . '-header', 'partials.header'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>

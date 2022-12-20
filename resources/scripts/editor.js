@@ -164,97 +164,101 @@ wp.domReady(function () {
   //   },
   // });
 
-  // wp.blocks.registerBlockType('mrn/person', {
-  //   title: 'Person',
-  //   category: 'widgets',
-  //   edit: () => {
-  //     return wp.element.createElement(wp.blockEditor.InnerBlocks, {
-  //       template: [
-  //         [
-  //           'core/group',
-  //           {
-  //             className: 'wp-block-person',
-  //             templateLock: true,
-  //           },
-  //           [
-  //             [
-  //               'core/columns',
-  //               {
-  //                 templateLock: true,
-  //               },
-  //               [
-  //                 [
-  //                   'core/column',
-  //                   {
-  //                     width: '20%',
-  //                     templateLock: true,
-  //                   },
-  //                   [
-  //                     [
-  //                       'core/image',
-  //                       {
-  //                         sizeSlug: 'thumbnail',
-  //                         height: 150,
-  //                         width: 150,
-  //                       },
-  //                     ],
-  //                   ],
-  //                 ],
-  //                 [
-  //                   'core/column',
-  //                   {
-  //                     width: '80%',
-  //                     templateLock: 'all',
-  //                   },
-  //                   [
-  //                     [
-  //                       'core/heading',
-  //                       {
-  //                         placeholder: 'Name',
-  //                         level: 3,
-  //                       },
-  //                     ],
-  //                     [
-  //                       'core/heading',
-  //                       {
-  //                         placeholder: 'Position/title',
-  //                         level: 4,
-  //                       },
-  //                     ],
-  //                     [
-  //                       'mrn/button',
-  //                       {
-  //                         label: 'View details',
-  //                       },
-  //                     ],
-  //                   ],
-  //                 ],
-  //               ],
-  //             ],
-  //             [
-  //               'core/group',
-  //               {
-  //                 className: 'person-details',
-  //                 templateLock: false,
-  //                 hidden: true,
-  //               },
-  //               [
-  //                 [
-  //                   'core/paragraph',
-  //                   {
-  //                     placeholder: 'About this person',
-  //                   },
-  //                 ],
-  //               ],
-  //             ],
-  //           ],
-  //         ],
-  //       ],
-  //       templateLock: true,
-  //     });
-  //   },
-  //   save: () => {
-  //     return wp.element.createElement(wp.blockEditor.InnerBlocks.Content, {});
-  //   },
-  // });
+  wp.blocks.registerBlockType("mrn/person", {
+    title: "Person",
+    category: "widgets",
+    edit: () => {
+      return wp.element.createElement(wp.blockEditor.InnerBlocks, {
+        template: [
+          [
+            "core/group",
+            {
+              className: "wp-block-person",
+              templateLock: true,
+            },
+            [
+              [
+                "core/group",
+                {
+                  className: "person-summary",
+                  templateLock: true,
+                  hidden: true,
+                },
+                [
+                  [
+                    "core/columns",
+                    {
+                      templateLock: true,
+                    },
+                    [
+                      [
+                        "core/column",
+                        {
+                          width: "20%",
+                          templateLock: true,
+                        },
+                        [
+                          [
+                            "core/image",
+                            {
+                              sizeSlug: "thumbnail",
+                              height: 150,
+                              width: 150,
+                            },
+                          ],
+                        ],
+                      ],
+                      [
+                        "core/column",
+                        {
+                          width: "80%",
+                          templateLock: "all",
+                        },
+                        [
+                          [
+                            "core/heading",
+                            {
+                              placeholder: "Name",
+                              level: 3,
+                            },
+                          ],
+                          [
+                            "core/heading",
+                            {
+                              placeholder: "Position/title",
+                              level: 4,
+                            },
+                          ],
+                        ],
+                      ],
+                    ],
+                  ],
+                ],
+              ],
+              [
+                "core/group",
+                {
+                  className: "person-details",
+                  templateLock: false,
+                  hidden: true,
+                },
+                [
+                  [
+                    "core/paragraph",
+                    {
+                      placeholder: "About this person",
+                    },
+                  ],
+                ],
+              ],
+            ],
+          ],
+        ],
+        templateLock: true,
+      });
+    },
+    save: () => {
+      return wp.element.createElement(wp.blockEditor.InnerBlocks.Content, {});
+    },
+  });
 });

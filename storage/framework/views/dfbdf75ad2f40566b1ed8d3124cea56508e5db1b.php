@@ -13,7 +13,7 @@
     <div class="h-24"></div>
   <?php endif; ?>
 
-  <div class="container max-w-5xl mb-24">
+  <div class="container max-w-5xl mb-12">
 
     <div class="">
       <div class="inline-flex mt-1 mb-4 md:mb-6">
@@ -21,23 +21,46 @@
         <span class="px-3">&gt;</span>
         <a class="" href="<?php echo e(get_permalink(get_option('page_for_publications'))); ?>">Publications</a>
       </div>
-      <h2 class="max-w-3xl font-bold text-4xl lg:text-5xl text-blue">
+      <h2 class="max-w-3xl font-bold text-4xl lg:text-5xl text-navy">
         <?php echo $title; ?>
 
       </h2>
 
       <div class="mt-4 mb-6 text-xl font-semibold text-navy md:mb-4">
-        <?php echo e(get_the_date()); ?>
+        <?php echo e(get_the_date('F Y')); ?>
 
       </div>
 
-      <?php if(get_the_terms($post->ID, 'resourcetype')): ?>
-        <div class="mt-4 mb-6 flex flex-row gap-2">
-          <?php $__currentLoopData = get_the_terms($post->ID, 'resourcetype'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $type): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <a href="<?php echo e(get_term_link($type->term_id, 'resourcetype')); ?>"
-              class="bg-orange bg-opacity-10 rounded-lg px-6 text-sm py-2 font-semibold"><?php echo e($type->name); ?></a>
-          <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-        </div>
+      <div class="flex gap-4">
+
+        <?php if($publication_types): ?>
+          <div class="mt-4 mb-6 flex flex-row gap-2">
+            <?php $__currentLoopData = $publication_types; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $type): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+              <a href="<?php echo e(get_term_link($type->term_id, 'resourcetype')); ?>"
+                class="bg-sky rounded-lg rounded-tr-none px-6 text-sm py-2 font-semibold"><?php echo $type->name; ?></a>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+          </div>
+        <?php endif; ?>
+
+        <?php if($publication_areas_of_focus): ?>
+          <div class="mt-4 mb-6 flex flex-row gap-2">
+            <?php $__currentLoopData = $publication_areas_of_focus; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $area_of_focus): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+              <a href="<?php echo e(get_permalink($area_of_focus->ID)); ?>"
+                class="bg-sky rounded-lg rounded-tr-none px-6 text-sm py-2 font-semibold">
+                <?php echo $area_of_focus->post_title; ?></a>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+          </div>
+        <?php endif; ?>
+
+        <?php if($publication_what_we_dos): ?>
+          <div class="mt-4 mb-6 flex flex-row gap-2">
+            <?php $__currentLoopData = $publication_what_we_dos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $what_we_do): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+              <a href="<?php echo e(get_permalink($what_we_do->ID)); ?>"
+                class="bg-sky rounded-lg rounded-tr-none px-6 text-sm py-2 font-semibold">
+                <?php echo $what_we_do->post_title; ?></a>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+          </div>
+      </div>
       <?php endif; ?>
 
       <?php if(!empty($post->post_excerpt)): ?>
@@ -49,7 +72,7 @@
           <div class="flex items-center py-2 mt-8">
             <?php echo get_avatar(get_the_author_meta('ID'), 32, null, 'Profile image for ' . get_the_author(), [
                 'class' => "object-cover w-10 h-10 mr-2
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                rounded-full",
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    rounded-full",
             ]); ?>
 
             <div class="leading-tight">

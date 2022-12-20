@@ -12,10 +12,10 @@
       {!! get_search_form(false) !!}
     @endif
 
-    <div class="space-y-16">
+    <div class="space-y-6 lg:space-y-8">
       @php global $wp_query @endphp
       @if ($wp_query->found_posts)
-        <div class="max-w-3xl text-right">Found {{ $wp_query->found_posts }} results</div>
+        <div class="text-right">Found {{ $wp_query->found_posts }} results</div>
       @endif
       @while (have_posts())
         @php(the_post())

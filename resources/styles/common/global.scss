@@ -121,14 +121,14 @@ hr,
 }
 
 details {
-  @apply mb-4 p-4 border border-blue;
+  @apply mb-4 p-4 border border-sky rounded-br-medium;
 
   > div {
     @apply pt-6;
   }
 }
 summary {
-  @apply bg-sky py-3 px-4 -m-4 text-blue cursor-pointer text-lg;
+  @apply bg-sky rounded-br-medium py-3 px-4 -m-4 text-blue cursor-pointer text-lg;
 }
 
 cite p::before,
@@ -137,14 +137,14 @@ cite p::after {
 }
 
 .nav-links {
-  @apply mt-32 text-lg mx-auto max-w-4xl pt-4  border-blue justify-start space-x-8  flex justify-between;
+  @apply mt-12 text-lg mx-auto max-w-4xl pt-4  border-blue justify-center gap-8 flex;
 
   .current {
     @apply font-bold bg-sky;
   }
 
   .page-numbers {
-    @apply py-1 px-2 rounded;
+    @apply py-1 px-3 rounded;
     &:hover {
       @apply bg-sky;
     }

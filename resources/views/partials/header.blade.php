@@ -18,7 +18,7 @@
 
     <div class="">
 
-      <h2 class="pt-6 lg:pt-12 max-w-3xl font-bold text-3xl lg:text-4xl text-blue">
+      <h2 class="pt-6 lg:pt-12 max-w-3xl font-bold text-3xl lg:text-4xl text-navy">
         {!! $title !!}
       </h2>
       @if (isset($post) && isset($post->post_type) && $post->post_type == 'post')

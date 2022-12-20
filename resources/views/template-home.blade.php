@@ -143,8 +143,8 @@ Template Name: Home
               <a href="{{ get_permalink($block->ID) }}">{!! get_the_title($block->ID) !!}</a>
             </h3>
             <!-- <div class="max-w-sm mx-auto lg:mx-0">
-                    {!! wp_trim_words(get_the_excerpt($block->ID), 30) !!}
-                  </div> -->
+                      {!! wp_trim_words(get_the_excerpt($block->ID), 30) !!}
+                    </div> -->
             <a href="{{ get_permalink($block->ID) }}"
               class="lowercase inline-block mt-auto mx-auto lg:ml-0 border-2 border-green px-9 py-3 text-sm font-semibold rounded-xl rounded-tr-none whitespace-nowrap">Read</a>
           </div>
@@ -157,7 +157,7 @@ Template Name: Home
       <div
         class="rounded-tr-big lg:rounded-tr-none lg:rounded-br-big overflow-hidden bg-navy text-white flex flex-col items-start space-y-3 leading-tight lg:space-x-8 lg:space-y-0 lg:items-center lg:flex-row">
 
-        <div class="p-6 md:p-12 lg:p-24 flex-1">
+        <div class="p-6 md:p-12 lg:px-24 flex-1">
 
           <h3 class="text-3xl font-bold mb-4">
             {!! carbon_get_theme_option('newsletter_title') !!}

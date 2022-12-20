@@ -67,16 +67,16 @@
 
       </div>
 
-      <div class="bg-green bg-opacity-20 py-24">
+      <div class="bg-sky py-24">
         <form class="container max-w-3xl mx-auto" role="search" action="<?php echo e(home_url('/')); ?>" method="get"
           id="searchform">
           <h2 class="text-center mb-16 text-3xl font-bold lg:text-4xl text-blue">Find a publication</h2>
           <div class="flex flex-wrap px-8 gap-2 lg:gap-y-4 lg:gap-x-6">
             <input aria-label="Text to search for" type="text" name="s" placeholder="Search publications"
-              class="focus:shadow-outline w-full px-6 py-5 text-xl leading-tight border border-opacity-50 border-green rounded-lg appearance-none focus:outline-none" />
+              class="focus:shadow-outline w-full px-6 py-5 text-xl leading-tight border border-opacity-50 border-blue rounded-lg appearance-none focus:outline-none" />
             <input type="hidden" name="post_type" value="publication" />
             <select
-              class="focus:shadow-outline w-full md:w-2/5 flex-grow px-6 py-4 text-xl border border-opacity-50 border-green rounded-lg focus:outline-none"
+              class="focus:shadow-outline w-full md:w-2/5 flex-grow px-6 py-4 text-xl border border-opacity-50 border-blue rounded-lg focus:outline-none"
               name="post_resourcetype">
               <option value="">All publication types</option>
               <?php $__currentLoopData = $types; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $type): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -85,7 +85,7 @@
             </select>
 
             <select
-              class="focus:shadow-outline w-full md:w-2/5 flex-grow px-6 py-4 text-xl border border-opacity-50 border-green rounded-lg focus:outline-none"
+              class="focus:shadow-outline w-full md:w-2/5 flex-grow px-6 py-4 text-xl border border-opacity-50 border-blue rounded-lg focus:outline-none"
               name="post_areaoffocus">
               <option value="">All areas of focus</option>
               <?php $__currentLoopData = $areas_of_focus; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $area_of_focus): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>

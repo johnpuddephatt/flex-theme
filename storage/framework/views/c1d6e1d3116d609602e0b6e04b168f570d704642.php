@@ -1,7 +1,7 @@
 <?php $__env->startSection('content'); ?>
   <?php echo $__env->make('partials.page-header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
-  <div class="container min-h-screen my-12 xl:max-w-5xl">
+  <div class="container min-h-screen my-12 xl:max-w-5xl 2xl:max-w-6xl">
     <?php if(!have_posts()): ?>
        <?php if (isset($component)) { $__componentOriginald4c8f106e1e33ab85c5d037c2504e2574c1b0975 = $component; } ?>
 <?php $component = $__env->getContainer()->make(App\View\Components\Alert::class, ['type' => 'warning']); ?>
@@ -22,10 +22,10 @@
 
     <?php endif; ?>
 
-    <div class="space-y-16">
+    <div class="space-y-6 lg:space-y-8">
       <?php global $wp_query ?>
       <?php if($wp_query->found_posts): ?>
-        <div class="max-w-3xl text-right">Found <?php echo e($wp_query->found_posts); ?> results</div>
+        <div class="text-right">Found <?php echo e($wp_query->found_posts); ?> results</div>
       <?php endif; ?>
       <?php while(have_posts()): ?>
         <?php (the_post()); ?>

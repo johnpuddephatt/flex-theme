@@ -1,19 +1,23 @@
-(function () {
-  const headings = document.querySelectorAll(
-    '.wp-block-person .wp-block-columns'
-  );
+export default function () {
+  const persons = document.querySelectorAll(".wp-block-person");
 
-  Array.prototype.forEach.call(headings, (heading) => {
-    let btn = heading.querySelector('button');
-    let target = heading.nextElementSibling;
+  persons.forEach((person) => {
+    console.log(person);
+    let summary = person.querySelector(".wp-block-columns");
+    let details = person.querySelector(".person-details");
+    summary.setAttribute("aria-expanded", false);
+    details.hidden = true;
 
-    target.hidden = true;
+    summary.addEventListener("click", function () {
+      let expanded = summary.getAttribute("aria-expanded") === "true" || false;
 
-    btn.onclick = () => {
-      let expanded = btn.getAttribute('aria-expanded') === 'true' || false;
+      summary.setAttribute("aria-expanded", !expanded);
 
-      btn.setAttribute('aria-expanded', !expanded);
-      target.hidden = expanded;
-    };
+      if (!expanded) {
+        details.removeAttribute("hidden");
+      } else {
+        details.setAttribute("hidden", true);
+      }
+    });
   });
-})();
+}
