@@ -1,5 +1,5 @@
 <a href="{{ get_permalink($page->ID) }}">
-  <div class="flex flex-row bg-navy rounded-tr-medium rounded-bl-medium overflow-hidden xl:max-w-3xl items-center">
+  <div class="flex flex-row bg-navy rounded-tr-medium rounded-bl-giant xl:max-w-3xl items-center">
     <div class="mb-auto hidden lg:block relative">
       @if (has_post_thumbnail(isset($page->ID) ? $page->ID : '') &&
           isset(wp_get_attachment_metadata(get_post_thumbnail_id($page->ID))['sizes']['square-xs']))

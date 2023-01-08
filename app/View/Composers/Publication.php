@@ -45,6 +45,7 @@ class Publication extends Composer
                     "order" => "ASC",
                     "orderby" => "menu_order",
                     "hide_empty" => false,
+                    "numberposts" => -1,
                 ]),
                 "publication_files" => rwmb_get_value(
                     "file_advanced",
