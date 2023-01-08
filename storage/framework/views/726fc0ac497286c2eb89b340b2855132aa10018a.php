@@ -11,7 +11,7 @@
         type</span>
     </div>
     <?php $__currentLoopData = $types; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $type): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-      <a class="<?php if(get_term_link(get_queried_object_id()) == get_term_link($type->term_id, 'resourcetype')): ?> bg-opacity-100 text-navy <?php else: ?> hover:bg-opacity-30 bg-opacity-0 <?php endif; ?> pl-0 px-6 2xl:pl-0 2xl:px-8 block py-1.5 text-lg bg-sky transition"
+      <a class="<?php if(get_term_link(get_queried_object_id()) == get_term_link($type->term_id, 'resourcetype')): ?> bg-opacity-100 text-navy <?php else: ?> hover:bg-opacity100 bg-opacity-0 <?php endif; ?> pl-0 px-6 2xl:pl-0 2xl:px-8 block py-1.5 text-lg bg-sky transition"
         href="<?php echo e(get_term_link($type->term_id, 'resourcetype')); ?>">
         <span class="pl-10 2xl:pl-12 block mx-auto mr-4 w-72"><?php echo get_term($type->term_id)->name; ?></span>
       </a>
@@ -22,7 +22,7 @@
         area of focus</span>
     </div>
     <?php $__currentLoopData = $areas_of_focus; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $area_of_focus): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-      <a class="hover:bg-opacity-30 bg-opacity-0 pl-0 px-6 2xl:pl-0 2xl:px-8 block py-1.5 text-lg bg-sky transition"
+      <a class="hover:bg-opacity-100 bg-opacity-0 pl-0 px-6 2xl:pl-0 2xl:px-8 block py-1.5 text-lg bg-sky transition"
         href="<?php echo e(get_permalink($area_of_focus->ID)); ?>">
 
         <span class="pl-10 2xl:pl-12 block mx-auto mr-4 w-72"><?php echo $area_of_focus->post_title; ?></span>

@@ -19,9 +19,9 @@
 ?>
 
 <div class="text-center">
-  <h2 class="container text-center text-3xl lg:text-4xl font-bold text-blue mb-12">Latest publications</h2>
-  <div class="overflow-x-auto lg:overflow-x-hidden pb-6">
-    <div class="text-left grid grid-cols-3 gap-8 xl:gap-16 container max-w-none w-[200%] md:w-[150%] xl:w-full">
+  <h2 class="container text-3xl lg:text-4xl font-bold text-blue mb-12">Latest publications</h2>
+  <div class="overflow-x-hidden pb-6 container max-w-sm md:max-w-4xl xl:max-w-8xl relative">
+    <div class="text-left grid md:grid-cols-3 gap-8 xl:gap-16 md:w-[calc(150%+1.5rem)] xl:w-full">
       <?php $__currentLoopData = $latest_publications; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $publication): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <?php $category = get_the_terms($publication->ID, 'resourcetype') ? get_the_terms($publication->ID, 'resourcetype')[0] : null; ?>
         <div class="text-center">

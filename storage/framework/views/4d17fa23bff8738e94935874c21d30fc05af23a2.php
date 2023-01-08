@@ -5,7 +5,9 @@
               'square'
           ])): ?>
     <div class="lg:w-[50vw] max-w-5xl lg:ml-auto w-full ml-4">
-      <?php echo get_the_post_thumbnail(isset($post->ID) ? $post->ID : '', '16by9', ['class' => ' w-full rounded-bl-big']); ?>
+      <?php echo get_the_post_thumbnail(isset($post->ID) ? $post->ID : '', '16by9', [
+          'class' => ' w-full rounded-bl-medium xl:rounded-bl-big',
+      ]); ?>
 
     </div>
   <?php else: ?>

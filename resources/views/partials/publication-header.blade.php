@@ -5,7 +5,7 @@
           wp_get_attachment_metadata(get_post_thumbnail_id($post && isset($post->ID) ? $post->ID : ''))['sizes']['16by9']))
     <div class="w-1/2">
       {!! get_the_post_thumbnail(isset($post->ID) ? $post->ID : '', '16by9', [
-          'class' => ' w-full rounded-br-big',
+          'class' => ' w-full rounded-br-medium xl:rounded-br-big',
       ]) !!}
     </div>
   @else
@@ -68,7 +68,7 @@
           <div class="flex items-center py-2 mt-8">
             {!! get_avatar(get_the_author_meta('ID'), 32, null, 'Profile image for ' . get_the_author(), [
                 'class' => "object-cover w-10 h-10 mr-2
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    rounded-full",
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            rounded-full",
             ]) !!}
             <div class="leading-tight">
               <p class="text-sm font-semibold tracking-tight text-black">

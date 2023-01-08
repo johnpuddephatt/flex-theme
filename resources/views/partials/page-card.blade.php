@@ -6,10 +6,10 @@
         @if (has_post_thumbnail(isset($page->ID) ? $page->ID : '') &&
             isset(wp_get_attachment_metadata(get_post_thumbnail_id($page->ID))['sizes']['square-xs']))
         {!! get_the_post_thumbnail($page->ID, 'square-xs', [
-            'class' => 'w-72 rounded-tr-big rounded-bl-big max-w-none block ',
+            'class' => 'w-72 rounded-tr-medium rounded-bl-medium xl:rounded-tr-big xl:rounded-bl-big max-w-none block ',
         ]) !!}
         @else
-        <img src="https://via.placeholder.com/150" class="block w-72 rounded-tr-big rounded-bl-big max-w-none" />
+        <img src="https://via.placeholder.com/150" class="block w-72 rounded-tr-medium rounded-bl-medium xl:rounded-tr-big xl:rounded-bl-big max-w-none" />
 
         @endif
   </div>

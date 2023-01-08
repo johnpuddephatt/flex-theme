@@ -10,9 +10,9 @@
           isset(
               wp_get_attachment_metadata(get_post_thumbnail_id($post && isset($post->ID) ? $post->ID : ''))['sizes']['16by9']))
         <div class="mx-auto mt-4 max-w-md lg:max-w-none lg:mt-16 w-full lg:w-2/5 relative">
-          <div class="align-top inline-block bg-orange w-2/3 rounded-tl-big pt-[66.67%]"></div>
+          <div class="align-top inline-block bg-orange w-2/3 rounded-tl-medium xl:rounded-tl-big pt-[66.67%]"></div>
           <div
-            class="overflow-hidden relative inline-block bg-sky ml-[-35%] mt-[33.33%] w-2/3 rounded-tr-big rounded-bl-big pt-[66.67%]">
+            class="overflow-hidden relative inline-block bg-sky ml-[-35%] mt-[33.33%] w-2/3 rounded-tr-medium rounded-bl-medium xl:rounded-tr-big xl:rounded-bl-big pt-[66.67%]">
             {!! get_the_post_thumbnail(isset($post->ID) ? $post->ID : null, 'square', [
                 'class' => 'h-full w-full object-cover object-center inset-0 absolute',
             ]) !!}

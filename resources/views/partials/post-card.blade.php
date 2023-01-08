@@ -15,6 +15,6 @@
         'class' => 'object-cover object-center rounded-bl-medium w-72 h-72 hidden lg:block flex-none',
     ]) !!}
     @else
-    <div class="flex-none hidden lg:block rounded-bl-medium w-72 h-72 bg-opacity-30 bg-sky"></div>
+    <div class="flex-none hidden lg:block rounded-bl-medium w-72 h-72 bg-sky"></div>
     @endif
   </a>

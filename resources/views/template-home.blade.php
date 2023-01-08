@@ -52,7 +52,7 @@ Template Name: Home
     @if (carbon_get_theme_option('home_message_enabled'))
       <div class="container">
         <div
-          class="rounded-bl-medium rounded overflow-hidden bg-sky bg-opacity-30 flex flex-col items-start space-y-3 leading-tight lg:space-x-8 lg:space-y-0 lg:items-center md:flex-row">
+          class="rounded-bl-medium rounded overflow-hidden bg-sky flex flex-col items-start space-y-3 leading-tight lg:space-x-8 lg:space-y-0 lg:items-center md:flex-row">
           @if (carbon_get_theme_option('home_message_image'))
             <div class="hidden md:block w-72 h-72 bg-blue">
               {!! wp_get_attachment_image(carbon_get_theme_option('home_message_image'), 'thumbnail', '', [
@@ -81,9 +81,9 @@ Template Name: Home
         <h2 class="container text-center text-3xl lg:text-4xl font-bold text-blue mb-16">Latest updates</h2>
         <div class="container grid lg:grid-cols-2">
           <div class="pr-16 relative">
-            <div class="align-top inline-block bg-orange w-2/3 rounded-tl-big pt-[66.67%]"></div>
+            <div class="align-top inline-block bg-orange w-2/3 rounded-tl-medium xl:rounded-tl-big pt-[66.67%]"></div>
             <div
-              class="overflow-hidden relative inline-block bg-sky ml-[-35%] mt-[33.33%] w-2/3 rounded-tr-big rounded-bl-big pt-[66.67%]">
+              class="overflow-hidden relative inline-block bg-sky ml-[-35%] mt-[33.33%] w-2/3 rounded-tr-medium rounded-bl-medium xl:rounded-tr-big xl:rounded-bl-big pt-[66.67%]">
               {!! get_the_post_thumbnail($home_posts[0]->ID, null, [
                   'class' => 'h-full w-full object-cover object-center inset-0 absolute',
               ]) !!}
@@ -124,16 +124,16 @@ Template Name: Home
             <a href="{{ get_permalink($block->ID) }}" class="relative">
               <div class="max-w-lg mx-auto">
                 <div
-                  class="{{ match ($loop->iteration) {1 => '',2 => 'mt-[8.333%]',3 => 'ml-[8.333%] mt-[8.333%]',4 => 'ml-[8.333%]'} }} top-0 absolute -z-10 rounded-tr-big rounded-bl-big bg-sky bg-opacity-40 aspect-square w-10/12">
+                  class="{{ match ($loop->iteration) {1 => '',2 => 'mt-[8.333%]',3 => 'ml-[8.333%] mt-[8.333%]',4 => 'ml-[8.333%]'} }} top-0 absolute -z-10 rounded-tr-medium rounded-bl-medium xl:rounded-tr-big xl:rounded-bl-big bg-sky bg-opacity-40 aspect-square w-10/12">
                 </div>
                 {!! get_the_post_thumbnail($block->ID, 'square', [
                     'class' =>
-                        'block w-10/12 rounded-tr-big rounded-bl-big ' .
+                        'block w-10/12 rounded-tr-medium rounded-bl-medium xl:rounded-tr-big xl:rounded-bl-big ' .
                         match ($loop->iteration) {
-                            1 => 'ml-[8.333%] mt-[8.333%]',
+                            1 => 'mb-[8.333%]',
                             2 => 'ml-[8.333%] mb-[8.333%]',
                             3 => 'mb-[8.333%]',
-                            4 => 'mt-[8.333%]',
+                            4 => 'ml-[8.333%] mb-[8.333%]',
                         },
                 ]) !!}
               </div>
@@ -143,8 +143,8 @@ Template Name: Home
               <a href="{{ get_permalink($block->ID) }}">{!! get_the_title($block->ID) !!}</a>
             </h3>
             <!-- <div class="max-w-sm mx-auto lg:mx-0">
-                      {!! wp_trim_words(get_the_excerpt($block->ID), 30) !!}
-                    </div> -->
+                                      {!! wp_trim_words(get_the_excerpt($block->ID), 30) !!}
+                                    </div> -->
             <a href="{{ get_permalink($block->ID) }}"
               class="lowercase inline-block mt-auto mx-auto lg:ml-0 border-2 border-green px-9 py-3 text-sm font-semibold rounded-xl rounded-tr-none whitespace-nowrap">Read</a>
           </div>
@@ -155,7 +155,7 @@ Template Name: Home
 
     <form action="{{ carbon_get_theme_option('newsletter_url') }}" method="POST" class="container mb-16">
       <div
-        class="rounded-tr-big lg:rounded-tr-none lg:rounded-br-big overflow-hidden bg-navy text-white flex flex-col items-start space-y-3 leading-tight lg:space-x-8 lg:space-y-0 lg:items-center lg:flex-row">
+        class="rounded-tr-medium lg:rounded-tr-none lg:rounded-br-big overflow-hidden bg-navy text-white flex flex-col items-start space-y-3 leading-tight lg:space-x-8 lg:space-y-0 lg:items-center lg:flex-row">
 
         <div class="p-6 md:p-12 lg:px-24 flex-1">
 
