@@ -14,7 +14,6 @@ class Section extends Composer
     protected static $views = [
         "partials.section-header",
         "partials.section-navigation",
-        "template-menu",
     ];
 
     /**

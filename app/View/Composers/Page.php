@@ -16,7 +16,6 @@ class Page extends Composer
         "template-areaoffocus",
         "template-whatwedo",
         "template-fullwidth",
-        "template-menu",
     ];
 
     /**
