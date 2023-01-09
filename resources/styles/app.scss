@@ -23,3 +23,16 @@
 .page-template-template-training #main-menu-container nav {
   display: none;
 }
+
+@media (min-width: 1536px) {
+  .wp-block-lazyblock-tagged-posts,
+  .wp-block-lazyblock-publication {
+    max-width: 72rem !important;
+  }
+}
+@media (min-width: 1280px) {
+  .wp-block-lazyblock-tagged-posts,
+  .wp-block-lazyblock-publication {
+    max-width: 72rem !important;
+  }
+}
