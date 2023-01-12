@@ -3,7 +3,7 @@
     class="!no-underline my-16 flex flex-col items-stretch lg:flex-row text-white overflow-hidden">
     <div class="rounded-tl-flex bg-navy overflow-hidden">
       {!! get_the_post_thumbnail($area_of_focus, 'square', [
-          'class' => '!my-0 w-full lg:w-56 object-cover object-center rounded-br-flex flex-shrink-0 h-auto',
+          'class' => '!my-0 w-full lg:w-48 object-cover object-center rounded-br-flex flex-shrink-0 h-auto',
       ]) !!}
     </div>
     <div class="p-8 lg:px-12 flex-1 bg-navy flex-col items-start justify-center">
