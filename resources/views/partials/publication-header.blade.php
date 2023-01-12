@@ -5,7 +5,7 @@
           wp_get_attachment_metadata(get_post_thumbnail_id($post && isset($post->ID) ? $post->ID : ''))['sizes']['16by9']))
     <div class="w-1/2">
       {!! get_the_post_thumbnail(isset($post->ID) ? $post->ID : '', '16by9', [
-          'class' => ' w-full rounded-br-medium xl:rounded-br-big',
+          'class' => ' w-full rounded-br-flex',
       ]) !!}
     </div>
   @else

@@ -6,7 +6,7 @@
     <div class="mx-auto mt-4 max-w-md lg:max-w-none lg:mt-12 w-full lg:w-1/3 relative">
       <div class="align-top inline-block bg-orange w-2/3 rounded-tl-medium lg:rounded-tl-big pt-[66.67%]"></div>
       <div
-        class="overflow-hidden relative inline-block bg-sky ml-[-35%] mt-[33.33%] w-2/3 rounded-tr-medium rounded-bl-medium xl:rounded-tr-big xl:rounded-bl-big pt-[66.67%]">
+        class="rounded-tr-flex rounded-bl-flex overflow-hidden relative inline-block bg-sky ml-[-35%] mt-[33.33%] w-2/3 pt-[66.67%]">
         {!! get_the_post_thumbnail(isset($post->ID) ? $post->ID : null, 'square', [
             'class' => 'h-full w-full object-cover object-center inset-0 absolute',
         ]) !!}
