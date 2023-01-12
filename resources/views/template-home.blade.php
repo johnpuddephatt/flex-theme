@@ -131,12 +131,12 @@ Template Name: Home
               </div>
             </a>
 
-            <h3 class="text-2xl font-semibold leading-tight pt-8">
+            <h3 class="text-2xl font-semibold leading-tight">
               <a href="{{ get_permalink($block->ID) }}">{!! get_the_title($block->ID) !!}</a>
             </h3>
             <!-- <div class="max-w-sm mx-auto lg:mx-0">
-                                                                                                                                    {!! wp_trim_words(get_the_excerpt($block->ID), 30) !!}
-                                                                                                                                  </div> -->
+                                                                                                                                          {!! wp_trim_words(get_the_excerpt($block->ID), 30) !!}
+                                                                                                                                        </div> -->
             <a href="{{ get_permalink($block->ID) }}"
               class="lowercase inline-block mt-auto mx-auto border-2 border-green px-9 py-3 text-sm font-semibold rounded-xl rounded-tr-none whitespace-nowrap">Read</a>
           </div>
@@ -153,7 +153,7 @@ Template Name: Home
           <h3 class="text-3xl font-bold mb-4">
             {!! carbon_get_theme_option('newsletter_title') !!}
           </h3>
-          <p class="font-semibold text-lg mb-12">{!! carbon_get_theme_option('newsletter_subtitle') !!}</p>
+          <p class="font-semibold text-xl mb-12">{!! carbon_get_theme_option('newsletter_subtitle') !!}</p>
 
           <div class="flex w-full max-w-2xl">
             <input name="EMAIL"
@@ -162,7 +162,7 @@ Template Name: Home
             <div style="position: absolute; left: -5000px;"><input type="text"
                 name="b_31c47f05892f67100d4173ae1_d783a08397" tabindex="-1" value=""></div>
             <button type="submit"
-              class="bg-green border-2 text-sm lowercase text-base border-green inline-block px-6 py-3 font-semibold rounded-br-xl whitespace-nowrap">
+              class="bg-green border-2 lowercase text-base border-green inline-block px-6 py-3 font-semibold rounded-br-xl whitespace-nowrap">
               {{ carbon_get_theme_option('newsletter_button_text') ? carbon_get_theme_option('newsletter_button_text') : 'Sign up' }}
             </button>
           </div>
