@@ -121,14 +121,14 @@ hr,
 }
 
 details {
-  @apply mb-4 p-4 border border-sky rounded-br-medium;
+  @apply mb-4 p-4 border border-sky rounded-br-xl;
 
   > div {
     @apply pt-6;
   }
 }
 summary {
-  @apply bg-sky rounded-br-medium py-3 px-4 -m-4 text-blue cursor-pointer text-lg;
+  @apply bg-sky rounded-br-xl py-3 px-4 -m-4 text-blue cursor-pointer text-lg;
 }
 
 cite p::before,
@@ -152,6 +152,6 @@ cite p::after {
 
   .nav-previous,
   .nav-next {
-    @apply inline-flex px-6 py-2 text-lg text-navy border-2 border-blue rounded-tr-none rounded-xl focus:outline-none hover:bg-sky;
+    @apply text-sm font-semibold inline-flex px-6 py-2 lowercase text-navy border-2 border-blue rounded-tr-none rounded-xl focus:outline-none hover:bg-sky;
   }
 }

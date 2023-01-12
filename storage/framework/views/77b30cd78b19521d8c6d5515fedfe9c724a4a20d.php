@@ -1,16 +1,16 @@
 <div class="border-t border-sky relative lg:pt-16">
   <div
-    class="<?php echo e($background ?? 'bg-sky'); ?> z-10 px-0 container flex flex-col-reverse rounded-bl-medium xl:rounded-bl-big overflow-hidden items-start mx-auto text-white max-w-7xl md:flex-row">
+    class="z-10 px-0 container flex items-stretch flex-col-reverse overflow-hidden mx-auto text-white max-w-7xl md:flex-row">
     <?php if(has_post_thumbnail(isset($post->ID) ? $post->ID : '') &&
         isset(wp_get_attachment_metadata(get_post_thumbnail_id($post->ID))['sizes']['square'])): ?>
-      <div class="relative flex-1 lg:max-w-lg">
+      <div class="<?php echo e($background ?? 'bg-sky'); ?> rounded-bl-flex relative flex-1 lg:max-w-lg overflow-hidden">
         <?php echo get_the_post_thumbnail(isset($post->ID) ? $post->ID : '', 'square', [
-            'class' => 'w-full rounded-tr-medium xl:rounded-tr-big',
+            'class' => 'w-full rounded-tr-flex',
         ]); ?>
 
       </div>
     <?php endif; ?>
-    <div class="lg:pt-40 px-4 py-12 lg:p-16 mx-auto md:flex-1">
+    <div class="<?php echo e($background ?? 'bg-sky'); ?> lg:pt-40 px-4 py-12 lg:p-16 md:flex-1 flex flex-col items-start">
 
       <h2 class="<?php echo e($titletext ?? 'text-navy'); ?> font-bold text-4xl lg:text-6xl"><?php echo e($post->post_title); ?>
 

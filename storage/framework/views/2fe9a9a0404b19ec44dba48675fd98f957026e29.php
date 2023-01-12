@@ -6,11 +6,11 @@
         <?php if(has_post_thumbnail(isset($page->ID) ? $page->ID : '') &&
             isset(wp_get_attachment_metadata(get_post_thumbnail_id($page->ID))['sizes']['square-xs'])): ?>
         <?php echo get_the_post_thumbnail($page->ID, 'square-xs', [
-            'class' => 'w-72 rounded-tr-medium rounded-bl-medium xl:rounded-tr-big xl:rounded-bl-big max-w-none block ',
+            'class' => 'w-72 rounded-tr-flex rounded-bl-flex max-w-none block ',
         ]); ?>
 
         <?php else: ?>
-        <img src="https://via.placeholder.com/150" class="block w-72 rounded-tr-medium rounded-bl-medium xl:rounded-tr-big xl:rounded-bl-big max-w-none" />
+        <img src="https://via.placeholder.com/150" class="block w-72 rounded-tr-flex rounded-bl-flex max-w-none" />
 
         <?php endif; ?>
   </div>
@@ -18,7 +18,7 @@
     <h3 class="mt-2 mb-4 text-2xl font-bold lg:text-4xl text-navy"><?php echo get_the_title($page->ID); ?></h3>
     <p class="md:text-lg"><?php echo wp_trim_words(get_the_excerpt($page->ID), 40); ?></p>
     <span
-      class="font-semibold inline-block mt-8 lg:mt-16 py-3 px-6 rounded-xl rounded-tr-none border-2 border-green text-lg text-navy">Read
+      class="font-semibold inline-block text-sm mt-8 lg:mt-16 py-3 px-6 rounded-xl rounded-tr-none border-2 border-green lowercase text-navy">Read
       more</span>
   </div>
   </div>

@@ -20,26 +20,26 @@
     <?php endif; ?>
 
     <!-- <form class="max-w-3xl mx-auto mb-24" role="search" action="<?php echo e(home_url('/')); ?>" method="get" id="searchform">
-            <input type="hidden" name="post_type" value="post" />
-            <div class="flex flex-wrap px-8 py-12 lg:flex-nowrap">
-              <input type="text" aria-label="Text to search for" name="s" placeholder="Search latest updates"
-                class="text-lg flex-1 inline-block rounded-l-lg p-4 border-2 border-blue">
-              <button type="submit"
-                class="bg-blue text-white border-2 text-base border-blue inline-block px-8 py-4 font-semibold rounded-br-lg whitespace-nowrap">
-                Search
-              </button>
+                <input type="hidden" name="post_type" value="post" />
+                <div class="flex flex-wrap px-8 py-12 lg:flex-nowrap">
+                  <input type="text" aria-label="Text to search for" name="s" placeholder="Search latest updates"
+                    class="text-lg flex-1 inline-block rounded-l-lg p-4 border-2 border-blue">
+                  <button type="submit"
+                    class="bg-blue text-white border-2 text-base border-blue inline-block px-8 py-4 font-semibold rounded-br-lg whitespace-nowrap">
+                    Search
+                  </button>
 
-            </div>
-          </form> -->
+                </div>
+              </form> -->
 
-    <div class="space-y-8 xl:space-y-16 max-w-4xl mx-auto">
+    <div class="space-y-8 xl:space-y-12 max-w-4xl mx-auto">
       <?php while(have_posts()): ?>
         <?php (the_post()); ?>
         <?php echo $__env->make('partials.post-card', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
       <?php endwhile; ?>
     </div>
 
-    <div class="mt-16">
+    <div class="mt-12">
       <?php echo get_the_posts_navigation(); ?>
 
     </div>

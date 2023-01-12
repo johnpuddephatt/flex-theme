@@ -28,12 +28,12 @@
 
           @php $wp_the_query = new WP_Query() @endphp
           <div class="max-w-3xl text-right">
-            Found {{ get_queried_object()->count }} resources.
+            Found {{ get_queried_object()->count }} publications.
           </div>
 
           @if (!have_posts())
             <x-alert type="warning">
-              {!! __('Sorry, no matching resources were found.', 'sage') !!}
+              {!! __('Sorry, no matching publications were found.', 'sage') !!}
             </x-alert>
           @endif
 

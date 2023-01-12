@@ -13,13 +13,18 @@
       <div class="space-y-4">        
         <?php $__currentLoopData = $publication_files; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $file): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
           <a href="<?php echo e($file['url']); ?>"
-            class="flex bg-white text-navy max-w-3xl rounded-tl-medium pr-8 overflow-hidden">
-            <div class="w-32 h-32 bg-blue rounded-br-medium"></div>
-            <div class="py-6 px-12 flex-1">
-              <h3 class="mb-3 font-semibold text-lg"><?php echo $file['title']; ?></h3>
+            class="flex  text-navy max-w-3xl items-stretch overflow-hidden">
+            <div class="bg-white rounded-tl-flex overflow-hidden">
+              <div class="w-32 h-32 bg-blue  rounded-br-flex"></div>
+            </div>
+            <div class="py-6 px-12 flex-1 bg-white flex flex-col">
+              <h3 class="mb-1 font-semibold text-lg"><?php echo $file['title']; ?></h3>
               <p><?php echo e(get_the_excerpt($file['ID'])); ?></p>
             </div>
-            <?php echo e(get_svg('icons.arrow-right', 'h-12 w-12 text-navy my-auto')); ?>
+            <div class="bg-white pr-8 flex flex-col justify-center">
+            <?php echo e(get_svg('icons.arrow-right', 'h-8 w-8 text-navy my-auto')); ?>
+
+          </div>
           </a>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
       </div>

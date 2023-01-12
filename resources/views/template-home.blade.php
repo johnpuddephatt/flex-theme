@@ -13,7 +13,7 @@ Template Name: Home
           </h2>
           <p class="mt-8 font-semibold text-lg">{{ carbon_get_theme_option('home_hero_subtitle') }}</p>
 
-          <a class="border-2 rounded-tr-none rounded-2xl border-green py-3 px-6 font-semibold lowercase inline-block mt-12"
+          <a class="border-2 rounded-tr-none rounded-xl border-green py-3 px-6 font-semibold lowercase inline-block mt-12"
             href="#">Find out how</a>
 
         </div>
@@ -21,27 +21,27 @@ Template Name: Home
         <div class="relative flex-none w-2/3 mb-6 ml-auto pr-4 md:w-1/2 lg:my-0 md:pl-20">
           <div class="w-full relative pt-[100%]">
             <div class="grid grid-cols-4 grid-rows-4 absolute inset-0">
-              <div class="bg-navy rounded-tr-3xl rounded-bl-3xl overflow-hidden"></div>
-              <div class="bg-green rounded-tr-3xl rounded-bl-3xl overflow-hidden"></div>
-              <div class="bg-orange rounded-tl-3xl rounded-br-3xl overflow-hidden"></div>
-              <div class="bg-sky rounded-tr-3xl rounded-bl-3xl overflow-hidden">
+              <div class="rounded-bl-flex rounded-tr-flex bg-navy overflow-hidden"></div>
+              <div class="rounded-bl-flex rounded-tr-flex bg-green overflow-hidden"></div>
+              <div class="rounded-br-flex rounded-tl-flex bg-orange overflow-hidden"></div>
+              <div class="rounded-bl-flex rounded-tr-flex bg-sky overflow-hidden">
                 {!! $hero_images[0] ?? null !!}
               </div>
 
-              <div class="rounded-tr-3xl rounded-bl-3xl overflow-hidden"></div>
-              <div class="bg-orange rounded-tr-3xl rounded-bl-3xl overflow-hidden"></div>
-              <div class="bg-navy rounded-tl-3xl rounded-br-3xl overflow-hidden">{!! $hero_images[1] ?? null !!}</div>
-              <div class="bg-sky rounded-tl-3xl rounded-br-3xl overflow-hidden"></div>
+              <div class="rounded-bl-flex rounded-tr-3xl overflow-hidden"></div>
+              <div class="rounded-tr-flex rounded-bl-flex bg-orange overflow-hidden"></div>
+              <div class="rounded-tl-flex rounded-br-flex bg-navy overflow-hidden">{!! $hero_images[1] ?? null !!}</div>
+              <div class="rounded-tl-flex rounded-br-flex bg-sky overflow-hidden"></div>
 
-              <div class="bg-sky rounded-tr-3xl rounded-bl-3xl overflow-hidden"></div>
-              <div class="bg-navy rounded-tl-3xl rounded-br-3xl overflow-hidden"></div>
-              <div class="bg-green rounded-tl-3xl rounded-br-3xl overflow-hidden">{!! $hero_images[2] ?? null !!}</div>
-              <div class="rounded-tr-3xl rounded-bl-3xl overflow-hidden"></div>
+              <div class="rounded-tr-flex rounded-bl-flex bg-sky overflow-hidden"></div>
+              <div class="rounded-tl-flex rounded-br-flex bg-navy overflow-hidden"></div>
+              <div class="rounded-tl-flex rounded-br-flex bg-green overflow-hidden">{!! $hero_images[2] ?? null !!}</div>
+              <div class="rounded-tr-flex rounded-bl-flex overflow-hidden"></div>
 
-              <div class="rounded-tr-3xl rounded-bl-3xl overflow-hidden"></div>
-              <div class="bg-green rounded-tl-3xl rounded-br-3xl overflow-hidden"></div>
-              <div class="bg-sky rounded-tr-3xl rounded-bl-3xl overflow-hidden"></div>
-              <div class="bg-orange rounded-tr-3xl rounded-bl-3xl overflow-hidden"></div>
+              <div class="rounded-tr-flex rounded-bl-flex overflow-hidden"></div>
+              <div class="rounded-tl-flex rounded-br-flex bg-green overflow-hidden"></div>
+              <div class="rounded-tr-flex rounded-bl-flex bg-sky overflow-hidden"></div>
+              <div class="rounded-tr-flex rounded-bl-flex bg-orange overflow-hidden"></div>
             </div>
           </div>
 
@@ -51,16 +51,15 @@ Template Name: Home
 
     @if (carbon_get_theme_option('home_message_enabled'))
       <div class="container">
-        <div
-          class="rounded-bl-medium rounded overflow-hidden bg-sky flex flex-col items-start space-y-3 leading-tight lg:space-x-8 lg:space-y-0 lg:items-center md:flex-row">
+        <div class="overflow-hidden flex flex-col leading-tight md:flex-row">
           @if (carbon_get_theme_option('home_message_image'))
-            <div class="hidden md:block w-72 h-72 bg-blue">
+            <div class="rounded-bl-medium overflow-hidden items-stretch hidden md:block w-72 h-72 bg-blue">
               {!! wp_get_attachment_image(carbon_get_theme_option('home_message_image'), 'thumbnail', '', [
                   'class' => 'w-full h-auto',
               ]) !!}
             </div>
           @endif
-          <div class="p-8">
+          <div class="p-8 bg-sky flex flex-1 flex-col justify-center items-start">
             <div>
               <h3 class="text-3xl font-bold text-navy">
                 {!! carbon_get_theme_option('home_message_title') !!}
@@ -120,21 +119,14 @@ Template Name: Home
 
       <div class="container grid grid-cols-1 gap-x-24 lg:gap-x-48 gap-y-24 md:grid-cols-2">
         @foreach ($home_blocks as $block)
-          <div class="flex flex-col space-y-8 text-center lg:text-left">
+          <div class="flex flex-col space-y-8 text-center">
             <a href="{{ get_permalink($block->ID) }}" class="relative">
-              <div class="max-w-lg mx-auto">
+              <div class="max-w-lg mx-auto relative">
                 <div
-                  class="{{ match ($loop->iteration) {1 => 'ml-[8.333%] mt-[8.333%]',2 => 'mt-[8.333%]',3 => 'ml-[8.333%] mt-[8.333%]',4 => 'mt-[8.333%]'} }} top-0 absolute -z-10 rounded-tr-medium rounded-bl-medium xl:rounded-tr-big xl:rounded-bl-big bg-sky bg-opacity-40 aspect-square w-10/12">
+                  class="ml-[8.333%] mt-[8.333%] top-0 absolute -z-10 rounded-tr-medium rounded-bl-medium xl:rounded-tr-big xl:rounded-bl-big bg-sky bg-opacity-40 aspect-square w-10/12">
                 </div>
                 {!! get_the_post_thumbnail($block->ID, 'square', [
-                    'class' =>
-                        'block w-10/12 rounded-tr-medium rounded-bl-medium xl:rounded-tr-big xl:rounded-bl-big ' .
-                        match ($loop->iteration) {
-                            1 => 'mb-[8.333%]',
-                            2 => 'ml-[8.333%] mb-[8.333%]',
-                            3 => 'mb-[8.333%]',
-                            4 => 'ml-[8.333%] mb-[8.333%]',
-                        },
+                    'class' => 'block w-10/12 rounded-tr-medium rounded-bl-medium xl:rounded-tr-big xl:rounded-bl-big mb-[8.333%]',
                 ]) !!}
               </div>
             </a>
@@ -143,10 +135,10 @@ Template Name: Home
               <a href="{{ get_permalink($block->ID) }}">{!! get_the_title($block->ID) !!}</a>
             </h3>
             <!-- <div class="max-w-sm mx-auto lg:mx-0">
-                                        {!! wp_trim_words(get_the_excerpt($block->ID), 30) !!}
-                                      </div> -->
+                                                                                                                    {!! wp_trim_words(get_the_excerpt($block->ID), 30) !!}
+                                                                                                                  </div> -->
             <a href="{{ get_permalink($block->ID) }}"
-              class="lowercase inline-block mt-auto mx-auto lg:ml-0 border-2 border-green px-9 py-3 text-sm font-semibold rounded-xl rounded-tr-none whitespace-nowrap">Read</a>
+              class="lowercase inline-block mt-auto mx-auto border-2 border-green px-9 py-3 text-sm font-semibold rounded-xl rounded-tr-none whitespace-nowrap">Read</a>
           </div>
         @endforeach
       </div>
@@ -154,29 +146,29 @@ Template Name: Home
     </div>
 
     <form action="{{ carbon_get_theme_option('newsletter_url') }}" method="POST" class="container mb-16">
-      <div
-        class="rounded-tr-medium lg:rounded-tr-none lg:rounded-br-big overflow-hidden bg-navy text-white flex flex-col items-start space-y-3 leading-tight lg:space-x-8 lg:space-y-0 lg:items-center lg:flex-row">
+      <div class="overflow-hidden text-white flex flex-row items-stretch leading-tight">
 
-        <div class="p-6 md:p-12 lg:px-24 flex-1">
+        <div class="bg-navy flex flex-col items-start justify-center p-6 md:p-12 lg:px-24 flex-1">
 
           <h3 class="text-3xl font-bold mb-4">
             {!! carbon_get_theme_option('newsletter_title') !!}
           </h3>
           <p class="font-semibold text-lg mb-12">{!! carbon_get_theme_option('newsletter_subtitle') !!}</p>
 
-          <div class="flex flex-row">
-            <input name="EMAIL" class="bg-navy text-base flex-1 inline-block rounded-l-lg p-4 border-2 border-green"
-              type="text" placeholder="Enter your email address">
+          <div class="flex w-full max-w-2xl">
+            <input name="EMAIL"
+              class="bg-navy text-base flex-1 inline-block rounded-l-xl py-4 px-6 border-2 border-green" type="text"
+              placeholder="Enter your email address">
             <div style="position: absolute; left: -5000px;"><input type="text"
                 name="b_31c47f05892f67100d4173ae1_d783a08397" tabindex="-1" value=""></div>
             <button type="submit"
-              class="bg-green border-2 text-base border-green inline-block px-6 py-3 font-semibold rounded-br-lg whitespace-nowrap">
+              class="bg-green border-2 text-sm lowercase text-base border-green inline-block px-6 py-3 font-semibold rounded-br-xl whitespace-nowrap">
               {{ carbon_get_theme_option('newsletter_button_text') ? carbon_get_theme_option('newsletter_button_text') : 'Sign up' }}
             </button>
           </div>
         </div>
         @if (carbon_get_theme_option('newsletter_image'))
-          <div class="hidden lg:block lg:w-96 lg:h-96 bg-blue">
+          <div class="rounded-br-flex hidden lg:block lg:w-96 lg:h-96 bg-blue overflow-hidden">
             {!! wp_get_attachment_image(carbon_get_theme_option('newsletter_image'), 'square', '', [
                 'class' => 'w-full h-auto',
             ]) !!}

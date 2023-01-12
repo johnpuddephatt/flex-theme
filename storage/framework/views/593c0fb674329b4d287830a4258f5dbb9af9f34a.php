@@ -14,11 +14,11 @@
   </div>
     <?php if(has_post_thumbnail($post_id ?? null)): ?>
     <?php echo get_the_post_thumbnail($post_id ?? null, 'square', [
-        'class' => '!my-0 object-cover object-center rounded-bl-medium w-72 h-72 hidden lg:block flex-none',
+        'class' => '!my-0 object-cover object-center rounded-bl-flex w-72 h-72 hidden lg:block flex-none',
     ]); ?>
 
     <?php else: ?>
-    <div class="flex-none hidden lg:block rounded-bl-medium w-72 h-72 bg-sky"></div>
+    <div class="flex-none hidden lg:block rounded-bl-flex w-72 h-72 bg-sky"></div>
     <?php endif; ?>
   </a>
 <?php /**PATH /Users/johnpuddephatt/Sites/flex/web/app/themes/flex-2022/resources/views/partials/post-card.blade.php ENDPATH**/ ?>

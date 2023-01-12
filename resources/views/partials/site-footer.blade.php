@@ -24,7 +24,7 @@
         </p>
 
         <p class="text-gray-300 company-info mt-6 text-sm">
-          Flex is a registered charity.
+          FLEX is a registered charity.
           @if (carbon_get_theme_option('charitynumber'))
             Charity no. {{ carbon_get_theme_option('charitynumber') }}
           @endif

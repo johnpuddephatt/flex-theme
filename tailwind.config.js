@@ -47,9 +47,14 @@ module.exports = {
     },
     extend: {
       borderRadius: {
-        medium: "3em",
-        big: "6em",
-        giant: "12em",
+        // medium: "3em",
+        // big: "6em",
+        // giant: "12em",
+        flex: "20%",
+        flex169: "11.24% 20%",
+        medium: "20%",
+        big: "20%",
+        giant: "20%",
       },
       maxWidth: {
         "8xl": "90rem",

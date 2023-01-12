@@ -94,7 +94,7 @@
             </select>
 
             <input
-              class="mt-6 mx-auto bg-green inline-flex w-auto px-12 py-4 text-base text-center lowercase rounded-2xl rounded-tr-none appearance-none text-white focus:outline-none"
+              class="mt-6 mx-auto bg-green inline-flex w-auto px-12 py-4 text-base text-center lowercase rounded-xl rounded-tr-none appearance-none text-white focus:outline-none"
               type="submit" alt="Search" value="Search" />
           </div>
         </form>
