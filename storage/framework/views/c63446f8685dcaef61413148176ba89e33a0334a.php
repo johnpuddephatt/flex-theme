@@ -51,7 +51,7 @@
       <div class="container">
         <div class="overflow-hidden flex flex-col leading-tight md:flex-row">
           <?php if(carbon_get_theme_option('home_message_image')): ?>
-            <div class="rounded-bl-medium overflow-hidden items-stretch hidden md:block w-72 h-72 bg-blue">
+            <div class="rounded-bl-flex overflow-hidden items-stretch hidden md:block w-72 h-72 bg-blue">
               <?php echo wp_get_attachment_image(carbon_get_theme_option('home_message_image'), 'thumbnail', '', [
                   'class' => 'w-full h-auto',
               ]); ?>
@@ -81,9 +81,9 @@
         <h2 class="container text-center text-3xl lg:text-4xl font-bold text-blue mb-16">Latest updates</h2>
         <div class="container grid lg:grid-cols-2">
           <div class="pr-16 relative">
-            <div class="align-top inline-block bg-orange w-2/3 rounded-tl-medium xl:rounded-tl-big pt-[66.67%]"></div>
+            <div class="rounded-tl-flex align-top inline-block bg-orange w-2/3 pt-[66.67%]"></div>
             <div
-              class="overflow-hidden relative inline-block bg-sky ml-[-35%] mt-[33.33%] w-2/3 rounded-tr-medium rounded-bl-medium xl:rounded-tr-big xl:rounded-bl-big pt-[66.67%]">
+              class="rounded-tr-flex rounded-bl-flex overflow-hidden relative inline-block bg-sky ml-[-35%] mt-[33.33%] w-2/3 pt-[66.67%]">
               <?php echo get_the_post_thumbnail($home_posts[0]->ID, null, [
                   'class' => 'h-full w-full object-cover object-center inset-0 absolute',
               ]); ?>
@@ -127,10 +127,10 @@
             <a href="<?php echo e(get_permalink($block->ID)); ?>" class="relative">
               <div class="max-w-lg mx-auto relative">
                 <div
-                  class="ml-[8.333%] mt-[8.333%] top-0 absolute -z-10 rounded-tr-medium rounded-bl-medium xl:rounded-tr-big xl:rounded-bl-big bg-sky bg-opacity-40 aspect-square w-10/12">
+                  class="rounded-tr-flex rounded-bl-flex ml-[8.333%] mt-[8.333%] top-0 absolute -z-10 bg-sky bg-opacity-40 aspect-square w-10/12">
                 </div>
                 <?php echo get_the_post_thumbnail($block->ID, 'square', [
-                    'class' => 'block w-10/12 rounded-tr-medium rounded-bl-medium xl:rounded-tr-big xl:rounded-bl-big mb-[8.333%]',
+                    'class' => 'block w-10/12 rounded-tr-flex rounded-bl-flex mb-[8.333%]',
                 ]); ?>
 
               </div>
@@ -140,9 +140,9 @@
               <a href="<?php echo e(get_permalink($block->ID)); ?>"><?php echo get_the_title($block->ID); ?></a>
             </h3>
             <!-- <div class="max-w-sm mx-auto lg:mx-0">
-                                                                                                                    <?php echo wp_trim_words(get_the_excerpt($block->ID), 30); ?>
+                                                                                                                          <?php echo wp_trim_words(get_the_excerpt($block->ID), 30); ?>
 
-                                                                                                                  </div> -->
+                                                                                                                        </div> -->
             <a href="<?php echo e(get_permalink($block->ID)); ?>"
               class="lowercase inline-block mt-auto mx-auto border-2 border-green px-9 py-3 text-sm font-semibold rounded-xl rounded-tr-none whitespace-nowrap">Read</a>
           </div>

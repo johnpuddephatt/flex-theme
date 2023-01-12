@@ -53,7 +53,7 @@ Template Name: Home
       <div class="container">
         <div class="overflow-hidden flex flex-col leading-tight md:flex-row">
           @if (carbon_get_theme_option('home_message_image'))
-            <div class="rounded-bl-medium overflow-hidden items-stretch hidden md:block w-72 h-72 bg-blue">
+            <div class="rounded-bl-flex overflow-hidden items-stretch hidden md:block w-72 h-72 bg-blue">
               {!! wp_get_attachment_image(carbon_get_theme_option('home_message_image'), 'thumbnail', '', [
                   'class' => 'w-full h-auto',
               ]) !!}
@@ -135,8 +135,8 @@ Template Name: Home
               <a href="{{ get_permalink($block->ID) }}">{!! get_the_title($block->ID) !!}</a>
             </h3>
             <!-- <div class="max-w-sm mx-auto lg:mx-0">
-                                                                                                                        {!! wp_trim_words(get_the_excerpt($block->ID), 30) !!}
-                                                                                                                      </div> -->
+                                                                                                                          {!! wp_trim_words(get_the_excerpt($block->ID), 30) !!}
+                                                                                                                        </div> -->
             <a href="{{ get_permalink($block->ID) }}"
               class="lowercase inline-block mt-auto mx-auto border-2 border-green px-9 py-3 text-sm font-semibold rounded-xl rounded-tr-none whitespace-nowrap">Read</a>
           </div>

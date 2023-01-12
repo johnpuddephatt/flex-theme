@@ -9,6 +9,7 @@
       <div class="flex-1">
         @include('partials.page-header')
         @includeFirst(['partials.content-page', 'partials.content-single'])
+
         @include('partials.page-siblings')
       </div>
     </div>
