@@ -59,15 +59,15 @@ Template Name: Home
               ]) !!}
             </div>
           @endif
-          <div class="p-8 bg-sky flex flex-1 flex-col justify-center items-start">
+          <div class="px-12 py-8 bg-sky flex flex-1 flex-col justify-center items-start">
             <div>
               <h3 class="text-3xl font-bold text-navy">
                 {!! carbon_get_theme_option('home_message_title') !!}
               </h3>
-              <p class="font-semibold text-2xl text-navy mt-2 mb-12">{!! carbon_get_theme_option('home_message_body') !!}</p>
+              <p class="font-semibold text-xl text-navy mt-2 mb-8">{!! carbon_get_theme_option('home_message_body') !!}</p>
             </div>
             <a href="{{ carbon_get_theme_option('home_message_link_url') }}"
-              class="border-2 border-green px-9 py-3 text-sm font-semibold rounded-xl rounded-tr-none whitespace-nowrap">
+              class="lowercase border-2 border-green px-9 py-3 text-sm font-semibold rounded-xl rounded-tr-none whitespace-nowrap">
               {{ carbon_get_theme_option('home_message_link_text') ? carbon_get_theme_option('home_message_link_text') : 'read more' }}
             </a>
           </div>
@@ -135,8 +135,8 @@ Template Name: Home
               <a href="{{ get_permalink($block->ID) }}">{!! get_the_title($block->ID) !!}</a>
             </h3>
             <!-- <div class="max-w-sm mx-auto lg:mx-0">
-                                                                                                                          {!! wp_trim_words(get_the_excerpt($block->ID), 30) !!}
-                                                                                                                        </div> -->
+                                                                                                                                  {!! wp_trim_words(get_the_excerpt($block->ID), 30) !!}
+                                                                                                                                </div> -->
             <a href="{{ get_permalink($block->ID) }}"
               class="lowercase inline-block mt-auto mx-auto border-2 border-green px-9 py-3 text-sm font-semibold rounded-xl rounded-tr-none whitespace-nowrap">Read</a>
           </div>
