@@ -6,7 +6,7 @@
           'class' => '!my-0 w-full lg:w-48 object-cover object-center rounded-br-flex flex-shrink-0 h-auto',
       ]) !!}
     </div>
-    <div class="p-4 px-8 lg:px-12 flex-1 bg-navy flex-col items-start justify-center">
+    <div class="p-4 px-8 lg:px-12 flex flex-1 bg-navy flex-col items-start justify-center">
       <h3 class="!mt-0 !mb-2 !text-white text-3xl font-semibold">{{ get_the_title($area_of_focus) }}</h3>
       <p class="text-white !mb-4 leading-normal text-base">{{ get_the_excerpt($area_of_focus) }}</p>
       <span
