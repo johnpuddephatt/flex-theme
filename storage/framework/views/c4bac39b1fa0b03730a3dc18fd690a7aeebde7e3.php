@@ -9,6 +9,7 @@
           <?php echo $__env->first(['partials.content-single-' . get_post_type(), 'partials.content-single'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         <?php endwhile; ?>
       </div>
+
       <?php if ($__env->exists('partials.' . get_post_type() . '-siblings')) echo $__env->make('partials.' . get_post_type() . '-siblings', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     </div>
   </div>

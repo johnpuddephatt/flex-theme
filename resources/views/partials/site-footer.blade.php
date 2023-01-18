@@ -24,14 +24,9 @@
         </p>
 
         <p class="text-gray-300 company-info mt-6 text-sm">
-          FLEX is a registered charity.
-          @if (carbon_get_theme_option('charitynumber'))
-            Charity no. {{ carbon_get_theme_option('charitynumber') }}
+          @if (carbon_get_theme_option('footer_text_left'))
+            {{ carbon_get_theme_option('footer_text_left') }}
           @endif
-          @if (carbon_get_theme_option('companynumber'))
-            | Company no. {{ carbon_get_theme_option('companynumber') }}
-        </p>
-        @endif
         </p>
       </div>
 
@@ -46,8 +41,8 @@
             @endif
           @endforeach
         </div>
-        @if (carbon_get_theme_option('footer_text'))
-          <p class="mt-auto pt-16 text-sm">{{ carbon_get_theme_option('footer_text') }}</p>
+        @if (carbon_get_theme_option('footer_text_right'))
+          <p class="mt-auto pt-16 text-sm">{{ carbon_get_theme_option('footer_text_right') }}</p>
         @endif
       </div>
     </div>

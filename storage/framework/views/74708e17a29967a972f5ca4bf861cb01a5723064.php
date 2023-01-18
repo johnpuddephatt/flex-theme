@@ -45,18 +45,7 @@
     <?php if(!empty($primaryNavigation)): ?>
       <div class="pt-2 max-w-none container flex justify-between flex-col lg:flex-row lg:items-end">
         <div class="invisible lg:visible">
-           <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
-<?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.logo','data' => []]); ?>
-<?php $component->withName('logo'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php $component->withAttributes([]); ?>
-<?php if (isset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4)): ?>
-<?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
-<?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
-<?php endif; ?>
-<?php echo $__env->renderComponent(); ?>
-<?php endif; ?> 
+          <img class="w-56 my-8" src="<?= \Roots\asset('/images/FLEX-logo.svg'); ?>" alt="FLEX – Focus on Labour Exploitation">
         </div>
 
         <nav class="px-0 pt-4 lg:pt-6 pb-4 lg:pb-8 lg:text-xl">

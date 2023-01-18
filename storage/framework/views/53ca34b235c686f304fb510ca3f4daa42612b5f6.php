@@ -3,9 +3,9 @@
   <div class="grid md:grid-cols-2 gap-4 lg:gap-8 container">
     <?php $__currentLoopData = $areas_of_focus; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $area_of_focus): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
       <a class="flex flex-row items-stretch" href="<?php echo e(get_permalink($area_of_focus->ID)); ?>">
-        <div class="rounded-bl-flex w-24 h-24 lg:w-32 lg:h-32 bg-sky overflow-hidden flex-none">
+        <div class="-mr-px rounded-bl-flex w-24 h-24 lg:w-32 lg:h-32 bg-sky overflow-hidden flex-none">
           <?php echo get_the_post_thumbnail($area_of_focus->ID, 'square', [
-              'class' => 'w-24 h-24 lg:w-32 lg:h-32 rounded-tr-flex ',
+              'class' => 'isolate w-24 h-24 lg:w-32 lg:h-32 rounded-tr-flex ',
           ]); ?>
 
         </div>

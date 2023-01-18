@@ -9,8 +9,8 @@ add_action("carbon_fields_register_fields", function () {
         __("Theme Options")
     )->add_fields([
         Field::make("textarea", "address", __("Address ")),
-        Field::make("text", "charitynumber", __("Charity number")),
-        Field::make("text", "companynumber", __("Company number")),
+        // Field::make("text", "charitynumber", __("Charity number")),
+        // Field::make("text", "companynumber", __("Company number")),
         Field::make("text", "companyemail", __("Contact email")),
         Field::make("text", "companyphone", __("Contact phone")),
     ]);
@@ -48,7 +48,16 @@ add_action("carbon_fields_register_fields", function () {
     Container::make("theme_options", __("Footer"))
         ->set_page_parent($parent_options) // reference to a top level container
         ->add_fields([
-            Field::make("textarea", "footer_text", __("Footer Text")),
+            Field::make(
+                "textarea",
+                "footer_text_left",
+                __("Footer Text (left)")
+            ),
+            Field::make(
+                "textarea",
+                "footer_text_right",
+                __("Footer Text (right)")
+            ),
         ]);
 
     Container::make("theme_options", __("Social Links"))
