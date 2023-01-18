@@ -3,7 +3,7 @@
     class="z-10 px-0 container flex items-stretch flex-col-reverse overflow-hidden mx-auto text-white max-w-7xl md:flex-row">
     @if (has_post_thumbnail(isset($post->ID) ? $post->ID : '') &&
         isset(wp_get_attachment_metadata(get_post_thumbnail_id($post->ID))['sizes']['square']))
-      <div class="{{ $background ?? 'bg-sky' }} rounded-bl-flex relative flex-1 lg:max-w-lg overflow-hidden">
+      <div class="{{ $background ?? 'bg-sky' }} rounded-bl-flex -mr-px relative flex-1 lg:max-w-lg overflow-hidden">
         {!! get_the_post_thumbnail(isset($post->ID) ? $post->ID : '', 'square', [
             'class' => 'isolate w-full rounded-tr-flex',
         ]) !!}
