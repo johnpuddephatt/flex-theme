@@ -140,15 +140,6 @@ add_action(
     "after_setup_theme",
     function () {
         add_action("init", function () {
-            function my_acf_init()
-            {
-                acf_update_setting(
-                    "google_api_key",
-                    "AIzaSyAnc7Dwhlv93SenK1wFiQ-LW5dMTXydHKw"
-                );
-            }
-            add_action("acf/init", "App\my_acf_init");
-
             register_post_status("archive", [
                 "label" => _x("Archive", "post"),
                 "public" => false,

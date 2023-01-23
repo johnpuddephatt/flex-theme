@@ -20,6 +20,10 @@
         @endif
 
         @includeFirst(['partials.content-page', 'partials.content-single'])
+
+        @include('partials.related-publications')
+        @include('partials.related-posts')
+
         @include('partials.page-siblings')
       </div>
     </div>

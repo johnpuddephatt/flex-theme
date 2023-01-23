@@ -13,8 +13,8 @@ class RelatedPostsPublications extends Composer
      * @var array
      */
     protected static $views = [
-        "partials.area-of-focus-posts",
-        "partials.area-of-focus-publications",
+        "partials.related-posts",
+        "partials.related-publications",
     ];
 
     /**
@@ -33,18 +33,38 @@ class RelatedPostsPublications extends Composer
     public function posts()
     {
         global $post;
-        return \MB_Relationships_API::get_connected([
-            "id" => "posts_to_areas_of_focus",
-            "to" => $post->ID,
-        ]);
+
+        if (get_page_template_slug() == "template-whatwedo.blade.php") {
+            return \MB_Relationships_API::get_connected([
+                "id" => "posts_to_what_we_do",
+                "to" => $post->ID,
+            ]);
+        }
+
+        if (get_page_template_slug() == "template-areaoffocus.blade.php") {
+            return \MB_Relationships_API::get_connected([
+                "id" => "posts_to_areas_of_focus",
+                "to" => $post->ID,
+            ]);
+        }
     }
 
     public function publications()
     {
         global $post;
-        return \MB_Relationships_API::get_connected([
-            "id" => "publications_to_areas_of_focus",
-            "to" => $post->ID,
-        ]);
+
+        if (get_page_template_slug() == "template-whatwedo.blade.php") {
+            return \MB_Relationships_API::get_connected([
+                "id" => "publications_to_what_we_do",
+                "to" => $post->ID,
+            ]);
+        }
+
+        if (get_page_template_slug() == "template-areaoffocus.blade.php") {
+            return \MB_Relationships_API::get_connected([
+                "id" => "publications_to_areas_of_focus",
+                "to" => $post->ID,
+            ]);
+        }
     }
 }

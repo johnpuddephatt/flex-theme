@@ -6,11 +6,6 @@
 
 namespace App;
 
-add_filter("acf/fields/google_map/api", function ($api) {
-    $api["key"] = env("GOOGLE_MAPS", "AIzaSyAnc7Dwhlv93SenK1wFiQ-LW5dMTXydHKw");
-    return $api;
-});
-
 add_filter(
     "gettext",
     function ($translation, $original) {
@@ -119,24 +114,3 @@ add_filter(
     10,
     3
 );
-
-/*
- *
- * ACF Icon picker
- *
- */
-
-/// modify the path to the icons directory
-add_filter("acf_icon_path_suffix", function ($path_suffix) {
-    return "/public/icons/"; // After assets folder you can define folder structure
-});
-
-// modify the path to the above prefix
-add_filter("acf_icon_path", function ($path_suffix) {
-    return get_stylesheet_directory();
-});
-
-// modify the URL to the icons directory to display on the page
-add_filter("acf_icon_url", function ($path_suffix) {
-    return get_stylesheet_directory_uri();
-});

@@ -13,8 +13,8 @@
         @include('partials.page-header')
         @includeFirst(['partials.content-page', 'partials.content-single'])
 
-        @include('partials.area-of-focus-publications')
-        @include('partials.area-of-focus-posts')
+        @include('partials.related-publications')
+        @include('partials.related-posts')
 
         @include('partials.page-siblings')
       </div>

@@ -32,7 +32,9 @@
     @if (!empty($primaryNavigation))
       <div class="pt-2 max-w-none container flex justify-between flex-col lg:flex-row lg:items-end">
         <div class="invisible lg:visible">
-          <img class="w-56 my-8" src="@asset('/images/FLEX-logo.svg')" alt="FLEX – Focus on Labour Exploitation">
+          <a href="{{ home_url('/') }}">
+            <img class="w-56 my-8" src="@asset('/images/FLEX-logo.svg')" alt="FLEX – Focus on Labour Exploitation">
+          </a>
         </div>
 
         <nav class="px-0 pt-4 lg:pt-6 pb-4 lg:pb-8 lg:text-xl">

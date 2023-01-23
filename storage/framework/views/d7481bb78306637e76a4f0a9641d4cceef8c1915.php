@@ -24,16 +24,10 @@
         </p>
 
         <p class="text-gray-300 company-info mt-6 text-sm">
-          FLEX is a registered charity.
-          <?php if(carbon_get_theme_option('charitynumber')): ?>
-            Charity no. <?php echo e(carbon_get_theme_option('charitynumber')); ?>
+          <?php if(carbon_get_theme_option('footer_text_left')): ?>
+            <?php echo e(carbon_get_theme_option('footer_text_left')); ?>
 
           <?php endif; ?>
-          <?php if(carbon_get_theme_option('companynumber')): ?>
-            | Company no. <?php echo e(carbon_get_theme_option('companynumber')); ?>
-
-        </p>
-        <?php endif; ?>
         </p>
       </div>
 
@@ -59,8 +53,8 @@
             <?php endif; ?>
           <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
-        <?php if(carbon_get_theme_option('footer_text')): ?>
-          <p class="mt-auto pt-16 text-sm"><?php echo e(carbon_get_theme_option('footer_text')); ?></p>
+        <?php if(carbon_get_theme_option('footer_text_right')): ?>
+          <p class="mt-auto pt-16 text-sm"><?php echo e(carbon_get_theme_option('footer_text_right')); ?></p>
         <?php endif; ?>
       </div>
     </div>
