@@ -135,8 +135,8 @@ Template Name: Home
               <a href="{{ get_permalink($block->ID) }}">{!! get_the_title($block->ID) !!}</a>
             </h3>
             <!-- <div class="max-w-sm mx-auto lg:mx-0">
-                                                                                                                                            {!! wp_trim_words(get_the_excerpt($block->ID), 30) !!}
-                                                                                                                                          </div> -->
+                                                                                                                                              {!! wp_trim_words(get_the_excerpt($block->ID), 30) !!}
+                                                                                                                                            </div> -->
             <a href="{{ get_permalink($block->ID) }}"
               class="lowercase inline-block mt-auto mx-auto border-2 border-green px-9 py-3 text-sm font-semibold rounded-xl rounded-tr-none whitespace-nowrap">Read</a>
           </div>
@@ -168,7 +168,7 @@ Template Name: Home
           </div>
         </div>
         @if (carbon_get_theme_option('newsletter_image'))
-          <div class="rounded-br-flex hidden lg:block lg:w-96 lg:h-96 bg-blue overflow-hidden">
+          <div class="-mr-px rounded-br-flex hidden lg:block lg:w-96 lg:h-96 bg-blue overflow-hidden">
             {!! wp_get_attachment_image(carbon_get_theme_option('newsletter_image'), 'square', '', [
                 'class' => 'w-full h-auto',
             ]) !!}

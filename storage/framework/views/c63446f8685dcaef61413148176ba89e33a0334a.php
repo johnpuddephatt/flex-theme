@@ -140,9 +140,9 @@
               <a href="<?php echo e(get_permalink($block->ID)); ?>"><?php echo get_the_title($block->ID); ?></a>
             </h3>
             <!-- <div class="max-w-sm mx-auto lg:mx-0">
-                                                                                                                                            <?php echo wp_trim_words(get_the_excerpt($block->ID), 30); ?>
+                                                                                                                                              <?php echo wp_trim_words(get_the_excerpt($block->ID), 30); ?>
 
-                                                                                                                                          </div> -->
+                                                                                                                                            </div> -->
             <a href="<?php echo e(get_permalink($block->ID)); ?>"
               class="lowercase inline-block mt-auto mx-auto border-2 border-green px-9 py-3 text-sm font-semibold rounded-xl rounded-tr-none whitespace-nowrap">Read</a>
           </div>
@@ -176,7 +176,7 @@
           </div>
         </div>
         <?php if(carbon_get_theme_option('newsletter_image')): ?>
-          <div class="rounded-br-flex hidden lg:block lg:w-96 lg:h-96 bg-blue overflow-hidden">
+          <div class="-mr-px rounded-br-flex hidden lg:block lg:w-96 lg:h-96 bg-blue overflow-hidden">
             <?php echo wp_get_attachment_image(carbon_get_theme_option('newsletter_image'), 'square', '', [
                 'class' => 'w-full h-auto',
             ]); ?>
