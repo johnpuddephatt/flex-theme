@@ -6,6 +6,11 @@
 
 namespace App;
 
+add_filter("wp_insert_post_data", function ($post_data) {
+    $post_data["post_title"] = wp_strip_all_tags($post_data["post_title"]);
+    return $post_data;
+});
+
 add_filter(
     "gettext",
     function ($translation, $original) {
