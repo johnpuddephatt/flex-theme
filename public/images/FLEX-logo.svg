@@ -1,7 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="prefix__Layer_1" width="1167.64" height="457.01" data-name="Layer 1" version="1.1" viewBox="0 0 1167.64 457.01">
     <defs id="prefix__defs4">
         <style id="style2">
-            .prefix__cls-1{fill:rgb(236 175 61)}.prefix__cls-2{fill:#132c44}
+      
+            .prefix__cls-1{fill:#f7ab05}.prefix__cls-2{fill:#132c44}
         </style>
     </defs>
     <path id="prefix__polygon6" d="M54.18 61.1 54.18 182.82 87.15 182.82 87.15 136.27 133.61 136.27 133.61 108.78 87.15 108.78 87.15 89.15 141.72 89.15 141.82 61.1z" class="prefix__cls-1" transform="translate(-54.18 -59.5)"/>
