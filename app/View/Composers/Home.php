@@ -83,7 +83,7 @@ class Home extends Composer
         return get_posts([
             "post_type" => "page",
             "post_parent" => 457,
-            "numberposts" => 4,
+            "numberposts" => 5,
             "order" => "ASC",
             "orderby" => "menu_order",
         ]);
