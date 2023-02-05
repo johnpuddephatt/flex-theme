@@ -117,16 +117,16 @@ Template Name: Home
     <div>
       <h2 class="container text-center text-3xl lg:text-4xl font-bold text-blue mb-16">What we do</h2>
 
-      <div class="container flex items-center justify-center flex-wrap gap-x-24 lg:gap-x-48 gap-y-24">
+      <div class="container flex items-center justify-center flex-wrap gap-y-24">
         @foreach ($home_blocks as $block)
-          <div class="md:w-1/3 xl:w-1/5 flex-grow flex flex-col space-y-8 text-center">
+          <div class="px-12 md:w-1/2 xl:w-1/3 flex flex-col space-y-8 text-center">
             <a href="{{ get_permalink($block->ID) }}" class="relative">
               <div class="max-w-lg mx-auto relative">
                 <div
                   class="rounded-tr-flex rounded-bl-flex ml-[8.333%] mt-[8.333%] top-0 absolute -z-10 bg-sky aspect-square w-10/12">
                 </div>
                 {!! get_the_post_thumbnail($block->ID, 'square', [
-                    'class' => 'block w-10/12 rounded-tr-flex rounded-bl-flex mb-[8.333%]',
+                    'class' => 'block w-11/12 md:w-10/12 rounded-tr-flex rounded-bl-flex mb-[8.333%]',
                 ]) !!}
               </div>
             </a>
@@ -135,8 +135,8 @@ Template Name: Home
               <a href="{{ get_permalink($block->ID) }}">{!! get_the_title($block->ID) !!}</a>
             </h3>
             <!-- <div class="max-w-sm mx-auto lg:mx-0">
-                                                                                                                                                                {!! wp_trim_words(get_the_excerpt($block->ID), 30) !!}
-                                                                                                                                                              </div> -->
+                                                                                                                                                                  {!! wp_trim_words(get_the_excerpt($block->ID), 30) !!}
+                                                                                                                                                                </div> -->
             <a href="{{ get_permalink($block->ID) }}"
               class="lowercase inline-block mt-auto mx-auto border-2 border-green px-9 py-3 text-sm font-semibold rounded-xl rounded-tr-none whitespace-nowrap">Read</a>
           </div>
