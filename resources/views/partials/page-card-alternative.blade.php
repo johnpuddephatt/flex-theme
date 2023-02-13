@@ -4,7 +4,7 @@
       @if (has_post_thumbnail(isset($page->ID) ? $page->ID : '') &&
           isset(wp_get_attachment_metadata(get_post_thumbnail_id($page->ID))['sizes']['square-xs']))
         {!! get_the_post_thumbnail($page->ID, 'square-xs', [
-            'class' => 'w-40 rounded-tr-flex -ml-px rounded-bl-flex max-w-none block ',
+            'class' => '!my-0 w-40 rounded-tr-flex -ml-px rounded-bl-flex max-w-none block ',
         ]) !!}
       @else
         <div class="rounded-tr-flex -ml-px rounded-bl-flex block w-40 h-40 bg-sky max-w-none"></div>
