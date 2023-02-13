@@ -28,7 +28,6 @@ class Page extends Composer
         global $post;
 
         return [
-            "children" => $this->children(),
             "siblings" => $this->siblings(),
             "parent" => $this->parent(),
         ];
@@ -44,20 +43,6 @@ class Page extends Composer
         return [
                 // 'title' => $this->title(),
             ];
-    }
-
-    public function children()
-    {
-        global $post;
-        if ($post->post_type == "page") {
-            return get_posts([
-                "post_type" => "page",
-                "post_parent" => $post->ID,
-                "orderby" => "menu_order",
-                "order" => "ASC",
-                "numberposts" => -1,
-            ]);
-        }
     }
 
     public function siblings()

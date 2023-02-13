@@ -5,14 +5,6 @@
       <div class="flex-1">
         <?php echo $__env->make('partials.page-header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
-        <?php if(count($children)): ?>
-          <div class="container my-16 flex flex-col gap-6 mx-auto xl:max-w-5xl 2xl:max-w-6xl 2xl:mt-24">
-            <?php $__currentLoopData = $children; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $page): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-              <?php echo $__env->make('partials.page-card-alternative', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-          </div>
-        <?php endif; ?>
-
         <?php echo $__env->first(['partials.content-page', 'partials.content-single'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
         <?php echo $__env->make('partials.related-publications', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
