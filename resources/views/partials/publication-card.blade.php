@@ -1,6 +1,6 @@
 @if (!isset($publication) || $publication)
   <a href="{{ get_permalink(isset($publication) ? $publication->ID : null) }}"
-    class="my-2 lg:my-8 no-underline flex flex-row items-stretch overflow-hidden">
+    class="my-2 lg:my-8 no-underline flex flex-row items-stretch overflow-hidden max-w-[48rem]">
     <div class="rounded-tl-flex bg-sky overflow-hidden">
       <div class="rounded-br-flex bg-blue w-6 lg:w-36 lg:min-h-[9rem] self-stretch"></div>
     </div>
