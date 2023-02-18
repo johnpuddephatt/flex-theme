@@ -35,17 +35,25 @@ class RelatedPostsPublications extends Composer
         global $post;
 
         if (get_page_template_slug() == "template-whatwedo.blade.php") {
-            return \MB_Relationships_API::get_connected([
-                "id" => "posts_to_what_we_do",
-                "to" => $post->ID,
-            ]);
+            return array_slice(
+                \MB_Relationships_API::get_connected([
+                    "id" => "posts_to_what_we_do",
+                    "to" => $post->ID,
+                ]),
+                0,
+                3
+            );
         }
 
         if (get_page_template_slug() == "template-areaoffocus.blade.php") {
-            return \MB_Relationships_API::get_connected([
-                "id" => "posts_to_areas_of_focus",
-                "to" => $post->ID,
-            ]);
+            return array_slice(
+                \MB_Relationships_API::get_connected([
+                    "id" => "posts_to_areas_of_focus",
+                    "to" => $post->ID,
+                ]),
+                0,
+                3
+            );
         }
     }
 
@@ -54,17 +62,25 @@ class RelatedPostsPublications extends Composer
         global $post;
 
         if (get_page_template_slug() == "template-whatwedo.blade.php") {
-            return \MB_Relationships_API::get_connected([
-                "id" => "publications_to_what_we_do",
-                "to" => $post->ID,
-            ]);
+            return array_slice(
+                \MB_Relationships_API::get_connected([
+                    "id" => "publications_to_what_we_do",
+                    "to" => $post->ID,
+                ]),
+                0,
+                5
+            );
         }
 
         if (get_page_template_slug() == "template-areaoffocus.blade.php") {
-            return \MB_Relationships_API::get_connected([
-                "id" => "publications_to_areas_of_focus",
-                "to" => $post->ID,
-            ]);
+            return array_slice(
+                \MB_Relationships_API::get_connected([
+                    "id" => "publications_to_areas_of_focus",
+                    "to" => $post->ID,
+                ]),
+                0,
+                5
+            );
         }
     }
 }
