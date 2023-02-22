@@ -1,8 +1,8 @@
 <?php if(!isset($publication) || $publication): ?>
   <a href="<?php echo e(get_permalink(isset($publication) ? $publication->ID : null)); ?>"
-    class="my-2 lg:my-8 no-underline flex flex-row items-stretch overflow-hidden">
-    <div class="rounded-tl-flex bg-sky overflow-hidden">
-      <div class="rounded-br-flex bg-blue w-6 lg:w-36 lg:min-h-[9rem] self-stretch"></div>
+    class="my-2 lg:my-8 !no-underline flex flex-row items-stretch overflow-hidden max-w-[48rem]">
+    <div class="lg:rounded-tl-flex bg-sky overflow-hidden">
+      <div class="lg:rounded-br-flex bg-blue w-6 lg:w-36 h-full lg:min-h-[9rem] self-stretch"></div>
     </div>
     <div class="py-3 px-5 lg:px-10 flex-1 flex flex-col justify-center items-start bg-sky">
       <div class="max-w-2xl">

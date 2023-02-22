@@ -1,5 +1,5 @@
 <a href="{{ get_permalink($post_id ?? null) }}"
-  @php(post_class('flex items-center flex-row block bg-sky hover:!no-underline max-w-[48rem]'))>
+  @php(post_class('flex items-center flex-row block bg-sky !no-underline max-w-[48rem]'))>
   <div class="flex-grow py-4 px-6  lg:px-10 !text-navy">
   <div class="!mb-2 font-semibold ">{{ get_the_date(null, $post_id ?? null) }}</div>
   <h3 class="!mt-0 mb-4 !text-lg !text-navy xl:!leading-tight !leading-tight font-semibold lg:!text-xl">

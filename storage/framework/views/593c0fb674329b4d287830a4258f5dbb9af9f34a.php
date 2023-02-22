@@ -1,5 +1,5 @@
 <a href="<?php echo e(get_permalink($post_id ?? null)); ?>"
-  <?php (post_class('flex items-center flex-row mx-auto block bg-sky hover:!no-underline')); ?>>
+  <?php (post_class('flex items-center flex-row block bg-sky !no-underline max-w-[48rem]')); ?>>
   <div class="flex-grow py-4 px-6  lg:px-10 !text-navy">
   <div class="!mb-2 font-semibold "><?php echo e(get_the_date(null, $post_id ?? null)); ?></div>
   <h3 class="!mt-0 mb-4 !text-lg !text-navy xl:!leading-tight !leading-tight font-semibold lg:!text-xl">

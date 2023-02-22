@@ -1,5 +1,5 @@
 <?php
 
 echo \Roots\view("partials.post-card", [
-    "post" => get_post($attributes["post"]),
+    "post_id" => $attributes["post"],
 ])->render(); ?>
