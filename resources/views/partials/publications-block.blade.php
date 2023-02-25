@@ -1,4 +1,4 @@
-<div class="my-16">
+<div class="my-8">
   @foreach ($publications as $publication)
     @include('partials.publication-card')
   @endforeach
