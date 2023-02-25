@@ -35,25 +35,29 @@ class RelatedPostsPublications extends Composer
         global $post;
 
         if (get_page_template_slug() == "template-whatwedo.blade.php") {
-            return array_slice(
-                \MB_Relationships_API::get_connected([
-                    "id" => "posts_to_what_we_do",
-                    "to" => $post->ID,
-                ]),
-                0,
-                3
-            );
+            $posts = \MB_Relationships_API::get_connected([
+                "id" => "posts_to_what_we_do",
+                "to" => $post->ID,
+            ]);
+
+            uasort($posts, function ($a, $b) {
+                return strtotime($b->post_date) - strtotime($a->post_date);
+            });
+
+            return array_slice($posts, 0, 3);
         }
 
         if (get_page_template_slug() == "template-areaoffocus.blade.php") {
-            return array_slice(
-                \MB_Relationships_API::get_connected([
-                    "id" => "posts_to_areas_of_focus",
-                    "to" => $post->ID,
-                ]),
-                0,
-                3
-            );
+            $posts = \MB_Relationships_API::get_connected([
+                "id" => "posts_to_areas_of_focus",
+                "to" => $post->ID,
+            ]);
+
+            uasort($posts, function ($a, $b) {
+                return strtotime($b->post_date) - strtotime($a->post_date);
+            });
+
+            return array_slice($posts, 0, 3);
         }
     }
 
