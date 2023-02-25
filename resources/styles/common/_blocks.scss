@@ -1,0 +1,40 @@
+// Buttons
+
+.wp-block-buttons {
+  @apply mb-4;
+}
+
+.wp-block-button .wp-block-button__link {
+  @apply lowercase text-black no-underline border-2 bg-transparent border-green px-6 py-3 text-sm font-semibold rounded-xl rounded-tr-none whitespace-nowrap #{!important};
+}
+
+// Block quote
+
+.wp-block-quote p {
+  @apply mt-0 mb-0 #{!important};
+}
+
+.wp-block-quote p + p {
+  @apply mt-4 #{!important};
+}
+
+.wp-block-quote.is-style-default {
+  @apply text-green font-semibold border-green my-12 not-italic lg:leading-tight leading-tight text-xl lg:text-2xl #{!important};
+}
+
+.wp-block-quote.is-style-centered {
+  @apply text-center text-blue font-bold text-3xl my-12 lg:text-4xl lg:leading-tight xl:leading-tight xl:text-5xl not-italic border-l-0 #{!important};
+}
+
+.wp-block-quote cite {
+  @apply text-black mt-4 text-base #{!important};
+}
+
+.wp-block-quote.is-style-centered p::before,
+.wp-block-quote.is-style-centered p::after {
+  @apply text-green block text-left #{!important};
+}
+
+.wp-block-quote.is-style-centered p::after {
+  @apply text-right #{!important};
+}

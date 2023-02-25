@@ -12,11 +12,12 @@ wp.domReady(function () {
   //   .removeEditorPanel("taxonomy-panel-post_tag");
 
   wp.blocks.unregisterBlockStyle("core/button", "outline");
+  wp.blocks.unregisterBlockStyle("core/button", "fill");
 
-  wp.blocks.registerBlockStyle("core/button", {
-    name: "outline",
-    label: "Outline",
-  });
+  // wp.blocks.registerBlockStyle("core/button", {
+  //   name: "outline",
+  //   label: "Outline",
+  // });
   wp.data.dispatch("core/edit-post").removeEditorPanel("discussion-panel");
 
   wp.blocks.unregisterBlockType("core/verse");
@@ -44,15 +45,15 @@ wp.domReady(function () {
   wp.blocks.unregisterBlockStyle("core/image", "rounded");
   wp.blocks.unregisterBlockStyle("core/pullquote", "solid-color");
 
-  wp.blocks.registerBlockStyle("core/paragraph", {
-    name: "large",
-    label: "Large",
-  });
+  // wp.blocks.registerBlockStyle("core/paragraph", {
+  //   name: "large",
+  //   label: "Large",
+  // });
 
-  wp.blocks.registerBlockStyle("core/paragraph", {
-    name: "small",
-    label: "Small",
-  });
+  // wp.blocks.registerBlockStyle("core/paragraph", {
+  //   name: "small",
+  //   label: "Small",
+  // });
 
   wp.blocks.registerBlockStyle("core/image", {
     name: "rounded-corners",

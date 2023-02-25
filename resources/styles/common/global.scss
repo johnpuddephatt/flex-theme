@@ -1,5 +1,6 @@
 @import "fonts";
 @import "patterns";
+@import "blocks";
 @import "person-block";
 
 #app {
@@ -25,23 +26,6 @@
 .wp-block-image.is-style-rounded-corners img {
   border-top-right-radius: 5rem;
   border-bottom-left-radius: 5rem;
-}
-
-.wp-block-quote.is-style-default {
-  @apply text-green font-semibold border-green not-italic text-xl lg:text-2xl;
-}
-
-.wp-block-quote.is-style-centered {
-  @apply text-center text-blue font-bold text-3xl lg:text-4xl lg:leading-tight xl:leading-tight xl:text-5xl not-italic border-l-0;
-}
-
-.wp-block-quote.is-style-centered p::before,
-.wp-block-quote.is-style-centered p::after {
-  @apply text-green block text-left;
-}
-
-.wp-block-quote.is-style-centered p::after {
-  @apply text-right;
 }
 
 .hidden-on-mobile {
@@ -110,14 +94,6 @@ hr,
   .wp-block-media-text__content {
     padding: 0 8% 0 8%;
   }
-}
-
-.wp-block-buttons {
-  @apply mb-4;
-}
-
-.wp-block-button .wp-block-button__link {
-  @apply inline-block text-blue text-lg rounded-full bg-sky no-underline py-3 px-8 border-sky hover:border-blue border;
 }
 
 details {

@@ -69,6 +69,13 @@
       "textTransform": false,
       "fontSizes": [],
       "fontFamilies": []
+    },
+    "blocks": {
+      "core/button": {
+        "border": {
+          "radius": false
+        }
+      }
     }
   }
 }
