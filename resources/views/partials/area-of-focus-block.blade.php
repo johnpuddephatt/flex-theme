@@ -1,6 +1,6 @@
 @if ($area_of_focus && get_post_status($area_of_focus))
   <a href="{{ get_permalink($area_of_focus) }}"
-    class="!no-underline my-16 flex flex-col items-stretch lg:flex-row text-white overflow-hidden">
+    class="!no-underline my-4 flex flex-col items-stretch lg:flex-row text-white overflow-hidden">
     <div
       class="rounded-tl-flex bg-navy via-transparent bg-gradient-to-tl from-transparent to-white overflow-hidden -mr-px">
       {!! get_the_post_thumbnail($area_of_focus, 'square', [
