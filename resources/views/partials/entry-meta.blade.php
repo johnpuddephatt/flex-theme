@@ -5,9 +5,7 @@
     ]) !!}
     <div class="text-blue">
       <p class="text-lg lg:text-xl mb-1 font-bold">
-        {{-- <a href="{{ get_author_posts_url(get_the_author_meta('ID')) }}" rel="author" class="fn"> --}}
         {{ get_the_author() }}
-        {{-- </a> --}}
       </p>
       <p class="font-semibold">{{ carbon_get_user_meta(get_the_author_meta('ID'), 'user_role') }}
       </p>

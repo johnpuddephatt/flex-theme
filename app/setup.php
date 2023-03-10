@@ -406,54 +406,59 @@ add_image_size("square", 800, 800, true);
 add_image_size("square-s", 640, 640, true);
 add_image_size("square-xs", 320, 320, true);
 
-// add_action("pre_get_posts", function ($query) {
-//     if ($query->is_search && !is_admin()) {
-//         $terms = explode(" ", $query->get("s"));
-//         // $query->set("tax_query", [
-//         //     "relation" => "OR",
-//         //     [
-//         //         "taxonomy" => "post_tag",
-//         //         "field" => "slug",
-//         //         "terms" => $terms,
-//         //         "operator" => "IN",
-//         //     ],
-//         // ]);
-//         // $query->tax_query->relation = "OR";
+add_action("pre_get_posts", function ($query) {
+    
+    if (!$query->get("s")) {
+        $query->orderby = "post_date";
+    
+    //     if ($query->is_search && !is_admin()) {
+    //         $terms = explode(" ", $query->get("s"));
+    //         // $query->set("tax_query", [
+    //         //     "relation" => "OR",
+    //         //     [
+    //         //         "taxonomy" => "post_tag",
+    //         //         "field" => "slug",
+    //         //         "terms" => $terms,
+    //         //         "operator" => "IN",
+    //         //     ],
+    //         // ]);
+    //         // $query->tax_query->relation = "OR";
 
-//         $tax_query = [
-//             "relation" => "OR",
-//             "taxonomy" => "post_tag",
-//             "field" => "slug",
-//             "terms" => $terms,
-//         ];
-//         // $query->tax_query->queries[] = $tax_query;
-//         // $query->query_vars["tax_query"] = $query->tax_query->queries;
+    //         $tax_query = [
+    //             "relation" => "OR",
+    //             "taxonomy" => "post_tag",
+    //             "field" => "slug",
+    //             "terms" => $terms,
+    //         ];
+    //         // $query->tax_query->queries[] = $tax_query;
+    //         // $query->query_vars["tax_query"] = $query->tax_query->queries;
 
-//         // dd($query);
-//         // $query->tax_query = new \WP_Tax_Query([
-//         //     "relation" => "OR",
-//         //     [
-//         //         "taxonomy" => "post_tag",
-//         //         "field" => "slug",
-//         //         "terms" => $terms,
-//         //     ],
-//         // ]);
-//     }
-// });
+    //         // dd($query);
+    //         // $query->tax_query = new \WP_Tax_Query([
+    //         //     "relation" => "OR",
+    //         //     [
+    //         //         "taxonomy" => "post_tag",
+    //         //         "field" => "slug",
+    //         //         "terms" => $terms,
+    //         //     ],
+    //         // ]);
+    //     }
+});
 
-add_filter(
-    "posts_orderby",
-    function ($orderby, $query) {
-        global $wpdb;
+// add_filter(
+//     "posts_orderby",
+//     function ($orderby, $query) {
+//         global $wpdb;
 
-        if (!$query->is_admin && $query->is_search) {
-            $orderby =
-                $wpdb->prefix .
-                "posts.post_type ASC, {$wpdb->prefix}posts.post_date DESC";
-        }
+//         if (!$query->is_admin && $query->is_search) {
 
-        return $orderby;
-    },
-    10,
-    2
-);
+//             $orderby =
+//                 $wpdb->prefix .
+//                 "posts.post_type ASC, {$wpdb->prefix}posts.post_date DESC";
+//         }
+
+//         return $orderby;
+//     },
+//     10,
+//     2
+// );
