@@ -1,12 +1,16 @@
-<div class="flex py-2">
-  <img src="https://d33wubrfki0l68.cloudfront.net/6d60ae66b2a50b1842d08156aeb53663fa328837/d7f97/assets/badges/mike.jpg"
-    class="object-cover w-10 h-10 mr-2 rounded-full">
-  <div>
-    <p class="text-sm font-semibold tracking-tight text-black">
-      <a href="{{ get_author_posts_url(get_the_author_meta('ID')) }}" rel="author" class="fn">
+@if (get_the_author_meta('ID') !== 1)
+  <div class="flex flex-row items-center py-4 lg:py-8">
+    {!! get_avatar(get_the_author_meta('ID'), null, null, null, [
+        'class' => 'max-w-none bg-sky object-cover w-12 h-12 lg:w-16 lg:h-16 mr-2 lg:mr-4 rounded-full',
+    ]) !!}
+    <div class="text-blue">
+      <p class="text-lg lg:text-xl mb-1 font-bold">
+        {{-- <a href="{{ get_author_posts_url(get_the_author_meta('ID')) }}" rel="author" class="fn"> --}}
         {{ get_the_author() }}
-      </a>
-    </p>
-    <p class="text-sm font-normal tracking-tight text-coolGray-400"> Role. </p>
+        {{-- </a> --}}
+      </p>
+      <p class="font-semibold">{{ carbon_get_user_meta(get_the_author_meta('ID'), 'user_role') }}
+      </p>
+    </div>
   </div>
-</div>
+@endif

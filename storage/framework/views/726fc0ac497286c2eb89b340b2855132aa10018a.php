@@ -23,9 +23,8 @@
     </div>
     <?php $__currentLoopData = $areas_of_focus; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $area_of_focus): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
       <a class="hover:bg-opacity-100 bg-opacity-0 pl-0 px-6 2xl:pl-0 2xl:px-8 block py-1.5 text-lg bg-sky transition"
-        href="<?php echo e(get_permalink($area_of_focus->ID)); ?>">
-
-        <span class="pl-10 2xl:pl-12 block mx-auto mr-4 w-72"><?php echo $area_of_focus->post_title; ?></span>
+        href="?s=&post_type=publication&post_resourcetype=&post_areaoffocus=<?php echo e($area_of_focus->ID); ?>"><span
+          class="pl-10 2xl:pl-12 block mx-auto mr-4 w-72"><?php echo $area_of_focus->post_title; ?></span>
       </a>
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 

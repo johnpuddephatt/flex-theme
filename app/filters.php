@@ -50,26 +50,26 @@ add_filter("parse_query", function ($query) {
         return $query;
     }
 
-    // // Used by the 'view all posts related to this project' link from single project pages.
-    // if ($query->is_main_query() && isset($_GET["postProjectID"])) {
-    //     $query->set("meta_query", [
-    //         [
-    //             "key" => "related_project",
-    //             "value" => '"' . $_GET["postProjectID"] . '"',
-    //             "compare" => "LIKE",
-    //         ],
-    //     ]);
-    // }
+    // Used by the 'view all posts related to this project' link from single project pages.
+    if ($query->is_main_query() && isset($_GET["postProjectID"])) {
+        $query->set("meta_query", [
+            [
+                "key" => "related_project",
+                "value" => '"' . $_GET["postProjectID"] . '"',
+                "compare" => "LIKE",
+            ],
+        ]);
+    }
 
-    // if ($query->is_main_query() && isset($_GET["resourceProjectID"])) {
-    //     $query->set("meta_query", [
-    //         [
-    //             "key" => "project",
-    //             "value" => '"' . $_GET["resourceProjectID"] . '"',
-    //             "compare" => "LIKE",
-    //         ],
-    //     ]);
-    // }
+    if ($query->is_main_query() && isset($_GET["resourceProjectID"])) {
+        $query->set("meta_query", [
+            [
+                "key" => "project",
+                "value" => '"' . $_GET["resourceProjectID"] . '"',
+                "compare" => "LIKE",
+            ],
+        ]);
+    }
 
     if ($query->is_search) {
         // Used to allow searching to a specific type of post

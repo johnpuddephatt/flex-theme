@@ -70,6 +70,10 @@ add_action("carbon_fields_register_fields", function () {
             Field::make("text", "youtube", __("YouTube Link")),
             Field::make("text", "vimeo", __("Vimeo Link")),
         ]);
+
+    Container::make("user_meta", "Role")->add_fields([
+        Field::make("text", "user_role", "User role"),
+    ]);
 });
 
 add_action("after_setup_theme", function () {

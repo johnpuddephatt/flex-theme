@@ -23,9 +23,8 @@
     </div>
     @foreach ($areas_of_focus as $area_of_focus)
       <a class="hover:bg-opacity-100 bg-opacity-0 pl-0 px-6 2xl:pl-0 2xl:px-8 block py-1.5 text-lg bg-sky transition"
-        href="{{ get_permalink($area_of_focus->ID) }}">
-
-        <span class="pl-10 2xl:pl-12 block mx-auto mr-4 w-72">{!! $area_of_focus->post_title !!}</span>
+        href="?s=&post_type=publication&post_resourcetype=&post_areaoffocus={{ $area_of_focus->ID }}"><span
+          class="pl-10 2xl:pl-12 block mx-auto mr-4 w-72">{!! $area_of_focus->post_title !!}</span>
       </a>
     @endforeach
 

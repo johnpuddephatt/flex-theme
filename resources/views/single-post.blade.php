@@ -17,6 +17,10 @@
                   'class' => 'h-full w-full object-cover object-center inset-0 absolute',
               ]) !!}
             </div>
+
+            <div class="hidden lg:block">
+              @include('partials.entry-meta')
+            </div>
           </div>
         @endif
 
@@ -32,6 +36,10 @@
                 {{ get_the_date() }}
               </div>
             @endif
+
+            <div class="block -mt-8 lg:hidden">
+              @include('partials.entry-meta')
+            </div>
 
             <div class="prose max-w-none xl:prose-lg">
               @php(the_content())
