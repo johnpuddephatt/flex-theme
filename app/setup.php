@@ -407,7 +407,11 @@ add_image_size("square-s", 640, 640, true);
 add_image_size("square-xs", 320, 320, true);
 
 add_action("pre_get_posts", function ($query) {
-    if (!$query->get("s") && $query->query["post_type"] == "publication") {
+    if (
+        !$query->get("s") &&
+        isset($query->query["post_type"]) &&
+        $query->query["post_type"] == "publication"
+    ) {
         $query->set("orderby", "post_date");
     }
 
