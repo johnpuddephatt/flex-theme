@@ -407,10 +407,10 @@ add_image_size("square-s", 640, 640, true);
 add_image_size("square-xs", 320, 320, true);
 
 add_action("pre_get_posts", function ($query) {
-    
-    if (!$query->get("s")) {
-        $query->orderby = "post_date";
-    
+    if (!$query->get("s") && $query->query["post_type"] == "publication") {
+        $query->set("orderby", "post_date");
+    }
+
     //     if ($query->is_search && !is_admin()) {
     //         $terms = explode(" ", $query->get("s"));
     //         // $query->set("tax_query", [

@@ -9,11 +9,15 @@
 }
 
 .prose h2 {
-  @apply text-navy;
+  @apply text-navy text-2xl #{!important};
 }
 
 .prose h3 {
   @apply text-green;
+}
+
+.prose ul {
+  margin-bottom: 4rem;
 }
 
 .alignfull img {
