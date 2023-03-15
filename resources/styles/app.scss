@@ -12,6 +12,10 @@
   @apply text-navy text-2xl mb-12 pb-0 #{!important};
 }
 
+.prose h2 + p {
+  margin-top: -2rem;
+}
+
 .prose h3 {
   @apply text-green;
 }

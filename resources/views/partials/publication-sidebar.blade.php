@@ -7,7 +7,7 @@
     </h2>
 
     <div class="mt-8 pl-0 2xl:pl-0 px-6 2xl:px-8 mb-3 font-semibold text-green">
-      <span class="pl-10 text-lg 2xl:pl-12 block mx-auto mr-16 w-60">Browse by
+      <span class="pl-10 2xl:pl-12 block mx-auto mr-16 w-60">Browse by
         type</span>
     </div>
     @foreach ($types as $type)
@@ -18,7 +18,7 @@
     @endforeach
 
     <div class="mt-8 pl-0 2xl:pl-0 px-6 2xl:px-8 mb-3 font-semibold text-green">
-      <span class="pl-10 2xl:pl-12 text-lg block mx-auto mr-16 w-60">Browse by
+      <span class="pl-10 2xl:pl-12 block mx-auto mr-16 w-60">Browse by
         area of focus</span>
     </div>
     @foreach ($areas_of_focus as $area_of_focus)
