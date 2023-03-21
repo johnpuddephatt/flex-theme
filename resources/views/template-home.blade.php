@@ -13,9 +13,10 @@ Template Name: Home
           </h2>
           <p class="mt-8 font-semibold text-lg">{{ carbon_get_theme_option('home_hero_subtitle') }}</p>
 
-          <a class="border-2 rounded-tr-none rounded-xl border-green py-3 px-6 font-semibold lowercase inline-block mt-12"
-            href="#">Find out how</a>
-
+          @if (carbon_get_theme_option('home_hero_url'))
+            <a class="border-2 rounded-tr-none rounded-xl border-green py-3 px-6 font-semibold lowercase inline-block mt-12"
+              href="{{ carbon_get_theme_option('home_hero_url') }}">Find out how</a>
+          @endif
         </div>
 
         <div class="relative flex-none w-2/3 mb-6 ml-auto pr-4 md:w-1/2 lg:my-0 md:pl-20">
@@ -135,8 +136,8 @@ Template Name: Home
               <a href="{{ get_permalink($block->ID) }}">{!! get_the_title($block->ID) !!}</a>
             </h3>
             <!-- <div class="max-w-sm mx-auto lg:mx-0">
-                                                                                                                                                                    {!! wp_trim_words(get_the_excerpt($block->ID), 30) !!}
-                                                                                                                                                                  </div> -->
+                                                                                                                                                                      {!! wp_trim_words(get_the_excerpt($block->ID), 30) !!}
+                                                                                                                                                                    </div> -->
             <a href="{{ get_permalink($block->ID) }}"
               class="lowercase inline-block mt-auto mx-auto border-2 border-green px-9 py-3 text-sm font-semibold rounded-xl rounded-tr-none whitespace-nowrap">Read</a>
           </div>

@@ -21,6 +21,7 @@ add_action("carbon_fields_register_fields", function () {
             Field::make("separator", "hero_separator", __("Hero")),
             Field::make("text", "home_hero_title", __("Title")),
             Field::make("text", "home_hero_subtitle", __("Subtitle")),
+            Field::make("text", "home_hero_url", __("URL")),
             Field::make("media_gallery", "hero_images", __("Hero images")),
             Field::make(
                 "separator",
