@@ -28,6 +28,10 @@
   @apply w-full;
 }
 
+#my-courses .col-2 {
+  display: none;
+}
+
 // @media (min-width: 1536px) {
 //   .wp-block-lazyblock-tagged-posts,
 //   .wp-block-lazyblock-publication {

@@ -4,8 +4,13 @@
   @apply mb-4;
 }
 
-.wp-block-button .wp-block-button__link {
+.wp-block-button .wp-block-button__link,
+.sensei-login-submit input[type="submit"] {
   @apply lowercase text-black no-underline border-2 bg-transparent border-green px-6 py-3 text-sm font-semibold rounded-xl rounded-tr-none whitespace-nowrap #{!important};
+}
+
+.sensei-login-submit input[type="submit"] {
+  margin-top: 1rem;
 }
 
 // Block quote
