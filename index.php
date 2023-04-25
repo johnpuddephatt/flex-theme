@@ -5,6 +5,21 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <?php wp_head(); ?>
+
+    <?php if (carbon_get_theme_option("google_analytics")): ?>      
+      <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo carbon_get_theme_option(
+        "google_analytics"
+      ); ?>"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '<?php echo carbon_get_theme_option(
+          "google_analytics"
+        ); ?>');
+      </script>
+    <?php endif; ?>
+    
   </head>
 
   <body <?php body_class(

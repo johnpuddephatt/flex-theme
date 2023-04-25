@@ -72,6 +72,12 @@ add_action("carbon_fields_register_fields", function () {
             Field::make("text", "vimeo", __("Vimeo Link")),
         ]);
 
+    Container::make("theme_options", __("Analytics"))
+        ->set_page_parent($parent_options) // reference to a top level container
+        ->add_fields([
+            Field::make("text", "google_analytics", __("Google Analytics")),
+        ]);
+
     Container::make("user_meta", "Role")->add_fields([
         Field::make("text", "user_role", "User role"),
     ]);
