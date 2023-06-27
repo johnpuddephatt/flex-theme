@@ -11,14 +11,10 @@ add_action("generate_rewrite_rules", function ($wp_rewrite) {
 
 add_filter(
     "post_link",
-    function ($post_link, $id = 0) {
-        $post = get_post($id);
-
-        if (is_object($post) && $post->post_type == "post") {
-            return home_url("/news/" . $post->post_name . "/");
-        }
-
-        return $post_link;
+    function ($post_link, $post) {
+        if($post->post_status === 'draft') return $post_link;
+        if($post->post_type !== 'post') return $post_link;
+        return home_url("/news/" . $post->post_name . "/");
     },
     1,
     3
