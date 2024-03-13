@@ -9,10 +9,14 @@
   @apply font-sans text-lg antialiased #{!important};
 }
 
+.editor-styles-wrapper {
+  @apply max-w-none prose xl:prose-lg;
+}
+
 .wp-block {
   @apply max-w-screen-md;
 
-  &.editor-post-title__block .editor-post-title__input {
-    @apply font-sans font-extrabold text-6xl #{!important};
+  &.editor-post-title__input {
+    @apply font-sans mb-8 font-extrabold text-6xl #{!important};
   }
 }
