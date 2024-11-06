@@ -1,6 +1,6 @@
 <a href="{{ get_permalink($page->ID) }}"
   @php(post_class(''))>
-    <div class="py-12 xl:py-24 flex flex-row items-center gap-16 lg:gap-24 xl:max-w-5xl mx-auto  2xl:max-w-6xl">
+    <div class="py-12 2xl:py-24 flex flex-row items-center gap-16 lg:gap-24 xl:max-w-5xl mx-auto  2xl:max-w-6xl">
     <div
         class="mb-auto hidden lg:block relative">
         @if (has_post_thumbnail(isset($page->ID) ? $page->ID : '') &&
