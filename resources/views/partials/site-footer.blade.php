@@ -41,6 +41,19 @@
             @endif
           @endforeach
         </div>
+
+    @if (!empty($footerNavigation))
+          <ul class="flex flex-row justify-end gap-4 xl:gap-6">
+            @foreach ($footerNavigation as $link)
+              <li>
+                <a href="{{ $link->url }}" class="{{ $link->classes }} font-semibold text-white">
+                  {{ $link->label }}
+                </a>
+              </li>
+            @endforeach
+          </ul>
+    @endif
+
         @if (carbon_get_theme_option('footer_text_right'))
           <p class="mt-auto pt-16 text-sm">{{ carbon_get_theme_option('footer_text_right') }}</p>
         @endif

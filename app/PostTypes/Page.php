@@ -8,11 +8,11 @@ if (
         (get_post_meta($post_id, "_wp_page_template", true) ==
             "template-areaoffocus.blade.php" ||
             get_post_meta($post_id, "_wp_page_template", true) ==
-                "template-whatwedo.blade.php"))
+            "template-whatwedo.blade.php"))
 ) {
     add_filter("rwmb_meta_boxes", function ($meta_boxes) {
         $meta_boxes[] = [
-            "title" => "Show related entries",
+            "title" => "Show related",
             "post_types" => "page",
             "context" => "side",
             "fields" => [

@@ -29,6 +29,7 @@ class App extends Composer
             "secondaryNavigation" => $this->getNavigation(
                 "secondary_navigation"
             ),
+            "footerNavigation" => $this->getNavigation("tertiary_navigation"),
         ];
     }
 
