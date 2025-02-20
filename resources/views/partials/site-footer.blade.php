@@ -43,7 +43,7 @@
         </div>
 
     @if (!empty($footerNavigation))
-          <ul class="flex flex-row justify-end gap-4 xl:gap-6">
+          <ul class="mt-16 flex flex-row justify-end gap-4 xl:gap-6">
             @foreach ($footerNavigation as $link)
               <li>
                 <a href="{{ $link->url }}" class="{{ $link->classes }} font-semibold text-white">
@@ -55,7 +55,7 @@
     @endif
 
         @if (carbon_get_theme_option('footer_text_right'))
-          <p class="mt-auto pt-16 text-sm">{{ carbon_get_theme_option('footer_text_right') }}</p>
+          <p class="mt-auto pt-4 text-right text-sm">{{ carbon_get_theme_option('footer_text_right') }}</p>
         @endif
       </div>
     </div>
